@@ -40,7 +40,8 @@
 </div>
 </div>
 <div class="entry">  
-<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div>   	  
+<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380
+<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div> -->  	  
 <?php else : ?>  	  
 <h2 class="center">Page not found</h2> 	 	 	 
 <?php endif; ?> 		    		  
