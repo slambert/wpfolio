@@ -34,7 +34,7 @@ $options = array (
 
    array( "name" => "Headline Font Size",
 			"id" => $shortname."_headline_size",
-            "std" => "36px",
+            "std" => "28px",
             "type" => "text"),
      array(    "name" => "Body font",
             "id" => $shortname."_body_font",
@@ -50,7 +50,7 @@ $options = array (
    
    array(    "name" => "Body background color",
             "id" => $shortname."_body_backgroundcolor",
-            "std" => "#c0c0c0",
+            "std" => "#E0E0E0",
             "type" => "text"),          
    
             
@@ -61,12 +61,12 @@ $options = array (
    	
    array( "name" => "Highlight Font Color",
           "id" => $shortname."_highlight_color",
-          "std" => "#000000",
+          "std" => "#666666",
           "type" => "text"),
    
    array( "name" => "Secondary Font Color",
            "id" => $shortname."_second_color",
-           "std" => "#000000",
+           "std" => "#ABABAB",
            "type" => "text"), 
    
  
@@ -163,7 +163,7 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 </p>
 <p><strong>Links:</strong>
 <ul><li>Colors must be in hex format.  Use a <a href="http://www.colorpicker.com/" target="_blank">color picker tool</a> for help.</li>
-<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation.</li></ul>
+<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation. And remember to keep your Wordpress installation up to date as well!</li></ul>
 </form>
 <?php
 }
