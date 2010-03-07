@@ -4,26 +4,24 @@
 <?php /* If this is a category archive */ if(is_category(array('news','latest', 'updates', 'blog', 'notable'))):	 ?>	
 <!-- If it's the blog, run the following -->
 
-	<!-- begin post -->   
-	<br />   
-	<div id="content" class="pages">  	  	 
+	<!-- begin post -->    
+	<div class="pages">  	  	 
 	<?php if (have_posts()): ?>  
 	
 						 
 		<h2><?php echo single_cat_title(); ?></h2> <!--CATEGORY TITLE-->
-	 
-		
-		</div> 
-		<div class="pages">    
+	  
 			<?php while (have_posts()) : the_post(); ?>     
 		
 				<div class="notable-post">
-		
-					<h3><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h3> <!--POST TITLE-->
-			
+					
+<!--POST TITLE-->		
+					<h3><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h3> 
+<!--END POST TITLE-->
+					<h4><?php the_date('F d, Y', '', ''); ?></h4>
 					<?php the_content('continue...'); ?>
 			
-					<h5><?php the_date('F d, Y', 'posted ', ''); ?><?php comments_popup_link(__(' | Comments (0)'), __(' | Comments (1)'), __(' | Comments (%)'), __(''), __('')); ?><?php the_tags('| Tags: ',', ',''); ?>  <?php edit_post_link('edit this entry', '<span class="adminuser">', '</span>'); ?> <!--USER EDIT LINK--></h5>
+					<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?><?php the_tags('| Tags: ',', ',''); ?>  <?php edit_post_link('edit this entry', '<span class="adminuser">', '</span>'); ?> <!--USER EDIT LINK--></h5>
 				</div>
 	
 			<?php endwhile; ?>   	  

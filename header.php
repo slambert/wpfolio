@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />    
 
 <title>
-<?php bloginfo('name'); ?>  <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?>  <?php wp_title(); ?>
+<?php bloginfo('name'); ?>  <?php if ( is_single() ) { ?> &raquo; Archive <?php } ?>  <?php wp_title(); ?>
 </title>  
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />   
 
