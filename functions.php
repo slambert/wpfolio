@@ -215,8 +215,8 @@ function wpfolio_widget_categories($args, $widget_args = 1) {
     $this_category = get_category($cat_id);
 ?>
     <ul>
-    <a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a>
-    </ul>
+	<li><a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a></li>
+	</ul>
 <?php
     endforeach;
     echo $after_widget;

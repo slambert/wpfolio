@@ -83,27 +83,19 @@ div.container h2 {color: <?php echo $WPFolio_highlight_color; ?>; }
 <!-- MENU  --> 
 <div class="nav">
 <ul>
-<!-- 
 
-
-<?php wp_list_categories('exclude=&title_li=' );?>
-
-<?php wp_list_pages('exclude=&title_li=' );?>
--->
 <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('navbar') ) : else : ?> 
-        <ul>
 
-<?php wp_list_categories('exclude=&title_li=' );?>
-
-
-<?php wp_get_archives('type=yearly'); ?> 
-
-<?php wp_list_pages('exclude=&title_li=' );?>
-</ul>
+	<ul>
+	<?php wp_list_categories('exclude=&title_li=' );?>
+	<?php wp_get_archives('type=yearly'); ?> 
+	<?php wp_list_pages('exclude=&title_li=' );?>
+	</ul>
 <?php endif; ?>
 </ul>
 
-</div> <!-- END Menu -->  
+</div> 
+<!-- END MENU -->  
 
 
 
