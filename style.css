@@ -368,7 +368,7 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	display: inline; 
 	}
 .nav a, link   {  
-	border : 1px solid #c0c0c0;
+	/*border : 1px solid #c0c0c0; - remove comment to add borders to navigation*/
 	color : #545454;
 	text-decoration : none;
 	font-weight : normal;
@@ -376,7 +376,6 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	margin:  2px;
 	}
 .nav a:active  {  
-	border : 1px solid #c0c0c0;
 	/*color : <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 	text-decoration : none;
@@ -384,7 +383,6 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	padding : 3px;
 	}
 .nav a:hover  {  
-	border : 1px solid #c0c0c0;
 	/*color : <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 	text-decoration : none;
