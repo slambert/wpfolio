@@ -30,9 +30,9 @@
 <?php if(in_category('news','latest', 'updates', 'blog', 'notable')) continue; ?>
 
 <div class="img-frame">
-<a title="'<?php the_title(); ?>', posted on <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
+<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
 </br>
-<a title="'<?php the_title(); ?>', posted on <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><div class="img-frame-caption"><?php the_title('' ); ?></a></div>
+<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><div class="img-frame-caption"><?php the_title('' ); ?></a></div>
 </div>
 
 <?php endwhile; ?>   

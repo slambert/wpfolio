@@ -19,7 +19,7 @@
 		
 				<div class="notable-post">
 		
-					<h3><a title="'<?php the_title(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h3> <!--POST TITLE-->
+					<h3><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h3> <!--POST TITLE-->
 			
 					<?php the_content('continue...'); ?>
 			
@@ -80,9 +80,9 @@
 		<?php while (have_posts()) : the_post(); ?> 
 			
 			<div class="img-frame">
-				<a title="'<?php the_title(); ?>', posted on <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
+				<a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
 				<br />
-				<div class="img-frame-caption"><a title="'<?php the_title(); ?>', posted on <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php the_title('' ); ?></a>
+				<div class="img-frame-caption"><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php the_title('' ); ?></a>
 			</div>
 		</div>
 		

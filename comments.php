@@ -36,7 +36,7 @@
 <td valign="top">
 			<strong><?php comment_author_link() ?></strong> says:
 			<?php if ($comment->comment_approved == '0') : ?>
-			<em>Your comment is hold to moderation</em>
+			<em>Your comment is held for moderation</em>
 			<?php endif; ?>
 			<br />
 
