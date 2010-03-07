@@ -233,7 +233,7 @@ function wpfolio_widget_categories_control( $widget_args=null ) {
 ?>
 		<p>
 			<label for="categories-order-<?php echo $number; ?>">
-				<?php _e( 'List categories by category slug name (painting, drawing, etc):' ); ?>
+				<?php _e( 'List categories by category name (painting, drawing, art work, etc):' ); ?>
 				<input class="widefat" id="wpfolio-categories-order" name="widget-wpfolio-categories-order" type="text" value="<?php echo $order; ?>" />
 			</label>
 		</p>
