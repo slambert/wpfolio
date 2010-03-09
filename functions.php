@@ -163,7 +163,7 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 </p>
 <p><strong>Links:</strong>
 <ul><li>Colors must be in hex format.  Use a <a href="http://www.colorpicker.com/" target="_blank">color picker tool</a> for help.</li>
-<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation. And remember to keep your Wordpress installation up to date as well!</li></ul>
+<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation.</li></ul>
 </form>
 <?php
 }
@@ -213,10 +213,12 @@ function wpfolio_widget_categories($args, $widget_args = 1) {
     $cat_name = trim($cat_name);
     $cat_id = get_cat_id($cat_name);	
     $this_category = get_category($cat_id);
+    
+    $class =  is_category($cat_id)  ? "current_page_item" : "";
 ?>
     <ul>
-	<li><a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a></li>
-	</ul>
+	<li class="<?=$class?>"><a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a></li>
+    </ul>
 <?php
     endforeach;
     echo $after_widget;
