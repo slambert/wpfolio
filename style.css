@@ -599,6 +599,10 @@ div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
 }
 /* @end */
 
+.Page.not.found p {
+	font-size: 1.5em;
+}
+
 .widgettitle  { display: none; 
 padding: 0em;}
 
