@@ -4,7 +4,7 @@
 
 <div class="entry">   
 	
-<!--COMMENTING OUR PREVIOUS/NEXT BUTTONS - they page through multiple categories.
+<!--COMMENTING OUT PREVIOUS/NEXT BUTTONS - they page through multiple categories.
 See ticket http://dev.eyebeam.org/projects/wpfolio/ticket/380
 
 <div class="prevnext"> 
