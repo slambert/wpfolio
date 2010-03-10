@@ -20,7 +20,7 @@ END PREVIOUS/NEXT BUTTONS
 </div> 		    
 
 <div class="posted">   
-<b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php the_tags('| Tags: ',', ',''); ?>  <?php comments_popup_link(__('| Comments (0)'), __('| Comments (1)'), __('| Comments (%)'), __(''), __('')); ?>
+<b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php the_tags('| Tags: ',', ',''); ?>  | <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>
 <?php edit_post_link('edit this entry', '<br /><span class="adminuser">', '</span>'); ?> <!--USER EDIT LINK-->
 </div>   
 <br /><br />
