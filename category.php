@@ -9,7 +9,7 @@
 	<?php if (have_posts()): ?>  
 	
 						 
-		<h2><?php echo single_cat_title(); ?></h2> <!--CATEGORY TITLE-->
+		<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2> <!--CATEGORY TITLE-->
 	  
 			<?php while (have_posts()) : the_post(); ?>     
 		
@@ -58,7 +58,7 @@
 			
 			
 			<?php /* If this is an author archive */ } elseif (is_author()) { ?> 		  
-				<h2 class="pagetitle">Author Archive</h2>  		    
+				<h2 class="pagetitle">Artist Archive</h2>  		    
 			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> 		  
 			<?php /*if this is a year archive */ } elseif (is_archive()) { ?>
 				<h2 class="pagetitle"><?php wp_title(''); ?></h2>
@@ -78,9 +78,9 @@
 		<?php while (have_posts()) : the_post(); ?> 
 			
 			<div class="img-frame">
-				<a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
+				<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
 				<br />
-				<div class="img-frame-caption"><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php the_title('' ); ?></a>
+				<div class="img-frame-caption"><a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php the_title('' ); ?></a>
 			</div>
 		</div>
 		
