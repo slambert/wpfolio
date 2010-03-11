@@ -1,3 +1,5 @@
+/* @override http://wpfolio.visitsteve.com/wp-content/themes/wpfolio1.5b3/style.css */
+
 /*
 
 Theme Name: WPFolio
@@ -89,7 +91,7 @@ and editable in Current Theme Options in the Wordpress dashboard */
 /* To change your header image create an image that is 960 pixels wide by 200 pixels high and name 
 it header.jpg and place in the images folder in your theme directory*/
 div.header    {
-	background-image: url(images/header.jpg);
+	background-image: url();
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	margin-left: 0;
@@ -242,9 +244,10 @@ margin: 1em auto;
 	margin-right:auto; 
 	}
 div.Home p img {
-	border : 1px solid #c0c0c0;
-	padding:  5px;
-	}
+	padding: 0;
+	margin: 0;
+	border-style: none;
+}
 /* @end */
 
 code {    

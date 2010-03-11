@@ -27,27 +27,33 @@
 	<?php foreach ($comments as $comment) : ?>
 
 		<li class="<?php echo $oddcomment; ?>" id="comment-<?php comment_ID() ?>">
-<div class="commentsbody">
-<table cellpadding="0" cellspacing="1">
-<tr>
-<td valign="top"> 
-     <?php echo get_avatar( $comment, $size = '40' ); ?>
-</td>
-<td valign="top">
+			<div class="commentsbody">
+
+<!-- START TABLE -->
+	<table cellpadding="0" cellspacing="1">
+		<tr>
+			<td valign="top"> 
+     		<?php echo get_avatar( $comment, $size = '40' ); ?>
+			</td>
+
+			<td valign="top">
 			<strong><?php comment_author_link() ?></strong> says:
 			<?php if ($comment->comment_approved == '0') : ?>
 			<em>Your comment is held for moderation</em>
 			<?php endif; ?>
 			<br />
 
-			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('e','',''); ?></small><br /><br />
+			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('e','',''); ?></small>
+			<br /><br />
 
 			<?php comment_text() ?>
 			</td>
-</tr>
-</table>
+		</tr>
+	</table>
+<!-- END TABLE -->
 
-           </div></li>
+           </div><!-- .commentsbody -->
+		</li>
 
 	<?php /* Changes every other comment to a different class */	
 		if ('alt' == $oddcomment) $oddcomment = '';
@@ -72,7 +78,9 @@
 
 
 <?php if ('open' == $post->comment_status) : ?>
+
 <br /><br />
+
 <h3 id="respond">Leave a comment</h3>
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
@@ -112,4 +120,4 @@
 <?php endif; // If registration required and not logged in ?>
 
 <?php endif; // if you delete this the sky will fall on your head ?>
-</div>
+</div><!-- .comments -->

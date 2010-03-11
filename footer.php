@@ -1,10 +1,10 @@
 <div class="footer">
 
-<!-- License information can go here --!>
+<!-- License information can go here -->
+<!-- Maybe this can be of help - http://creativecommons.org/about -->
 
 <a href="feed:<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a> and <a
 href="feed:<?php bloginfo('comments_rss2_url'); ?>">Comments(RSS)</a>.
-<br />
 
 
 
@@ -14,7 +14,7 @@ seconds. -->
 
 
 
-</div>
+</div><!-- footer -->
 
 
 
@@ -22,7 +22,9 @@ seconds. -->
 
 
 
-<?php wp_footer(); ?>   </div> 
+<?php wp_footer(); ?>   
+
+</div><!-- .container -->
 
 
 

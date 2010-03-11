@@ -65,7 +65,7 @@
 				<div class="entry"></div><!-- .entry --><!-- why is this here? -->	
 			
 			<?php } ?>   		  		  
-			<br /> 	 
+
 		</div> <!-- #content .entry -->
 		
 		

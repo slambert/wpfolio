@@ -23,71 +23,78 @@ function get_thumb ($post_ID){
 
 $themename = "WPFolio";
 $shortname = "WPFolio";
+
+//...BEGIN THEME OPTIONS...
+
 $options = array (
 
+//Headline Font
    array( "name" => "Headline Font",
            "id" => $shortname."_headline_font",
            "type" => "select",
            "std" =>"Arial",
            "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace" )),
 
-
-   array( "name" => "Headline Font Size",
+//Headline Font Size
+	array( "name" => "Headline Font Size",
 			"id" => $shortname."_headline_size",
             "std" => "28px",
             "type" => "text"),
-     array(    "name" => "Body font",
+
+//Body Font
+	array(  "name" => "Body font",
             "id" => $shortname."_body_font",
             "type" => "select",
             "std" => "Arial",
             "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", 
             "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace")),
-            
-   array(    "name" => "Body Foreground Color",
+
+//Body Foreground Color            
+	array(	"name" => "Body Foreground Color",
             "id" => $shortname."_foreground_color",
             "std" => "#ffffff",
-            "type" => "text"),        
-   
-   array(    "name" => "Body background color",
+			"type" => "text"),        
+
+//Body Background Color
+	array(	"name" => "Body background color",
             "id" => $shortname."_body_backgroundcolor",
             "std" => "#E0E0E0",
             "type" => "text"),          
-   
-            
-  array(    "name" => "Body font color",
+
+//Body Font Color
+	array(	"name" => "Body font color",
             "id" => $shortname."_body_color",
             "std" => "#000000",
             "type" => "text"),
-   	
-   array( "name" => "Highlight Font Color",
-          "id" => $shortname."_highlight_color",
-          "std" => "#666666",
-          "type" => "text"),
-   
+
+//Highlight Font Color
+	array(	"name" => "Highlight Font Color",
+			"id" => $shortname."_highlight_color",
+			"std" => "#666666",
+			"type" => "text"),
+
+//Secondary Font Color
    array( "name" => "Secondary Font Color",
            "id" => $shortname."_second_color",
            "std" => "#ABABAB",
            "type" => "text"), 
-   
- 
 
-   
+//Blog Title Visibility (replace for image based headers)  
    array(  "name" => "Blog Title Visibility",
             "id" => $shortname."_visible",
             "type" => "select",
             "std" => "visible",
             "options" => array("visible", "hidden")),
-   
+
+//Text Transform (uppercase, lowercase, or capitalize)
    array( "name" => "Text Transform",
            "id" => $shortname."_text_transform",
            "type" => "select",
            "std" =>"none", 
            "options" => array("none", "uppercase", "lowercase","capitalize" )),
- 
-
-
 
 );
+//...END THEME OPTIONS...//
 
 function mytheme_add_admin() {
 	global $themename, $shortname, $options;
@@ -121,50 +128,63 @@ function mytheme_add_admin() {
 	}
 	add_theme_page($themename." Options", "Current Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
 }
+
 function mytheme_admin() {
 global $themename, $shortname, $options;
 if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
     if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
+
+<!-- WPFolio Theme Interface -->
 <div class="wrap">
+
 <h2><?php echo $themename; ?> settings</h2>
 <form method="post">
-<table class="optiontable">
-<?php foreach ($options as $value) { 
+	<table class="optiontable">
+	
+	<?php foreach ($options as $value) { 
     if ($value['type'] == "text") { ?>
         <tr valign="top"> 
-    <th scope="row"><?php echo $value['name']; ?>:</th>
-    <td>
-        <input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo get_settings( $value['id'] ); } else { echo $value['std']; } ?>" />
-    </td>
-</tr>
-<?php } elseif ($value['type'] == "select") { ?>
-<tr valign="top"> 
-        <th scope="row"><?php echo $value['name']; ?>:</th>
-        <td>
-            <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
+    		<th scope="row"><?php echo $value['name']; ?>:</th>
+    		<td>
+        		<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo get_settings( $value['id'] ); } else { echo $value['std']; } ?>" />
+    		</td>
+		</tr>
+	
+	<?php } elseif ($value['type'] == "select") { ?>
+
+		<tr valign="top"> 
+        	<th scope="row"><?php echo $value['name']; ?>:</th>
+        	<td>
+            	<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
                 <?php foreach ($value['options'] as $option) { ?>
                 <option<?php if ( get_settings( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
                 <?php } ?>
-            </select>
-        </td>
-    </tr>
+            	</select>
+        	</td>
+    	</tr>
 
 <?php } }?>
 </table>
+
 <p class="submit">
-<input name="save" type="submit" value="Save changes" />    
-<input type="hidden" name="action" value="save" />
+	<input name="save" type="submit" value="Save changes" />    
+	<input type="hidden" name="action" value="save" />
 </p>
 </form>
+
 <form method="post">
 <p class="submit">
-<input name="reset" type="submit" value="Reset" />
-<input type="hidden" name="action" value="reset" />
+	<input name="reset" type="submit" value="Reset" />
+	<input type="hidden" name="action" value="reset" />
 </p>
+
 <p><strong>Links:</strong>
-<ul><li>Colors must be in hex format.  Use a <a href="http://www.colorpicker.com/" target="_blank">color picker tool</a> for help.</li>
-<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation.</li></ul>
+	<ul>
+		<li>Colors must be in hex format.  Use a <a href="http://www.colorpicker.com/" target="_blank">color picker tool</a> for help.</li>
+		<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation.</li>
+	</ul>
 </form>
+
 <?php
 }
 
