@@ -53,7 +53,7 @@ h3 {
 	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/}
 h2.pagetitle {
-margin-top: 50px;
+	margin-top: 50px;
 }
 h4 {
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
@@ -119,6 +119,10 @@ and editable in Current Theme Options in the Wordpress dashboard*/ }
 	font-style: normal;
 	opacity: 0.25;
 	}
+	
+.headertext h4 {
+	padding-top: .15em;
+}
 /* @end */
 
 /* @group links */
@@ -355,20 +359,19 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 /* @end */
 
 /* @group navbar */
-.nav, .widgettitle {  
-	/*   font-family : <?php echo $WPFolio_headline_font ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	font-size : 11px;
+.nav, .widgettitle {
 	color : #545454;
 	text-decoration : none;
 	font-weight : bold;
 	padding: 0 30px;
 	margin: 0;
+	font-size: 12px;
 }
 
 .nav ul, .widgettitle ul { 
 	float:left;
-	margin: .5em 0 1em;
+	margin: 0;
+	padding: 0;
 }
 
 .nav li, widgettitle li { 
