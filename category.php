@@ -22,15 +22,15 @@
 					<?php the_content('continue...'); ?>
 			
 					<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?> | <?php the_tags('Tags: ',', ',''); ?>  <?php edit_post_link('edit this entry', '<span class="adminuser">', '</span>'); ?> <!--USER EDIT LINK--></h5>
-				</div>
+				</div><!-- .notable-post -->
 	
 			<?php endwhile; ?>   	  
-		</div>	
+		</div>	<!-- .pages-->
 		
 	
 		<div class="entry">  
 		
-		<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div>   	  
+		<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div><!-- .prevnext --> 
 	
 		<?php else : // if there are posts ?>  	  
 			<h2 class="center">Page not found</h2> 	 
@@ -38,12 +38,12 @@
 		<?php endif; ?> 		    		  
 	
 	
-	</div>   	  
+		</div>  <!-- .entry --> 	  
 <!-- end post -->  
 <div id="links">
 <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar') ) ; ?> 
 
-</div>
+</div><!-- #links -->
 
 
 
@@ -62,11 +62,11 @@
 			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> 		  
 			<?php /*if this is a year archive */ } elseif (is_archive()) { ?>
 				<h2 class="pagetitle"><?php wp_title(''); ?></h2>
-				<div class="entry"></div>	
+				<div class="entry"></div><!-- .entry --><!-- why is this here? -->	
 			
 			<?php } ?>   		  		  
 			<br /> 	 
-		</div> 
+		</div> <!-- #content .entry -->
 		
 		
 		
@@ -81,13 +81,13 @@
 				<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
 				<br />
 				<div class="img-frame-caption"><a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php the_title('' ); ?></a>
-			</div>
-		</div>
+				</div><!-- .img-frame-caption -->
+			</div><!-- .img-frame -->
 		
 		<?php endwhile; ?>   
 		
-		</div>
-		</div>
+		</div><!-- .img-container -->
+		</div><!-- .entrycat -->
 		<div class="entry">  
 		<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380
 		<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div>-->
@@ -96,7 +96,7 @@
 	<?php endif; // have posts ?> 
 
 
-</div>	   	  
+		</div><!-- .entry -->	   	  
 <!-- end post -->     
 
 

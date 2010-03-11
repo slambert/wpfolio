@@ -13,8 +13,8 @@
 
 <?php the_content(); ?>    
 <?php edit_post_link('edit this entry', '<br /><span class="adminuser">', '</span>'); ?>
-</div> 		    
-</div>
+</div><!--.page title--> 		    
+</div><!--.pages -->
    
 
 <!-- <?php trackback_rdf(); ?> -->    
