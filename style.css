@@ -53,7 +53,6 @@ h3 {
 	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/}
 h2.pagetitle {
-	margin-top: 50px;
 }
 h4 {
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
@@ -269,20 +268,24 @@ code {
 	background-color: #9fff9c;
 }
 
-div.pages {  
- 	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	margin-top :15px;
-	margin-bottom : 5px;
-	margin-left : 30px;
-	margin-right : 30px;
-	padding-top: .5em;
+div.pages {
 	font-weight : normal;
 	text-align : left;
 	line-height: 1.4em;
+	font-size: 12px;
 	clear: both;
 	padding: 0;
+	margin: 30px 30px 5px;
+}
+
+div.pages {
+	font-weight : normal;
+	text-align : left;
+	line-height: 1.4em;
 	font-size: 12px;
+	clear: both;
+	padding: 0;
+	margin: 30px 30px 5px;
 }
 
 
