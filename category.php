@@ -30,6 +30,7 @@
 	
 		<div class="entry">  
 		
+		<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380
 		<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div><!-- .prevnext --> 
 	
 		<?php else : // if there are posts ?>  	  
@@ -50,6 +51,7 @@
 <!-- If it's NOT the blog, run the following -->
 <?php else: ?>
 
+	<div class="pages">  
 	<div id="content" class="entry">  	  	 
 		<?php if (have_posts()) : ?>  		     
 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>     
@@ -88,6 +90,8 @@
 		
 		</div><!-- .img-container -->
 		</div><!-- .entrycat -->
+		</div>	<!-- .pages-->
+		
 		<div class="entry">  
 		<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380
 		<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div>-->
