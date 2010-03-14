@@ -270,4 +270,6 @@ function wpfolio_widget_categories_control( $widget_args=null ) {
 wp_register_sidebar_widget('wpfolio_categories', __("WPFolio Categories"), 'wpfolio_widget_categories');
 wp_register_widget_control('wpfolio_categories', __("WPFolio Categories"),  'wpfolio_widget_categories_control');
 
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size( 150, 150,true );
 ?>

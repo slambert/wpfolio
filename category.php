@@ -80,7 +80,31 @@
 		<?php while (have_posts()) : the_post(); ?> 
 			
 			<div class="img-frame">
-				<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
+				
+				<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>">
+				
+				
+				
+				
+				<?php 
+				
+				if(has_post_thumbnail()){
+					the_post_thumbnail();
+				}
+				else{
+			
+				
+				echo get_thumb($post->ID); 
+			}
+				
+			
+				
+				
+				?>
+				
+				
+				
+				</a> 
 				<br />
 				<div class="img-frame-caption"><a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php the_title('' ); ?></a>
 				</div><!-- .img-frame-caption -->
