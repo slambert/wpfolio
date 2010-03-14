@@ -88,6 +88,10 @@
 				
 				<?php 
 				
+				
+				#If there is a post thumbnail , it will display. If not it is the thumb function. These
+				# can be edited in the functions.php file.
+				
 				if(has_post_thumbnail()){
 					the_post_thumbnail();
 				}
