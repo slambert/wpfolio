@@ -10,7 +10,23 @@ Template Name: Archives
 <h2>All Work</h2> 
 
 <!-- archives with the_excerpt so the page shows a grid of thumbnails for each post-->    
-<?php $arc_query = new WP_Query('orderby=post_date&order=DESC&showposts=-1'); ?> <?php while ($arc_query->have_posts()) : $arc_query->the_post(); ?> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo get_thumb($post->ID); ?></a>  
+<?php $arc_query = new WP_Query('orderby=post_date&order=DESC&showposts=-1'); ?> <?php while ($arc_query->have_posts()) : $arc_query->the_post(); ?> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				
+				<?php 
+
+				#If there is a post thumbnail , it will display. If not it is the thumb function. These
+				# can be edited in the functions.php file.
+
+				if(has_post_thumbnail()){
+					the_post_thumbnail();
+				}
+				else{
+
+				echo get_thumb($post->ID); 
+			}
+?>
+</a> 
+ 
  <?php the_title(''); ?>
 <?php endwhile; ?>  	
 </div> <!-- .entry cat (?)-->     
