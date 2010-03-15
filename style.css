@@ -286,8 +286,8 @@ div.pages {
 	font-size : 11px;
 	}
 .footer {
-	padding : 20px;
-	text-align : center;
+	padding : 20px 30px;
+	text-align : left;
 	font-size : 11px; clear: both; }
 
 /* @group prev/next navigation */
