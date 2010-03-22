@@ -21,7 +21,7 @@
 					<h4><?php the_date('F d, Y', '', ''); ?></h4>
 					<?php the_content('continue...'); ?>
 			
-					<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?> | <?php the_tags('Tags: ',', ',''); ?>  <?php edit_post_link('edit this entry', '<span class="adminuser">', '</span>'); ?> <!--USER EDIT LINK--></h5>
+					<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?><?php the_tags('| Tags: ',', ',''); ?>  <?php edit_post_link('edit this entry', '<span class="adminuser">', '</span>'); ?> <!--USER EDIT LINK--></h5>
 				</div><!-- .notable-post -->
 	
 			<?php endwhile; ?>   	  
