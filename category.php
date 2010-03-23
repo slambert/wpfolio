@@ -1,4 +1,9 @@
-<?php get_header(); ?>   
+<?php
+
+    // calling the header.php
+    get_header(); 
+
+?> 
 
 <!-- Checking if this is the blog -->
 <?php /* If this is a category archive */ if(is_category(array('news','latest', 'updates', 'blog', 'notable'))):	 ?>	
@@ -136,4 +141,9 @@
 
 
 
-<?php get_footer(); ?>
+<?php     
+
+	// calling footer.php
+    get_footer();
+
+?>

@@ -1,4 +1,10 @@
-<?php get_header(); ?>    
+<?php
+
+    // calling the header.php
+    get_header(); 
+
+?>
+   
 <!-- begin page -->    
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : start_wp(); ?> 
 
@@ -26,4 +32,9 @@
 
 <!-- end page -->     
 
-<?php get_footer(); ?> 
+<?php     
+
+	// calling footer.php
+    get_footer();
+
+?>

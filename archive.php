@@ -1,4 +1,9 @@
-<?php get_header(); ?>   
+<?php
+
+    // calling the header.php
+    get_header(); 
+
+?>  
 
 <!-- begin post -->    
 <div id="content" class="entry">  	  	 
@@ -50,4 +55,9 @@
 </div>	<!-- .entry -->   	  
 <!-- end post -->     
 
-<?php get_footer(); ?>  
+<?php     
+
+	// calling footer.php
+    get_footer();
+
+?>
