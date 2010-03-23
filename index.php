@@ -1,3 +1,4 @@
+<!-- generated with index.php -->
 <?php
 
     // calling the header.php

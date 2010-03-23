@@ -1,3 +1,4 @@
+<!-- generated with archives.php -->
 <?php /* 
 Template Name: Archives 
 */ ?>  

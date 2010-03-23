@@ -1,3 +1,4 @@
+<!-- generated with category.php -->
 <?php
 
     // calling the header.php

@@ -1,3 +1,4 @@
+<!-- generated with page.php -->
 <?php
 
     // calling the header.php

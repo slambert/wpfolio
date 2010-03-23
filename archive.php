@@ -1,3 +1,4 @@
+<!-- generated with archive.php -->
 <?php
 
     // calling the header.php
