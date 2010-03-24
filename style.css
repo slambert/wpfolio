@@ -78,6 +78,8 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	font-family : arial, verdana, serif;
 	/*background-color: <?php echo $WPFolio_foreground_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 	padding: 0px;
 	}
 	
@@ -243,6 +245,8 @@ margin: 1em auto; /*this might need to be removed*/
 	border-style: none;
 	margin-top: 0;
 	margin-bottom: 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 }
 /* @end */
 
