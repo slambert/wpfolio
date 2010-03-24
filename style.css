@@ -265,6 +265,9 @@ code {
 .adminuser {
 	font-variant: small-caps;
 	background-color: #9fff9c;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 4px;
 }
 
 div.pages {
