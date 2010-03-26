@@ -1,8 +1,14 @@
+<!-- generated with archives.php -->
 <?php /* 
 Template Name: Archives 
 */ ?>  
 
-<?php get_header(); ?>      
+<?php
+
+    // calling the header.php
+    get_header(); 
+
+?>    
 
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : start_wp(); ?>  
 
@@ -37,5 +43,10 @@ Template Name: Archives
 <?php endif; ?>    
 <!-- end post -->   
 
- <?php get_footer(); ?> 
+<?php     
+
+	// calling footer.php
+    get_footer();
+
+?>
 </div> <!-- is this superfluous? -->

@@ -42,7 +42,7 @@ $options = array (
             "type" => "text"),
 
 //Body Font
-	array(  "name" => "Body font",
+	array(  "name" => "Body Font",
             "id" => $shortname."_body_font",
             "type" => "select",
             "std" => "Arial",
@@ -56,13 +56,13 @@ $options = array (
 			"type" => "text"),        
 
 //Body Background Color
-	array(	"name" => "Body background color",
+	array(	"name" => "Body Background Color",
             "id" => $shortname."_body_backgroundcolor",
             "std" => "#E0E0E0",
             "type" => "text"),          
 
 //Body Font Color
-	array(	"name" => "Body font color",
+	array(	"name" => "Body Font Color",
             "id" => $shortname."_body_color",
             "std" => "#000000",
             "type" => "text"),
@@ -91,7 +91,7 @@ $options = array (
            "id" => $shortname."_text_transform",
            "type" => "select",
            "std" =>"none", 
-           "options" => array("none", "uppercase", "lowercase","capitalize" )),
+           "options" => array("none", "uppercase", "lowercase", "capitalize" )),
 
 );
 //...END THEME OPTIONS...//

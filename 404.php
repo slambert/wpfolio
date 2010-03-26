@@ -1,5 +1,11 @@
+<!-- generated with 404.php -->
 <?php @header("HTTP/1.1 404 Not found", TRUE, 404); ?>
-<?php get_header(); ?>    
+<?php
+
+    // calling the header.php
+    get_header(); 
+
+?>  
 <!-- begin page -->    
 
 
@@ -57,4 +63,9 @@ and it doesn't exist.</p>
 
 <!-- end page -->     
 
-<?php get_footer(); ?> 
+<?php     
+
+	// calling footer.php
+    get_footer();
+
+?>

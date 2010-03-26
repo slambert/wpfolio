@@ -1,4 +1,10 @@
-<?php get_header(); ?> 
+<!-- generated with index.php -->
+<?php
+
+    // calling the header.php
+    get_header(); 
+
+?> 
   
 <!-- begin post -->    
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
@@ -29,4 +35,9 @@
 
 <!-- end post-->     
 
-<?php get_footer(); ?>
+<?php     
+
+	// calling footer.php
+    get_footer();
+
+?>
