@@ -293,9 +293,31 @@ div.pages {
 	font-size : 11px;
 	}
 .footer {
-	padding : 20px 30px;
+	padding : 5px 3px 20px 3px;
 	text-align : left;
-	font-size : 11px; clear: both; }
+	font-size : 11px; clear: both; 
+	/* border: 1px solid red; */
+	background-color: #E0E0E0;
+	}
+	
+.footer a {
+font-weight: normal;
+}
+
+.footer a:hover {
+font-weight: normal;
+}
+
+	
+.footer .left {
+
+float: left;
+}
+
+.footer .right {
+
+float: right;
+}
 
 /* @group prev/next navigation */
 .prevnext {
@@ -597,6 +619,25 @@ div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
 	margin-bottom: 1em;
 	font-size: 1.6em;
 }
+
+/* @gallery */
+.gallery {
+                margin: auto;
+        }
+        .gallery-item {
+                float: left;
+                margin-top: 10px;
+                text-align: center;
+                width: 33%;
+        }
+        .gallery img {
+                border: 2px solid #cfcfcf;
+        }
+        .gallery-caption {
+                margin-left: 0;
+        }
+
+/* @gallery */
 /* @end */
 
 .Page.not.found p {
