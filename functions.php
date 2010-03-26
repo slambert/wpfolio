@@ -234,13 +234,14 @@ function wpfolio_widget_categories($args, $widget_args = 1) {
     $cat_id = get_cat_id($cat_name);	
     $this_category = get_category($cat_id);
     
-    $class =  is_category($cat_id)  ? "current_page_item" : "";
+    $class =  is_category($cat_id)  ? "current-cat" : "";
 ?>
     <ul>
 	<li class="<?=$class?>"><a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a></li>
     </ul>
 <?php
     endforeach;
+
     echo $after_widget;
 }
 

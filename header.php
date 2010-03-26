@@ -117,7 +117,7 @@
 <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('navbar') ) : else : ?> 
 
 	<ul>
-	<?php wp_list_categories('exclude=&title_li=' );?>
+	<?php wp_list_categories('exclude=&title_li=&current_category=1,' );?>
 	<?php wp_get_archives('type=yearly'); ?> 
 	<?php wp_list_pages('exclude=&title_li=' );?>
 	</ul>
