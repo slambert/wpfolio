@@ -95,6 +95,9 @@
 		text-transform:<?php echo $WPFolio_text_transform ?>;}
 	.prevnext a:hover {
 		background-color:<?php echo $WPFolio_highlight_color; ?>;}
+	.footer {
+	background-color: <?php echo $WPFolio_body_backgroundcolor; ?>;}
+	}
  </style>
 
 <?php wp_head(); ?> 

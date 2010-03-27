@@ -296,8 +296,8 @@ div.pages {
 	padding : 5px 3px 20px 3px;
 	text-align : left;
 	font-size : 11px; clear: both; 
-	/* border: 1px solid red; */
-	background-color: #E0E0E0;
+	/* background-color: #E0E0E0; */
+	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php and editable in Current Theme Options in the Wordpress dashboard*/
 	}
 	
 .footer a {
@@ -310,14 +310,24 @@ font-weight: normal;
 
 	
 .footer .left {
-
 float: left;
 }
 
 .footer .right {
-
 float: right;
 }
+
+.footer .right small {
+/*
+padding: -10px 0 0 0;
+margin:  -10px 0 0 0;
+border: 1px solid red;
+*/
+}
+
+.footer .right img, .footer .left img {
+	vertical-align: text-top;
+	}
 
 /* @group prev/next navigation */
 .prevnext {
