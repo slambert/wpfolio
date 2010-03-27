@@ -33,8 +33,15 @@
 
 
 <div class="img-container">
+
 <?php while (have_posts()) : the_post(); ?> 
-<?php if(in_category('news','latest', 'updates', 'blog', 'notable')) continue; ?>
+<?php /* if(in_category('news','latest', 'updates', 'blog', 'notable')) continue; */ ?>
+<?php
+$reserved_names = array('news','latest', 'updates', 'blog', 'notable','News','Latest', 'Updates', 'Blog', 'Notable'); 
+$category = get_the_category(); 
+$categories_to_exclude = $category[0]->cat_name;
+if (in_array($categories_to_exclude, $reserved_names)) continue;
+?>
 
 <div class="img-frame">
 <a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
