@@ -12,9 +12,12 @@
 <div class="entry">   
 	<div class="pages">
 
+<!-- START PREVIOUS/NEXT BUTTONS --> 
+
+<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380 
 <div class="prevnext">
 <?php next_post_link('%link', 'newer', TRUE); ?> <?php previous_post_link('%link', 'older', TRUE); ?>
-</div> <!--.prevnext -->
+</div> .prevnext -->
 
 <!-- END PREVIOUS/NEXT BUTTONS -->    
 

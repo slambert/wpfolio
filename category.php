@@ -8,6 +8,7 @@
 
 <!-- Checking if this is the blog -->
 <?php /* If this is a category archive */ if(is_category(array('news','latest', 'updates', 'blog', 'notable'))):	 ?>	
+
 <!-- If it's the blog, run the following -->
 
 	<!-- begin post -->    
@@ -24,6 +25,7 @@
 <!--POST TITLE-->		
 					<h3><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h3> 
 <!--END POST TITLE-->
+
 					<h4><?php the_date('F d, Y', '', ''); ?></h4>
 					<?php the_content('continue...'); ?>
 			
