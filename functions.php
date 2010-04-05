@@ -3,8 +3,7 @@
 /* Sidebars */
 	
 	if ( function_exists('register_sidebar') )
-	    register_sidebar(array('name'=>'navbar')); 
-	    
+	    register_sidebar(array('name'=>'navbar'));   
 	    
 	if ( function_exists('register_sidebar') )
 	    register_sidebar(array('name'=>'sidebar'));
@@ -516,8 +515,9 @@ function wpfolio_widget_categories_control( $widget_args=null ) {
 ?>
 		<p>
 			<label for="categories-order-<?php echo $number; ?>">
-				<?php _e( 'List categories by category name (painting, drawing, art work, etc):' ); ?>
+				<?php _e( 'List categories in order they will appear in the menu (i.e. painting, drawing, art work, etc):' ); ?>
 				<input class="widefat" id="wpfolio-categories-order" name="widget-wpfolio-categories-order" type="text" value="<?php echo $order; ?>" />
+				<small><?php _e( 'Note: no dashes or special characters.' ); ?></small>
 			</label>
 		</p>
 
