@@ -4,13 +4,13 @@ Theme Name: WPFolio
 
 Theme URI: http://dev.eyebeam.org/projects/wpfolio/wiki/
 
-Description: Photoblog theme for WP. Created by Patrick Carey, Jeff Crouse and Steve Lambert at the Eyebeam Center for Art and Technology.  Released as free software under the GPLv3 license.
+Description: A Wordpress Theme designed for artists. Created by Patrick Carey, Jeff Crouse, Daniel Wiener, and Steve Lambert at the Eyebeam Center for Art and Technology.  Released as free software under the GPLv3 license.
 
-Version: 1.5b3
+Version: 1.5
 
-Author: Eyebeam OpenLab
+Author: Eyebeam Center for Art and Technology
 
-Author URI: http://eyebeam.org/labs
+Author URI: http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio
 
 Tags: fixed width, portfolio, photoblog, widgets, one column, theme options
 
@@ -297,7 +297,8 @@ div.pages {
 	text-align : left;
 	font-size : 11px; clear: both; 
 	/* background-color: #E0E0E0; */
-	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
+	and editable in Current Theme Options in the Wordpress dashboard*/
 	}
 	
 .footer a {
