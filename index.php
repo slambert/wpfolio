@@ -27,7 +27,7 @@
 <div class="posted">   
 <b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php the_tags('| Tags: ',', ',''); ?>  | <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>
 
-<?php edit_post_link('edit this entry', '<br /><br /><span class="adminuser">', '</span>'); ?> <!--USER EDIT LINK-->
+<?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 </div><!-- .posted -->
      
 <?php comments_template(); ?> 	   

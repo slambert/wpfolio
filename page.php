@@ -19,7 +19,7 @@
 
 
 <?php the_content(); ?>    
-<?php edit_post_link('edit this entry', '<br /><span class="adminuser">', '</span>'); ?>
+<?php edit_post_link('edit this', '<br /><span class="edit-link">', '</span>'); ?>
 </div><!--.page title--> 		    
 </div><!--.pages -->
    

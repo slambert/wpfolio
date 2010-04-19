@@ -6,7 +6,7 @@ Theme URI: http://dev.eyebeam.org/projects/wpfolio/wiki/
 
 Description: A Wordpress Theme designed for artists. Created by Patrick Carey, Jeff Crouse, Daniel Wiener, and Steve Lambert at the Eyebeam Center for Art and Technology.  Released as free software under the GPLv3 license.
 
-Version: 1.5
+Version: 1.5.1a
 
 Author: Eyebeam Center for Art and Technology
 
@@ -270,13 +270,27 @@ code {
 	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php and editable in Current Theme Options in the Wordpress dashboard*/
 	}
 
-.adminuser {
-	font-variant: small-caps;
-	background-color: #9fff9c;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    padding: 4px;
+/* @group edit-link styles */
+
+.edit-link a:before {
+	content:"✎ ";
+	font-size: 1.3em;
 }
+.edit-link a {
+	background-color:red;
+	color:#FFF;
+	display:inline-block;
+	padding:0 8px;
+	font-size: 12px;
+	font-weight: normal;
+
+}
+.edit-link a {
+	margin-left:-8px;
+	width:75px;
+}
+
+/* @end */
 
 div.pages {
 	font-weight : normal;
@@ -295,7 +309,7 @@ div.pages {
 	margin-right : 30px;
 	text-align : center;
 	font-size : 11px;
-	}
+}
 .footer {
 	padding : 5px 3px 20px 3px;
 	text-align : left;
