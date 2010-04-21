@@ -30,7 +30,10 @@
 <?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 </div><!-- .posted -->
      
-<?php comments_template(); ?> 	   
+<?php comments_template(); ?> 	  
+
+<?php wp_link_pages(); ?>
+ 
 </div><!-- .pages -->
 
 <!-- <?php trackback_rdf(); ?> -->    

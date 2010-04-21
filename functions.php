@@ -496,7 +496,7 @@ function wpfolio_widget_categories($args, $widget_args = 1) {
     $class =  is_category($cat_id)  ? "current-cat" : "";
 ?>
     <ul>
-	<li class="<?=$class?>"><a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a></li>
+	<li class="<?php print $class; ?>"><a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a></li>
     </ul>
 <?php
     endforeach;

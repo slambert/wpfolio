@@ -134,6 +134,8 @@
 		<h2 class="center">Page not found</h2> 	 	 	 
 	<?php endif; // have posts ?> 
 
+		<?php wp_link_pages(); ?>
+		
 
 		</div><!-- .entry -->	   	  
 <!-- end post -->     
