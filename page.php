@@ -20,7 +20,9 @@
 
 <?php the_content(); ?>    
 <?php edit_post_link('edit this', '<br /><span class="edit-link">', '</span>'); ?>
-</div><!--.page title--> 		    
+</div><!--.page title--> 	
+<?php wp_link_pages(); ?>
+	    
 </div><!--.pages -->
    
 
