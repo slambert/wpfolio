@@ -311,32 +311,32 @@ $options = array (
 //Body Foreground Color            
 	array(	"name" => "Body Foreground Color",
             "id" => $shortname."_foreground_color",
-            "std" => "#ffffff",
-			"type" => "text"),        
+            "std" => "ffffff",
+			"type" => "color"),        
 
 //Body Background Color
 	array(	"name" => "Body Background Color",
             "id" => $shortname."_body_backgroundcolor",
-            "std" => "#E0E0E0",
-            "type" => "text"), 
+            "std" => "E0E0E0",
+            "type" => "color"), 
                      
 //Body Font Color
 	array(	"name" => "Body Font Color",
             "id" => $shortname."_body_color",
-            "std" => "#000000",
-            "type" => "text"),
+            "std" => "000000",
+            "type" => "color"),
 
 //Highlight Font Color
 	array(	"name" => "Highlight Font Color",
 			"id" => $shortname."_highlight_color",
-			"std" => "#666666",
-			"type" => "text"),
+			"std" => "666666",
+			"type" => "color"),
 
 //Secondary Font Color
    array( "name" => "Secondary Font Color",
            "id" => $shortname."_second_color",
-           "std" => "#ABABAB",
-           "type" => "text"), 
+           "std" => "ABABAB",
+           "type" => "color"), 
 
 //Blog Title Visibility (replace for image based headers)  
    array(  "name" => "Blog Title Visibility",
@@ -393,10 +393,13 @@ global $themename, $shortname, $options;
 if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
     if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
 
+
 <!-- WPFolio Theme Interface -->
+
+<script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/jscolor/jscolor.js"></script>
 <div class="wrap">
 
-<h2><?php echo $themename; ?> settings</h2>
+<h2><?php echo $themename; ?> Settings</h2>
 <form method="post">
 	<table class="optiontable">
 	
@@ -419,6 +422,19 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
                 <option<?php if ( get_option( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
                 <?php } ?>
             	</select>
+        	</td>
+    	</tr>
+
+	<?php } elseif ($value['type'] == "color") { ?><!--if the option needs a color picker, use js color picker-->
+		<!--Code taken from Allan Cole's Autofocus Plus Theme - thanks! -->
+
+		<tr valign="top"> 
+        	<th scope="row"><?php echo $value['name']; ?>:</th>
+        	<td>
+
+				<input type="<?php echo $value['type']; ?>" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo get_option( $value['id'] ); } else { echo $value['std']; } ?>" class="color {pickerPosition:'right'}" />
+				<!--grabbed the above block almost whole with a few modifications. It works, but please make changes if I missed something - SL -->
+
         	</td>
     	</tr>
 
