@@ -453,11 +453,17 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 	<input type="hidden" name="action" value="reset" />
 </p>
 
+<p><strong>Widgets:</strong>
+	<ul>
+		<li>Remember to set up <link href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 3 custom widgets.</li>
+	</ul>
+</p>
+
 <p><strong>Links:</strong>
 	<ul>
-		<li>Colors must be in hex format.  Use a <a href="http://www.colorpicker.com/" target="_blank">color picker tool</a> for help.</li>
 		<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation.</li>
 	</ul>
+	</p>
 </form>
 
 <?php
