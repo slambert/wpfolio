@@ -400,6 +400,9 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 <div class="wrap">
 
 <h2><?php echo $themename; ?> Settings</h2>
+
+<p>Remember to set up <a href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 3 custom widgets for changing your navigation, including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
+
 <form method="post">
 	<table class="optiontable">
 	
@@ -453,17 +456,7 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 	<input type="hidden" name="action" value="reset" />
 </p>
 
-<p><strong>Widgets:</strong>
-	<ul>
-		<li>Remember to set up <link href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 3 custom widgets.</li>
-	</ul>
-</p>
 
-<p><strong>Links:</strong>
-	<ul>
-		<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation.</li>
-	</ul>
-	</p>
 </form>
 
 <?php
