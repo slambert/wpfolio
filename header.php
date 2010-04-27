@@ -37,7 +37,7 @@
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	h4 {
 		color: #<?php echo $WPFolio_second_color; ?>;}
-	.header h4 {
+	#header h4 {
 		font-family: <?php echo $WPFolio_headline_font; ?>;}
 	.headertext {
 		visibility:<?php echo$WPFolio_visible; ?>; }
@@ -106,12 +106,12 @@
 
 <body>   
 <div class="container">  
-<div class="header">  
+<div id="header">  
 <div class="headertext">   
 <h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1> 		 
 <h4><?php bloginfo('description'); ?></h4>  
 </div><!-- .headertext -->
-</div><!-- .header -->
+</div><!-- #header -->
 
 <!-- MENU  --> 
 <div class="nav">

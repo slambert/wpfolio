@@ -58,7 +58,7 @@ h4 {
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 }
-.header h4{
+#header h4{
 	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 	font-weight: normal;
@@ -88,7 +88,7 @@ and editable in Current Theme Options in the Wordpress dashboard */
 /* @group header */
 /* To change your header image create an image that is 960 pixels wide by 200 pixels high and name 
 it header.jpg and place in the images folder in your theme directory*/
-div.header    {
+div#header    {
 	background-image: url();
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
