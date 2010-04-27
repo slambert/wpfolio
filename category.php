@@ -9,12 +9,12 @@
 <!-- Checking if this is the blog -->
 <?php /* If this is a category archive */ if(is_category(array('news','latest', 'updates', 'blog', 'notable'))):	 ?>	
 
-<!-- If it's the blog, run the following -->
+<!-- This IS the blog! So run the following -->
 
 	<!-- begin post -->    
-	<div class="pages">  	  	 
+	<div id="content">	  	 
 	<?php if (have_posts()): ?>  
-	
+
 						 
 		<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2> <!--CATEGORY TITLE-->
 	  
@@ -33,7 +33,7 @@
 				</div><!-- .notable-post -->
 	
 			<?php endwhile; ?>   	  
-		</div>	<!-- .pages-->
+		</div>	<!-- #content-->
 		
 	
 		<div class="entry">  
@@ -48,18 +48,17 @@
 	
 		</div>  <!-- .entry --> 	  
 <!-- end post -->  
-<div id="links">
+<div id="sidebar">
 <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar') ) ; ?> 
 
-</div><!-- #links -->
+</div><!-- #sidebar -->
 
 
 
-<!-- If it's NOT the blog, run the following -->
+
 <?php else: ?>
-
-	<div class="pages">  
-	<div id="content" class="entry">  	  	 
+<!-- This is NOT the blog. Run the following -->  
+	<div id="content" class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">  	  	 
 		<?php if (have_posts()) : ?>  		     
 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>     
 			<?php /* If this is a category archive */ if (is_category()) { ?>				 		 
@@ -75,7 +74,6 @@
 			
 			<?php } ?>   		  		  
 
-		</div> <!-- #content .entry -->
 		
 		
 		
@@ -125,11 +123,14 @@
 		
 		</div><!-- .img-container -->
 		</div><!-- .entrycat -->
-		</div>	<!-- .pages-->
+	
 		
 		<div class="entry">  
 		<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380
 		<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div>-->
+		</div><!-- .entry -->
+		
+		</div> <!-- #content .entry -->	   				
 	<?php else : // have posts ?>  	  
 		<h2 class="center">Page not found</h2> 	 	 	 
 	<?php endif; // have posts ?> 
@@ -137,7 +138,7 @@
 		<?php wp_link_pages(); ?>
 		
 
-		</div><!-- .entry -->	   	  
+  
 <!-- end post -->     
 
 

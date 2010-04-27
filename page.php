@@ -9,7 +9,8 @@
 <!-- begin page -->    
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : start_wp(); ?> 
 
-<div class="pages"> 
+<div id="content">
+	<div class="page"> 
 <div class="<?php wp_title('',true,''); ?>">
 
 <?php if (is_page('home')) { echo ""; } else if (is_page("")) {
@@ -23,7 +24,8 @@
 </div><!--.page title--> 	
 <?php wp_link_pages(); ?>
 	    
-</div><!--.pages -->
+</div><!-- .page -->
+</div><!-- #content -->
    
 
 <!-- <?php trackback_rdf(); ?> -->    

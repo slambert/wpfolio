@@ -24,7 +24,6 @@
 <!-- END: why is this here? -->
 
 <?php } ?>   		  		  	 	
-</div> <!-- #content .entry -->
 
 
 
@@ -44,9 +43,38 @@ if (in_array($categories_to_exclude, $reserved_names)) continue;
 ?>
 
 <div class="img-frame">
-<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php echo get_thumb($post->ID); ?></a> 
-</br>
-<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><div class="img-frame-caption"><?php the_title('' ); ?></a></div><!-- .img-frame-caption -->
+	
+	<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>">
+	
+	
+	
+	
+	<?php 
+	
+	
+	#If there is a post thumbnail , it will display. If not it is the thumb function. These
+	# can be edited in the functions.php file.
+	
+	if(has_post_thumbnail()){
+		the_post_thumbnail();
+	}
+	else{
+
+	
+	echo get_thumb($post->ID); 
+}
+	
+
+	
+	
+	?>
+	
+	
+	
+	</a> 
+	<br />
+	<div class="img-frame-caption"><a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php the_title('' ); ?></a>
+	</div><!-- .img-frame-caption -->
 </div><!-- .img-frame -->
 
 <?php endwhile; ?>   
@@ -62,7 +90,7 @@ if (in_array($categories_to_exclude, $reserved_names)) continue;
 <?php endif; ?> 		    		  
 </div>	<!-- .entry -->   	  
 <!-- end post -->     
-
+</div><!-- #content -->
 <?php     
 
 	// calling footer.php

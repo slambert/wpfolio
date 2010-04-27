@@ -9,7 +9,7 @@ Template Name: Archives
     get_header(); 
 
 ?>    
-
+<div id="content">
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : start_wp(); ?>  
 
 <div class="entrycat"> 
@@ -42,7 +42,7 @@ Template Name: Archives
 <p><h2 class="center">Sorry, page not found</h2></p> 
 <?php endif; ?>    
 <!-- end post -->   
-
+</div><!-- #content -->
 <?php     
 
 	// calling footer.php
