@@ -197,9 +197,9 @@ function rss_credits_in_footer() {
 			echo $optional_text;
 			}
 		if ( $show_rss_feed ) {
-			echo ' <a href="feed:' . get_bloginfo("rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/rss.png" border="0" width="14"></a> ';}
+			echo ' <a href="feed:' . get_bloginfo("rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/rss.png" border="0" width="14" alt="RSS Feed" /></a> ';}
 		if ( $show_comment_feed ){
-			echo   ' <a href="feed:' . get_bloginfo("comments_rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/comment.gif" border="0"></a> ' ;}
+			echo   ' <a href="feed:' . get_bloginfo("comments_rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/comment.gif" border="0" alt="Comments Feed" ></a> ' ;}
 		if ( $show_credits ){
 			echo ' &bull; <small>Credits: <a href="http://www.wordpress.org">Wordpress</a> | <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio">WPFolio</a> | <a href="http://eyebeam.org/">Eyebeam</a></small>' ;}
 			
@@ -311,32 +311,32 @@ $options = array (
 //Body Foreground Color            
 	array(	"name" => "Body Foreground Color",
             "id" => $shortname."_foreground_color",
-            "std" => "#ffffff",
-			"type" => "text"),        
+            "std" => "ffffff",
+			"type" => "color"),        
 
 //Body Background Color
 	array(	"name" => "Body Background Color",
             "id" => $shortname."_body_backgroundcolor",
-            "std" => "#E0E0E0",
-            "type" => "text"), 
+            "std" => "E0E0E0",
+            "type" => "color"), 
                      
 //Body Font Color
 	array(	"name" => "Body Font Color",
             "id" => $shortname."_body_color",
-            "std" => "#000000",
-            "type" => "text"),
+            "std" => "000000",
+            "type" => "color"),
 
 //Highlight Font Color
 	array(	"name" => "Highlight Font Color",
 			"id" => $shortname."_highlight_color",
-			"std" => "#666666",
-			"type" => "text"),
+			"std" => "666666",
+			"type" => "color"),
 
 //Secondary Font Color
    array( "name" => "Secondary Font Color",
            "id" => $shortname."_second_color",
-           "std" => "#ABABAB",
-           "type" => "text"), 
+           "std" => "ABABAB",
+           "type" => "color"), 
 
 //Blog Title Visibility (replace for image based headers)  
    array(  "name" => "Blog Title Visibility",
@@ -393,10 +393,16 @@ global $themename, $shortname, $options;
 if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
     if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
 
+
 <!-- WPFolio Theme Interface -->
+
+<script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/jscolor/jscolor.js"></script>
 <div class="wrap">
 
-<h2><?php echo $themename; ?> settings</h2>
+<h2><?php echo $themename; ?> Settings</h2>
+
+<p>Remember to set up <a href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 3 custom widgets for changing your navigation, including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
+
 <form method="post">
 	<table class="optiontable">
 	
@@ -422,6 +428,19 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
         	</td>
     	</tr>
 
+	<?php } elseif ($value['type'] == "color") { ?><!--if the option needs a color picker, use js color picker-->
+		<!--Code taken from Allan Cole's Autofocus Plus Theme - thanks! -->
+
+		<tr valign="top"> 
+        	<th scope="row"><?php echo $value['name']; ?>:</th>
+        	<td>
+
+				<input type="<?php echo $value['type']; ?>" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo get_option( $value['id'] ); } else { echo $value['std']; } ?>" class="color {pickerPosition:'right'}" />
+				<!--grabbed the above block almost whole with a few modifications. It works, but please make changes if I missed something - SL -->
+
+        	</td>
+    	</tr>
+
 <?php } }?>
 </table>
 
@@ -437,16 +456,6 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 	<input type="hidden" name="action" value="reset" />
 </p>
 
-<p><strong>Widgets:</strong>
-	<ul>
-		<li>Remember to set up <a href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. The WPFolio theme includes 3 custom widgets.</li>
-	</ul>
-
-<p><strong>Links:</strong>
-	<ul>
-		<li>Colors must be in hex format.  Use a <a href="http://www.colorpicker.com/" target="_blank">color picker tool</a> for help.</li>
-		<li>Check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates and documentation.</li>
-	</ul>
 </form>
 
 <?php

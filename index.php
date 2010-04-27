@@ -5,12 +5,11 @@
     get_header(); 
 
 ?> 
-  
+<div id="content">  
 <!-- begin post -->    
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
 
-<div class="entry">   
-	<div class="pages">
+<div class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">   
 
 <!-- START PREVIOUS/NEXT BUTTONS --> 
 
@@ -34,7 +33,7 @@
 
 <?php wp_link_pages(); ?>
  
-</div><!-- .pages -->
+</div><!-- #content -->
 
 <!-- <?php trackback_rdf(); ?> -->    
 <?php endforeach; else: ?> <?php _e('Sorry, no posts matched your criteria.'); ?>

@@ -9,7 +9,7 @@
 <!-- begin page -->    
 
 
-<div class="pages"> 
+<div id="content"> 
 	<div class="<?php wp_title('',true,''); ?>">
 
 		<h2><?php wp_title('',true,''); ?></h2>
@@ -47,15 +47,15 @@ and it doesn't exist.</p>
 <p>You can click back and try again OR search for what you're looking for:</p>
 
 <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-  <div>
+  <div class="search">
     <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
     <input type="submit" id="searchsubmit" value="Search" />
-  </div>
+  </div><!-- .search -->
 </form>
 </h4>
 
-	</div> 	<!-- .pages-->	    
-</div><!-- .pages-->
+	</div> 	<!-- .dynamic-title-->	    
+</div><!-- #content-->
    
 
 <!-- <?php trackback_rdf(); ?> -->     
