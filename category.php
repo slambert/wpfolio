@@ -12,7 +12,7 @@
 <!-- This IS the blog! So run the following -->
 
 	<!-- begin post -->    
-	<div id="content">	  	 
+	<div id="content" class="notable">	  	 
 	<?php if (have_posts()): ?>  
 
 						 
@@ -33,7 +33,7 @@
 				</div><!-- .notable-post -->
 	
 			<?php endwhile; ?>   	  
-		</div>	<!-- #content-->
+		</div>	<!-- #content .notable-->
 		
 	
 		<div class="entry">  
