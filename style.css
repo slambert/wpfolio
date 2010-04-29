@@ -311,13 +311,13 @@ div#content {
 	font-size : 11px;
 }
 .footer {
-	padding : 5px 3px 20px 3px;
+	padding: 5px 30px 20px;
 	text-align : left;
-	font-size : 11px; clear: both; 
+	font-size : 11px; clear: both;
 	/* background-color: #E0E0E0; */
-	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
+	/*color: <?php echo $WPFolio_second_color; ?>; This is handled in header.php 
 	and editable in Current Theme Options in the Wordpress dashboard*/
-	}
+}
 	
 .footer a {
 font-weight: normal;
