@@ -12,7 +12,8 @@
 <!-- This IS the blog! So run the following -->
 
 	<!-- begin post -->    
-	<div id="content" class="notable">	  	 
+	<div id="content">
+		<div class="notable">	  	 
 	<?php if (have_posts()): ?>  
 
 						 
@@ -32,26 +33,24 @@
 					<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?><?php the_tags('| Tags: ',', ',''); ?>  <?php edit_post_link('edit this', '<span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK--></h5>
 				</div><!-- .notable-post -->
 	
-			<?php endwhile; ?>   	  
-		</div>	<!-- #content .notable-->
+			<?php endwhile; ?>  
+
+		<div class="prevnext" align="center"><div class="prevnext_left"><?php next_posts_link('older posts') ?></div><!--.prevnext_left--> <div class="prevnext_right"><?php previous_posts_link('newer posts') ?></div><!--.prevnext_right--></div><!-- .prevnext --> 
+			 
+			</div><!-- .notable -->	
+		<div id="sidebar">
+			<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar') ) ; ?> 
+
+		</div><!-- #sidebar -->			  
 		
-	
-		<div class="entry">  
-		
-		<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div><!-- .prevnext --> 
-	
+		</div>	<!-- #content -->
+			 
 		<?php else : // if there are posts ?>  	  
 			<h2 class="center">Page not found</h2> 	 
 			
-		<?php endif; ?> 		    		  
-	
-	
-		</div>  <!-- .entry --> 	  
+		<?php endif; ?> 		    		   
 <!-- end post -->  
-<div id="sidebar">
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar') ) ; ?> 
 
-</div><!-- #sidebar -->
 
 
 

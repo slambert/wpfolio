@@ -1,3 +1,5 @@
+/* @override http://juliaschwadron.com/wp-content/themes/wpfolio-1.5b31/style.css */
+
 /*
 
 Theme Name: WPFolio 
@@ -35,6 +37,23 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 and editable in Current Theme Options in the Wordpress dashboard */
 }
 
+.container { 
+	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
+	margin-top : 30px;
+	width: 960px;
+	margin: 0px auto;
+	text-align: center;
+	/*background-color: <?php echo $WPFolio_foreground_color; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	padding: 0px;
+	}
+	
+/*.container p {color:<?php echo $WPFolio_body_color; ?>; } this is handled in header.php
+and editable in Current Theme Options in the Wordpress dashboard */
+
 /* @group htags */
 h1 { 
 	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
@@ -67,23 +86,6 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	display:none;
 }
 /* @end */
-
-.container { 
-	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	margin-top : 30px;
-	width: 960px;
-	margin: 0px auto;
-	text-align: center;
-	/*background-color: <?php echo $WPFolio_foreground_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	padding: 0px;
-	}
-	
-/*.container p {color:<?php echo $WPFolio_body_color; ?>; } this is handled in header.php
-and editable in Current Theme Options in the Wordpress dashboard */
 
 /* @group header */
 /* To change your header image create an image that is 960 pixels wide by 200 pixels high and name 
@@ -155,17 +157,15 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 }
 /* @end */
 
-.entry {   
-	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php and editable in Current Theme Options in the Wordpress dashboard*/
-	margin-top : 0px;
-	margin-bottom : 0px;
-	margin-left : auto;
-	margin-right : auto;
+/* @group .entry styles */
+
+div.entry {
 	padding : 0px;
 	font-size : 11px;
-	text-align : center; clear:both
-	}
-.entry p {
+	text-align : center; clear:both;
+	margin: 0px auto 20px;
+}
+div.entry p {
 	text-align: left;
 	}
 .entrycat { 
@@ -185,6 +185,8 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	padding: 10px;
 	font-weight: bold;
 }
+
+/* @end */
 
 /* @group images */
 .entry img {
@@ -256,7 +258,8 @@ margin: 1em auto; /*this might need to be removed*/
 
 code {    
 	color : #8B1D1D;
-	}
+	font-family: "Courier New", Courier, mono;
+}
 
 .info{     
 	margin-top : 0px;
@@ -310,6 +313,9 @@ div#content {
 	text-align : center;
 	font-size : 11px;
 }
+
+/* @group footer styles */
+
 .footer {
 	padding: 5px 30px 20px;
 	text-align : left;
@@ -348,27 +354,22 @@ border: 1px solid red;
 	vertical-align: text-top;
 	}
 
+/* @end */
+
 /* @group prev/next navigation */
 .prevnext {
-	margin-top : 0px;
-	margin-bottom : 0px;
-	margin-right: 30px;
-	color : #545454;
 	text-decoration : none;
 	padding : 3px;
-	text-align : right;
+	text-align : left;
 	font-size: 11px;
-	
+	margin: 0px 30px 30px;
 }
 .prevnext a, link  {  
-	border : 1px solid #c0c0c0;
-	color : #545454;
 	text-decoration : none;
 	font-weight : normal;
 	padding : 3px;
 	}
-.prevnext a:active  { background-color: #545454;
-	border : 1px solid #545454;
+.prevnext a:active  { 
 	color : #FFFFFF;
 	text-decoration : none;
 	font-weight : normal;
@@ -377,12 +378,29 @@ border: 1px solid red;
 .prevnext a:hover  {  
 	/*background-color: <?php echo $WPFolio_highlight_color; ?>; This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
-	border : 1px solid #545454;
 	color : #ffffff;
 	text-decoration : none;
 	font-weight : normal;
 	padding : 3px;
 	}
+
+div.prevnext_left {
+	float: left;
+}
+
+div.prevnext_right {
+	float: right;
+}
+
+div.prevnext_left :before {
+	content: "← ";
+	font-size: 1.2em;
+}
+
+div.prevnext_right :after {
+	content: " →";
+	font-size: 1.2em;
+}
 /* @end */
 
 /* @group comments */
@@ -407,8 +425,15 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 /* @end */
 
 /* @group navbar */
-.nav, .widgettitle {
-	color : #545454;
+div.nav .widgettitle  { 
+	display: none; 
+	padding: 0em;
+	}
+.nav {
+	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
 	text-decoration : none;
 	font-weight : bold;
 	padding: 0 30px;
@@ -451,6 +476,13 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	font-weight : normal;
 	opacity: 0.25;
 	}
+
+div.nav li.current_page_item a, div.nav li.current-cat a {
+	font-weight: bold;
+	text-transform: uppercase;
+	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
+}
 /* @end */
 
 div.container ul {
@@ -463,100 +495,113 @@ and editable in Current Theme Options in the Wordpress dashboard*/ }
 
 /* @group blog styles */
 
-.notable-post {
+div.notable {
+	width: 600px;
+	float: left;
+}
+
+div.notable-post {
 	/*border: 1px solid #c0c0c0;*/
 	padding: 10px 0;
 	margin: 10px 0 3em;
 }
-.notable-post h3 {
+
+#content div.notable-post h3 {
 	padding: 0px;
 	margin-top: 0px;
-	margin-bottom: .5em;
-	font-weight: normal;
-	font-style: normal;
 	font-size: 1.8em;
+	margin-bottom: .3em;
+	line-height: 1.2em;
 }
-.notable-post h3 a, link {
+div.notable-post h3 a, link {
 	font-weight: normal;
 	font-style: normal;
 }
 
-.notable-post h4 {
-	font-weight: normal;
-	font-style: normal;
+div.notable-post h4 {
 	margin-bottom: 1em;
 }
 
-.notable-post p {
+div.notable-post p {
 	margin-bottom: 1em;
 	margin-top: 0;
 }
 
-.notable-post a { 
+div.notable-post a { 
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 	}
-.notable-post a:hover {
+div.notable-post a:hover {
 	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
-	opacity: 0.25;
+	opacity: 0.75;
 	}
 
 /* @end */
 
 /* @group sidebar */
 
-#sidebar {
-	margin-left : 60px;
-	margin-right : 60px;
+#sidebar { 
 	/*color : #<?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 	font-size : 12px;
 	font-weight : normal;
 	text-align : left;
-	line-height:20px;
-	padding: 0; list-style:none;
-	}
-#sidebar h1,h2 {
+	list-style:none;
+	width: 240px;
+	float: right;
+	margin-top: 20px;
+	line-height: 1.5em;
+}
+
+#sidebar h2.widgettitle {
+	padding: 0;
+	font-size: 12px;
+	margin-bottom: -.5em;
+	text-align: center;
 	font-weight: normal;
-	text-transform: uppercase;
-	/*color: #<?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	}
+	margin-top: 1.5em;
+}
 #sidebar ul {
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 	list-style: none;
 	margin-left: 0;
 	padding-left: 0;
-	}
+}
 #sidebar ul li {
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 	margin-left: 0;
 	padding-left: 0;
-	}
-#sidebar ul li ul {
-	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	list-style: none;
-	margin-left: 0;
-	padding-left: 0;
-	padding-bottom: 15px;
-	}
-#sidebar ul li ul li {
-	margin-left: 0;
-	padding-left: 0;
-	}
+	margin-bottom: .5em;
+}
 #sidebar a {
-	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
- 	} 
+	font-weight: normal;
+	font-style: normal;
+} 
 #sidebar a:hover {
 	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
-	opacity: 0.25;
+	opacity: 0.75;
 	}
+
+#sidebar form {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+#sidebar #searchform div label.screen-reader-text {
+	display: none;
+}
+
+#sidebar .widget_calendar table#wp-calendar {
+	margin-right: auto;
+	margin-left: auto;
+	width: 240px;
+	text-align: center;
+}
+
 /* @end */
 
 
@@ -575,13 +620,6 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 }
 div#content h3 {
 	margin-bottom: .5em;
-}
-
-div.nav li.current_page_item a, div.nav li.current-cat a {
-	font-weight: bold;
-	text-transform: uppercase;
-	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 }
 
 
@@ -642,9 +680,6 @@ div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
 
 .Page.not.found p {
 	font-size: 1.5em;
-	}
-.widgettitle  { display: none; 
-padding: 0em;
 	}
 .aligncenter .center {
 	display: block;
