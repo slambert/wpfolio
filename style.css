@@ -1,5 +1,3 @@
-/* @override http://juliaschwadron.com/wp-content/themes/wpfolio-1.5b31/style.css */
-
 /*
 
 Theme Name: WPFolio 
@@ -279,19 +277,14 @@ code {
 	content:"✎ ";
 	font-size: 1.3em;
 }
-.edit-link a {
+.edit-link a.post-edit-link {
 	background-color:red;
-	color:#FFF;
-	display:inline-block;
-	padding:0 8px;
+	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: normal;
+	padding: .5em .8em 2px .5em;
+}
 
-}
-.edit-link a {
-	margin-left:-8px;
-	width:75px;
-}
 
 /* @end */
 
@@ -432,7 +425,7 @@ div.nav .widgettitle  {
 .nav {
 	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
-	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
+	/*color: <?php echo $WPFolio_second_color; ?>; This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 	text-decoration : none;
 	font-weight : bold;
@@ -510,8 +503,8 @@ div.notable-post {
 	padding: 0px;
 	margin-top: 0px;
 	font-size: 1.8em;
-	margin-bottom: .3em;
 	line-height: 1.2em;
+	margin-bottom: .1em;
 }
 div.notable-post h3 a, link {
 	font-weight: normal;
@@ -561,7 +554,7 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	text-align: center;
 	font-weight: normal;
 	margin-top: 1.5em;
-}
+	}
 #sidebar ul {
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/

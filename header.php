@@ -52,30 +52,34 @@
 		color: #<?php echo $WPFolio_highlight_color; ?>; }
 	a:hover  {
 		color: #<?php echo $WPFolio_highlight_color; ?>; }
-	.pages {
+	#content {
 		font-family : <?php echo $WPFolio_body_font; ?>; }
 	.title {
 		font-family : <?php echo $WPFolio_body_font; ?>;}
 	.nav, .widgettitle {
 		font-family : <?php echo $WPFolio_headline_font ?>;
 		text-transform:<?php echo $WPFolio_text_transform ?>;}
+	div.nav a {
+			color: #<?php echo $WPFolio_second_color; ?>;}
 	.nav a:active {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	.nav a:hover {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	div.container h2 {
 		color: #<?php echo $WPFolio_highlight_color; ?>; }
-	.notable-post {
+	div.notable-post {
 		color: #<?php echo $WPFolio_body_color; ?>;}
-	.notable-post h3 a, link {
+	div.notable-post h3 a, link {
 		color: #<?php echo $WPFolio_highlight_color; ?>; }
-	.notable-post a {
+	div.notable-post a {
 		color: #<?php echo $WPFolio_second_color; ?>;}
-	.notable-post a:hover {
+	div.notable-post a:hover {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
-	.pages h2 {
+	#sidebar h2.widgettitle {
+		color: #<?php echo $WPFolio_second_color; ?>;}
+	#content h2 {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
-	.pages {
+	#content {
 		color: #<?php echo $WPFolio_body_color; ?>; }
 	#links{
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
@@ -91,11 +95,11 @@
 		color: #<?php echo $WPFolio_second_color; ?>;}
 	#links a:hover {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
-	.prevnext{
+	div.prevnext{
 		text-transform:<?php echo $WPFolio_text_transform ?>;}
-	.prevnext a:hover {
+	div.prevnext a:hover {
 		background-color: #<?php echo $WPFolio_highlight_color; ?>;}
-	.footer {
+	div.footer {
 	background-color: #<?php echo $WPFolio_body_backgroundcolor; ?>;}
 	}
  </style>
