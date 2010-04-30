@@ -65,6 +65,8 @@ h1,h2,h3,h4,h5,h6,form,fieldset {
 h2 { 
 	/*color:<?php $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/ 
+	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
 }
 h3 {
 	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
@@ -421,6 +423,8 @@ div.prevnext_right :after {
 div.nav .widgettitle  { 
 	display: none; 
 	padding: 0em;
+	/*	font-family : <?php echo $WPFolio_body_font; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
 	}
 .nav {
 	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
@@ -509,6 +513,8 @@ div.notable-post {
 div.notable-post h3 a, link {
 	font-weight: normal;
 	font-style: normal;
+	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
 }
 
 div.notable-post h4 {

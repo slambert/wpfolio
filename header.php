@@ -32,7 +32,8 @@
 		font-family: <?php echo $WPFolio_headline_font; ?>;
 		font-size: <?php echo $WPFolio_headline_size; ?>;}
 	h2 {
-		color: #<?php $WPFolio_highlight_color; ?>; }
+		color: #<?php $WPFolio_highlight_color; ?>;
+		font-family: <?php echo $WPFolio_headline_font; ?>; }
 	h3 {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	h4 {
@@ -57,7 +58,7 @@
 	.title {
 		font-family : <?php echo $WPFolio_body_font; ?>;}
 	.nav, .widgettitle {
-		font-family : <?php echo $WPFolio_headline_font ?>;
+		font-family : <?php echo $WPFolio_body_font; ?>; 
 		text-transform:<?php echo $WPFolio_text_transform ?>;}
 	div.nav a {
 			color: #<?php echo $WPFolio_second_color; ?>;}
@@ -70,7 +71,8 @@
 	div.notable-post {
 		color: #<?php echo $WPFolio_body_color; ?>;}
 	div.notable-post h3 a, link {
-		color: #<?php echo $WPFolio_highlight_color; ?>; }
+		color: #<?php echo $WPFolio_highlight_color; ?>;
+		font-family: <?php echo $WPFolio_headline_font; ?>; }
 	div.notable-post a {
 		color: #<?php echo $WPFolio_second_color; ?>;}
 	div.notable-post a:hover {
