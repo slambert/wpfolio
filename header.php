@@ -64,8 +64,6 @@
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	.nav a:hover {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
-	div.container h2 {
-		color: #<?php echo $WPFolio_highlight_color; ?>; }
 	div.notable-post {
 		color: #<?php echo $WPFolio_body_color; ?>;}
 	div.notable-post h3 a, link {
@@ -76,8 +74,6 @@
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	#sidebar h2.widgettitle {
 		color: #<?php echo $WPFolio_second_color; ?>;}
-	#content h2 {
-		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	#content {
 		color: #<?php echo $WPFolio_body_color; ?>; }
 	#links{

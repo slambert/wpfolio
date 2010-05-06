@@ -90,13 +90,7 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	display:none;
 }
 
-div.container h2 {
-	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/ }
-
 div#content h2  {
-	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 	margin-left:auto;
 	margin-right: auto;
 	padding-bottom: .5em;
