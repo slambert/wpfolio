@@ -28,18 +28,16 @@
 		font-family : <?php echo $WPFolio_body_font; ?>;
 		background-color: #<?php echo $WPFolio_body_backgroundcolor; ?>;
 		color: #<?php echo $WPFolio_body_color; ?>;}
+	h1,h2,h3,h4,h5,h6 {
+		font-family: <?php echo $WPFolio_headline_font; ?>;}
 	h1 { 
-		font-family: <?php echo $WPFolio_headline_font; ?>;
 		font-size: <?php echo $WPFolio_headline_size; ?>;}
 	h2 {
-		color: #<?php $WPFolio_highlight_color; ?>;
-		font-family: <?php echo $WPFolio_headline_font; ?>; }
+		color: #<?php $WPFolio_highlight_color; ?>;}
 	h3 {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	h4 {
 		color: #<?php echo $WPFolio_second_color; ?>;}
-	#header h4 {
-		font-family: <?php echo $WPFolio_headline_font; ?>;}
 	.headertext {
 		visibility:<?php echo$WPFolio_visible; ?>; }
 	.headertext h1 a {
@@ -71,8 +69,7 @@
 	div.notable-post {
 		color: #<?php echo $WPFolio_body_color; ?>;}
 	div.notable-post h3 a, link {
-		color: #<?php echo $WPFolio_highlight_color; ?>;
-		font-family: <?php echo $WPFolio_headline_font; ?>; }
+		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	div.notable-post a {
 		color: #<?php echo $WPFolio_second_color; ?>;}
 	div.notable-post a:hover {

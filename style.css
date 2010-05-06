@@ -64,35 +64,28 @@ div.container ul {
 }
 
 /* @group htags */
-h1 { 
-	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	/*font-size: <?php echo $WPFolio_headline_size; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/}
+
 h1,h2,h3,h4,h5,h6,form,fieldset {
 	margin:0;
 	padding:0;
+	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/
 	}
+
+h1 { 
+	/*font-size: <?php echo $WPFolio_headline_size; ?>;This is handled in header.php 
+and editable in Current Theme Options in the Wordpress dashboard*/}
 h2 { 
 	/*color:<?php $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/ 
-	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 }
 h3 {
 	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/}
-h2.pagetitle {
-}
 h4 {
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
 }
-#header h4{
-	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	font-weight: normal;
-	font-style: normal;}
 .low {
 	display:none;
 }
@@ -100,8 +93,6 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 div.container h2 {
 	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/ }
-
-
 
 div#content h2  {
 	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
@@ -164,10 +155,8 @@ div#header    {
 	overflow: hidden;
 }
 .headertext {  
-   
-	overflow: hidden;
+   	overflow: hidden;
 	text-align: left;
-	font-family : arial, verdana, serif;
 	padding: 0;
 	margin: 0;
 	
@@ -184,10 +173,11 @@ and editable in Current Theme Options in the Wordpress dashboard*/ }
 	font-style: normal;
 	opacity: 0.25;
 	}
-	
-.headertext h4 {
+
+#header h4{
 	padding-top: .15em;
-}
+	font-weight: normal;
+	font-style: normal;}
 /* @end */
 
 /* @group .entry styles */
@@ -424,7 +414,7 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 #sidebar h2.widgettitle {
 	padding: 0;
 	font-size: 12px;
-	margin-bottom: -.5em;
+	margin-bottom: .5em;
 	text-align: center;
 	font-weight: normal;
 	margin-top: 1.5em;
@@ -557,8 +547,6 @@ div.notable-post {
 div.notable-post h3 a, link {
 	font-weight: normal;
 	font-style: normal;
-	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 }
 
 div.notable-post h4 {
