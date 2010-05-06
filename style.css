@@ -1,5 +1,3 @@
-/* @override http://localhost:8888/wp/wp-content/themes/WPFolio/style.css */
-
 /*
 
 Theme Name: WPFolio 
@@ -618,24 +616,26 @@ div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
 	font-size: 1.6em;
 }
 
-/* @gallery */
-.gallery {
-                margin: auto;
-        }
-        .gallery-item {
-                float: left;
-                margin-top: 10px;
-                text-align: center;
-                width: 33%;
-        }
-        .gallery img {
-                border: 2px solid #cfcfcf;
-        }
-        .gallery-caption {
-                margin-left: 0;
-        }
+/* @end */
 
-/* @gallery */
+/* @group gallery */
+
+.gallery {
+	margin: auto;
+}
+.gallery-item {
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 33%;
+}
+.gallery img {
+	border: 2px solid #cfcfcf;
+}
+.gallery-caption {
+	margin-left: 0;
+}
+
 /* @end */
 
 /* @group edit-link styles */
