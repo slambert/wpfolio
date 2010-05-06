@@ -49,10 +49,6 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	padding: 0px;
 	}
 
-div.container ul {
-	padding-left: 0; 
-	}
-
 #content {
 	font-weight : normal;
 	text-align : left;
