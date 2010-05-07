@@ -14,7 +14,7 @@
 <div class="<?php wp_title('',true,''); ?>">
 
 <?php if (is_page('home')) { echo ""; } else if (is_page("")) {
-	 echo the_title('<h2>','</h2>');
+	 echo the_title('<h2 class="pagetitle">','</h2>');
 	}
 ?>
 

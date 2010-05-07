@@ -86,18 +86,22 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	display:none;
 }
 
-div#content h2  {
-	margin-left:auto;
-	margin-right: auto;
+#content h2  {
 	padding-bottom: .5em;
+	font-weight: normal;
+	letter-spacing: .1em;
+	padding-top: 0;
+}
+
+h2.pagetitle {
+	text-transform: uppercase;
+	text-align: center;
+}
+#content h3 {
+	margin-bottom: .5em;
 	text-transform: uppercase;
 	font-weight: normal;
 	letter-spacing: .1em;
-	text-align: center;
-	padding-top: 0;
-}
-div#content h3 {
-	margin-bottom: .5em;
 }
 /* @end */
 
@@ -408,7 +412,8 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	text-align: center;
 	font-weight: normal;
 	margin-top: 1.5em;
-	}
+	text-transform: uppercase;
+}
 #sidebar ul {
 	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
 and editable in Current Theme Options in the Wordpress dashboard*/
@@ -527,13 +532,18 @@ div.notable-post {
 	margin: 10px 0 3em;
 }
 
+div.notable h2.post-title {
+	text-align: left;
+	font-size: 1.8em;
+}
+
 #content div.notable-post h3 {
 	padding: 0px;
 	margin-top: 0px;
-	font-size: 1.8em;
 	line-height: 1.2em;
 	margin-bottom: .1em;
 }
+
 div.notable-post h3 a, link {
 	font-weight: normal;
 	font-style: normal;
