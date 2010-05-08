@@ -5,12 +5,11 @@
  
   <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />    
 
-<title>
-<?php bloginfo('name'); ?>  <?php if ( is_single() ) { ?> &raquo; Archive <?php } ?>  <?php wp_title(); ?>
-</title>  
+	<title>
+	<?php bloginfo('name'); ?>  <?php if ( is_single() ) { ?> &raquo; Archive <?php } ?>  <?php wp_title(); ?>
+	</title>  
+
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />   
-
-
 
 <!-- leave this for stats -->   
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
@@ -105,35 +104,31 @@
 
 <body>   
 <div class="container">  
-<div id="header">  
-<div class="headertext">   
-<h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1> 		 
-<h4><?php bloginfo('description'); ?></h4>  
-</div><!-- .headertext -->
-</div><!-- #header -->
+	<div id="header">  
+		<div class="headertext">   
+		<h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1> 		 
+		<h4><?php bloginfo('description'); ?></h4>  
+		</div><!-- .headertext -->
+	</div><!-- #header -->
 
 <!-- MENU  --> 
-<div class="nav">
-<ul>
+	<div class="nav">
+		<ul>
 
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('navbar') ) : else : ?> 
+			<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('navbar') ) : else : ?> 
 
-	<ul>
-	<?php wp_list_categories('exclude=&title_li=&current_category=1,' );?>
-	<?php wp_get_archives('type=yearly'); ?> 
-	<?php wp_list_pages('exclude=&title_li=' );?>
-	</ul>
-<?php endif; ?>
-</ul>
+				<ul>
+				<?php wp_list_categories('exclude=&title_li=&current_category=1,' );?>
+				<?php wp_get_archives('type=yearly'); ?> 
+				<?php wp_list_pages('exclude=&title_li=' );?>
+				</ul>
+			<?php endif; ?>
+		</ul>
 
-</div><!-- .nav -->
+	</div><!-- .nav -->
 <!-- END MENU -->  
 
 
-
-
 <!--
-
 <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('menubar') ) : else : ?> <?php endif; ?>
-
 -->
