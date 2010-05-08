@@ -160,12 +160,15 @@ div#header    {
 div.entry {
 	padding : 0px;
 	font-size : 11px;
-	text-align : center; clear:both;
+	text-align : center; 
+	clear:both;
 	margin: 0px auto 20px;
 }
-div.entry p {
+
+div.entry.notblog p {
 	text-align: left;
-	}
+}
+
 .entrycat {
 	margin-top : 0px;
 	margin-bottom : 0px;
@@ -211,6 +214,7 @@ div.entry p {
 	border-radius: 3px;
 	font-style: italic;
 }
+
 .wp-caption img {
 	margin: 0;
 	padding: 0;
