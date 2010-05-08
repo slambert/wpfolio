@@ -16,38 +16,32 @@ Tags: fixed-width, photoblogging, one-column, theme-options
 
 */
 
-/* BEGIN requirements for Theme Options */
-/* warning: editing the the following section may completely disable your theme and site */
-
-/* END requirements for Theme Options */ 
-
+/* NOTE: Changing CSS affected by Theme Options 		*/
+/* To make changes to the CSS edit the CSS rules below. */
+/* rules commented out and wrapped in parentheses		*/
+/* i.e. ($WPFolio_body_font)      						*/
+/* are handled by the header.php file and editable in 	*/
+/* Current Theme Options in the Wordpress dashboard. 	*/
 
 /* BEGIN user editable area */
-/* To make changes to the CSS edit the CSS rules below. Do not change the php tags as this will effect the theme options*/
-
 body  { 
-	/*	font-family : <?php echo $WPFolio_body_font; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	/*background-color:<?php echo $WPFolio_body_backgroundcolor; ?>; This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/* font-family : ($WPFolio_body_font)  */
+	/* background-color: ($WPFolio_body_backgroundcolor)  */
+	/* color: ($WPFolio_body_color)   */
 	padding: 5px; 
-	/* color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard */
 }
 
 .container { 
-	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/* color: ($WPFolio_body_color)   */
+	/* background-color: ($WPFolio_foreground_color)  */
 	margin-top : 30px;
 	width: 960px;
 	margin: 0px auto;
 	text-align: center;
-	/*background-color: <?php echo $WPFolio_foreground_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	padding: 0px;
-	}
+}
 
 #content {
 	font-weight : normal;
@@ -62,25 +56,21 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 /* @group htags */
 
 h1,h2,h3,h4,h5,h6,form,fieldset {
+	/* font-family: ($WPFolio_headline_font)  */
 	margin:0;
 	padding:0;
-	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	}
+}
 
 h1 { 
-	/*font-size: <?php echo $WPFolio_headline_size; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/}
+	/*font-size: ($WPFolio_headline_size)  */}
 h2 { 
-	/*color:<?php $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/ 
+	/*color: (WPFolio_highlight_color)  */ 
 }
 h3 {
-	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/}
+	/*color: ($WPFolio_highlight_color)  */
+}
 h4 {
-	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: ($WPFolio_second_color)  */
 }
 .low {
 	display:none;
@@ -112,34 +102,34 @@ a  {
 	font-weight : bold;
 }
 a:link  {      
-	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php and editable in Current Theme Options in the Wordpress dashboard*/
+	/* color: ($WPFolio_body_color) */
 	text-decoration : none;
 	font-weight : bold;
 	}
 a:visited {    
-	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php and editable in Current Theme Options in the Wordpress dashboard*/
+	/* color: ($WPFolio_body_color) */
 	text-decoration : none;
 	font-weight : bold;
 }
 a:active  {     
-	/*color : <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
 	font-weight : bold;
 	}
 a:hover  {      
-	/*color : <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
 	font-weight : bold;
 }
 /* @end */
 
 /* @group header */
-/* To change your header image create an image that is 960 pixels wide by 200 pixels high and name 
-it header.jpg and place in the images folder in your theme directory*/
+/* To change your header image create an image that is 	*/
+/* 900 pixels wide by ~150 pixels high and name it 		*/
+/* header.jpg and place in the images folder in your 	*/
+/* theme directory. Then add the url as noted below.	*/
 div#header    {
-	background-image: url();
+	background-image: url(); /* <-- add url to background image between these parentheses */
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	margin-left: 0;
@@ -157,10 +147,10 @@ div#header    {
 }
 
 .headertext h1 a { 
+	/*color: ($WPFolio_highlight_color) */
 	font-weight: normal; 
-	font-style: normal; 
-	/*color: <?php echo $WPFolio_highlight_color;?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/ }
+	font-style: normal;  
+	}
 
 .headertext h1 a:hover { 
 	font-weight: normal; 
@@ -185,7 +175,7 @@ div.entry {
 div.entry p {
 	text-align: left;
 	}
-.entrycat { 
+.entrycat {
 	margin-top : 0px;
 	margin-bottom : 0px;
 	margin-left : auto;
@@ -195,7 +185,6 @@ div.entry p {
 	font-weight : normal;
 	line-height : 16px;
 	text-align : center;
-	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php and editable in Current Theme Options in the Wordpress dashboard*/
 	}
 .entrycat a {
 	text-align: center; 
@@ -300,8 +289,7 @@ margin: 1em auto; /*this might need to be removed*/
 	padding : 3px;
 	}
 .prevnext a:hover  {  
-	/*background-color: <?php echo $WPFolio_highlight_color; ?>; This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/* background-color: ($WPFolio_highlight_color) */
 	color : #ffffff;
 	text-decoration : none;
 	font-weight : normal;
@@ -329,16 +317,13 @@ div.prevnext_right :after {
 
 /* @group navbar */
 div.nav .widgettitle  { 
+	/* font-family : ($WPFolio_body_font)  */
 	display: none; 
 	padding: 0em;
-	/*	font-family : <?php echo $WPFolio_body_font; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 	}
 .nav {
-	/*font-family: <?php echo $WPFolio_headline_font; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
-	/*color: <?php echo $WPFolio_second_color; ?>; This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/* font-family: ($WPFolio_headline_font) */
+	/*color: ($WPFolio_second_color) */
 	text-decoration : none;
 	font-weight : bold;
 	padding: 0 30px;
@@ -366,35 +351,30 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	margin-right: 2em;
 }
 .nav a:active  {  
-	/*border : 1px solid #c0c0c0;*/
-	/*color : <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/*border: 1px solid #c0c0c0;*/
+	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
 	font-weight : normal;
 	opacity: 0.1;
 }
 .nav a:hover  {  
-	/*border : 1px solid #c0c0c0;*/
-	/*color : <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/*border: 1px solid #c0c0c0;*/
+	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
 	font-weight : normal;
-	opacity: 0.25;
+	opacity: 0.75;
 	}
 
 div.nav li.current_page_item a, div.nav li.current-cat a {
 	font-weight: bold;
 	text-transform: uppercase;
-	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 }
 /* @end */
 
 /* @group sidebar */
 
 #sidebar { 
-	/*color : #<?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/* color: ($WPFolio_highlight_color) */
 	font-size : 12px;
 	font-weight : normal;
 	text-align : left;
@@ -415,15 +395,11 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	text-transform: uppercase;
 }
 #sidebar ul {
-	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 	list-style: none;
 	margin-left: 0;
 	padding-left: 0;
 }
 #sidebar ul li {
-	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 	margin-left: 0;
 	padding-left: 0;
 	margin-bottom: .5em;
@@ -433,8 +409,6 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	font-style: normal;
 } 
 #sidebar a:hover {
-	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
 	opacity: 0.75;
 	}
 
@@ -484,16 +458,16 @@ and editable in Current Theme Options in the Wordpress dashboard*/
 	text-align : left;
 	font-size : 11px; clear: both;
 	/* background-color: #E0E0E0; */
-	/*color: <?php echo $WPFolio_second_color; ?>; This is handled in header.php 
-	and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: ($WPFolio_second_color) */
 }
 	
 .footer a {
-font-weight: normal;
+	font-weight: normal;
 }
 
 .footer a:hover {
-font-weight: normal;
+	font-weight: normal;
+	opacity: 0.75;
 }
 
 	
@@ -503,14 +477,6 @@ float: left;
 
 .footer .right {
 float: right;
-}
-
-.footer .right small {
-/*
-padding: -10px 0 0 0;
-margin:  -10px 0 0 0;
-border: 1px solid red;
-*/
 }
 
 .footer .right img, .footer .left img {
@@ -559,12 +525,10 @@ div.notable-post p {
 }
 
 div.notable-post a { 
-	/*color: <?php echo $WPFolio_second_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: ($WPFolio_second_color) */
 	}
 div.notable-post a:hover {
-	/*color: <?php echo $WPFolio_highlight_color; ?>;This is handled in header.php 
-and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: ($WPFolio_highlight_color) */
 	opacity: 0.75;
 	}
 
@@ -670,5 +634,5 @@ code {
 	font-size : 12px;
 	font-weight : normal;
 	text-align : justify;
-	/*color: <?php echo $WPFolio_body_color; ?>; This is handled in header.php and editable in Current Theme Options in the Wordpress dashboard*/
+	/*color: ($WPFolio_body_color) */
 	}
