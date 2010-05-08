@@ -125,6 +125,7 @@ class Name_Date_In_Footer extends WP_Widget {
 			</p>
 			<p>
 			<label for="<?php echo $this->get_field_id( 'choose_copyright' ); ?>">Choose License:</label>
+			
 			<ul>
 					<li><strong>Creative Commons Licenses</strong></li>
 					<li><input type="radio" name="<?php echo $this->get_field_name( 'choose_copyright' ); ?>" value="by" <?php if ( $instance['choose_copyright'] == 'by' || $instance['choose_copyright'] == '') echo ' checked'; ?>> CC Attribution</li>
@@ -151,6 +152,9 @@ class Name_Date_In_Footer extends WP_Widget {
 }
 
 /* End License and Name Widget */
+
+
+
 
 /* Begin RSS and Credits Widget */
 
@@ -257,6 +261,9 @@ function rss_credits_in_footer() {
 /* End RSS and Credits Widget */
 
 
+
+
+
 //Thumbnail Function
 function get_thumb ($post_ID){
     $thumbargs = array(
@@ -271,6 +278,7 @@ function get_thumb ($post_ID){
     }
 } 
 
+
 // Remove inline styles on gallery shortcode
 
 function twentyten_remove_gallery_css( $css ) {
@@ -279,6 +287,8 @@ function twentyten_remove_gallery_css( $css ) {
 add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
 
 // END - Remove inline styles on gallery shortcode
+
+
 
 $themename = "WPFolio";
 $shortname = "WPFolio";
@@ -491,7 +501,7 @@ register_sidebar_widget('Yearly Archives', 'wpfolio_archives');
 
 
 
-// CATEGORY ARCHIVE WIDGET
+// CATEGORY ARCHIVE WIDGET 
 function wpfolio_widget_categories($args, $widget_args = 1) {
 
     $title = empty($options[$number]['title']) ? __('') : apply_filters('widget_title', $options[$number]['title']);
