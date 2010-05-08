@@ -4,7 +4,7 @@ Theme Name: WPFolio
 
 Theme URI: http://dev.eyebeam.org/projects/wpfolio/wiki/
 
-Description: A Wordpress Theme designed for artists. Created by Patrick Carey, Jeff Crouse, Daniel Wiener, and Steve Lambert at the Eyebeam Center for Art and Technology.  Released as free software under the GPLv3 license.
+Description: A Wordpress Theme designed for artists. Created by Steve Lambert, Patrick Carey, Jeff Crouse, Daniel Wiener (and you?) at the Eyebeam Center for Art and Technology. Free software under the GPLv3 license. We welcome your code.
 
 Version: 1.5.1
 
@@ -76,7 +76,7 @@ h4 {
 	display:none;
 }
 
-#content h2  {
+#content h2, #content h3 {
 	padding-bottom: .5em;
 	font-weight: normal;
 	letter-spacing: .1em;
@@ -86,12 +86,6 @@ h4 {
 h2.pagetitle {
 	text-transform: uppercase;
 	text-align: center;
-}
-#content h3 {
-	margin-bottom: .5em;
-	text-transform: uppercase;
-	font-weight: normal;
-	letter-spacing: .1em;
 }
 /* @end */
 
@@ -153,8 +147,6 @@ div#header    {
 	}
 
 .headertext h1 a:hover { 
-	font-weight: normal; 
-	font-style: normal;
 	opacity: 0.25;
 	}
 
@@ -355,7 +347,7 @@ div.nav .widgettitle  {
 	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
 	font-weight : normal;
-	opacity: 0.1;
+	opacity: 0.25;
 }
 .nav a:hover  {  
 	/*border: 1px solid #c0c0c0;*/
@@ -494,20 +486,30 @@ div.notable {
 
 div.notable-post {
 	/*border: 1px solid #c0c0c0;*/
-	padding: 10px 0;
-	margin: 10px 0 3em;
+	padding: 0;
+	margin: 20px 0 3em;
 }
 
-div.notable h2.post-title {
+.notable h2.post-title {
 	text-align: left;
 	font-size: 1.8em;
+	font-weight: normal;
+	font-style: normal;
+	padding: 0;
+	margin: 0;
+}
+.notable-post h2 {
+	padding: 0;
+	margin-top: 0px;
+	line-height: 1.2em;
+	margin-bottom: .5em;
 }
 
-#content div.notable-post h3 {
+.notable-post h3 {
 	padding: 0px;
 	margin-top: 0px;
 	line-height: 1.2em;
-	margin-bottom: .1em;
+	margin-bottom: .5em;
 }
 
 div.notable-post h3 a, link {
@@ -517,6 +519,8 @@ div.notable-post h3 a, link {
 
 div.notable-post h4 {
 	margin-bottom: 1em;
+	font-weight: normal;
+	font-style: normal;
 }
 
 div.notable-post p {
