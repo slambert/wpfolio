@@ -6,7 +6,16 @@
 
 ?> 
 <div id="content">  
-<!-- begin post -->    
+<!-- begin post -->
+<h1>Congratulations on choosing WPFolio. </h1>
+<br />
+	
+	<h2>You need to set up a static front page - <a href="wp-admin/options-reading.php">do that here</a>. </h2>   
+<br />
+
+	<h2>Below is not a good example of WPFolio should look like... </h2> 
+	
+	<br /><br /><br /><br />
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
 
 	<div class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">   
