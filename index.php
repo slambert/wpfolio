@@ -1,10 +1,12 @@
-<!-- generated with index.php -->
 <?php
 
     // calling the header.php
     get_header(); 
 
 ?> 
+
+<!-- generated with index.php -->
+
 <div id="content">  
 <!-- begin post -->
 <h1>Congratulations on choosing WPFolio. </h1>

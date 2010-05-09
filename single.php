@@ -1,10 +1,11 @@
-<!-- generated with single.php -->
 <?php
 
     // calling the header.php
     get_header(); 
 
 ?> 
+
+<!-- generated with single.php -->
 
 <!-- Checking if this is a single blog post -->
 <?php /* If this is in the blog category */ if(in_category(array('news','latest', 'updates', 'blog', 'notable'))):	 ?>	

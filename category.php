@@ -1,10 +1,11 @@
-<!-- generated with category.php -->
 <?php
 
     // calling the header.php
     get_header(); 
 
 ?> 
+
+<!-- generated with category.php -->
 
 <!-- Checking if this is the blog -->
 <?php /* If this is a category archive */ if(is_category(array('news','latest', 'updates', 'blog', 'notable'))):	 ?>	

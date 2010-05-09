@@ -1,4 +1,3 @@
-<!-- generated with 404.php -->
 <?php @header("HTTP/1.1 404 Not found", TRUE, 404); ?>
 <?php
 
@@ -6,6 +5,9 @@
     get_header(); 
 
 ?>  
+
+<!-- generated with 404.php -->
+
 <!-- begin page -->    
 
 

@@ -1,10 +1,11 @@
-<!-- generated with archive.php -->
 <?php
 
     // calling the header.php
     get_header(); 
 
 ?>  
+
+<!-- generated with archive.php -->
 
 <!-- begin post -->    
 <div id="content" class="entry">  	  	 

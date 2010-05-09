@@ -1,10 +1,11 @@
-<!-- generated with page.php -->
 <?php
 
     // calling the header.php
     get_header(); 
 
 ?>
+
+<!-- generated with page.php -->
    
 <!-- begin page -->    
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : start_wp(); ?> 

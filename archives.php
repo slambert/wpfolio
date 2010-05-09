@@ -1,9 +1,6 @@
-<!-- generated with archives.php -->
 <?php /* 
 Template Name: Archives 
-*/ ?>  
-
-<?php
+*/ ?><?php
 
     // calling the header.php
     get_header(); 
