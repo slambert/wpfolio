@@ -3,3 +3,16 @@ README FILE for WPFolio
 For more info: http://dev.eyebeam.org/projects/wpfolio
 
 We really should add more here.
+
+======CHANGELOG=====
+
+== Version 1.5.1.20100509 ==
+
+- added single.php with conditional tag - individual blog post and portfolio post are styled differently
+ - blog posts have more uniform style
+- added note on basic install that tells people to set a static home page
+- simplified, cleaner CSS
+ - removed php in CSS
+ - more uniform headline styles
+- general code cleanup
+- removed auto email on 404, it wasn't working.
