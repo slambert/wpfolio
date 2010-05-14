@@ -1,3 +1,5 @@
+/* @override http://wpfolio.visitsteve.com/sample/wp-content/themes/WPFolio/style.css */
+
 /*
 
 Theme Name: WPFolio 
@@ -664,3 +666,13 @@ code {
 	text-align : justify;
 	/*color: ($WPFolio_body_color) */
 	}
+
+div.search-result img {
+	float: left;
+	margin-right: 2em;
+	margin-bottom: 1em;
+}
+
+.clear-both {
+	clear: both;
+}
