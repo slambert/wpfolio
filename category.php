@@ -24,9 +24,9 @@
 		
 				<div class="notable-post">
 					
-<!--POST TITLE-->		
+					<!--POST TITLE-->		
 					<h2 class="post-title"><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h2> 
-<!--END POST TITLE-->
+					<!--END POST TITLE-->
 
 					<h4><?php the_date('F d, Y', '', ''); ?></h4>
 					<?php the_content('continue...'); ?>
