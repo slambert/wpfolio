@@ -62,7 +62,7 @@
 	
 	
 
-<!-- This is NOT a single blog post. (So it's a single art work) Run the following -->
+<!-- This is NOT a single blog post. (So it's a portflio post/single art work) Run the following -->
 
 <div id="content">  
 <!-- begin post -->    
@@ -83,7 +83,7 @@
 	</div> <!-- .entry --> 		    
 
 <div class="post-bottom-title">   
-<b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php the_tags('| Tags: ',', ',''); ?>  | <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>
+<b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'media', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>  <?php comments_popup_link(__('| Comments (0)'), __('| Comments (1)'), __('| Comments (%)'), __(''), __('')); ?>
 
 <?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 </div><!-- .post-bottom-title -->
