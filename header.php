@@ -22,7 +22,7 @@ http://wpfolio.visitsteve.com/wiki
 	<?php if (function_exists('is_tag')) { if ( is_tag() ) { ?><?php bloginfo('name'); ?>&nbsp;|&nbsp;<?php  single_tag_title("Tag Archive:", true); } } ?>
 	</title>  
 
-  <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />   
 
 <!-- leave this for stats -->   
@@ -112,7 +112,6 @@ http://wpfolio.visitsteve.com/wiki
 	}
  </style>
 
-<!--jsenabled comments -->
 <?php //for support of js threaded comments
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 ?>
