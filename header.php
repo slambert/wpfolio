@@ -112,6 +112,11 @@ http://wpfolio.visitsteve.com/wiki
 	}
  </style>
 
+<!--jsenabled comments -->
+<?php //for support of js threaded comments
+if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+?>
+
 <?php wp_head(); ?> 
 
 </head>   

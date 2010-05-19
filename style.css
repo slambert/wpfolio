@@ -448,24 +448,25 @@ div.nav li.current_page_item a, div.nav li.current-cat a {
 /* @end */
 
 /* @group comments */
-.comments{ 
-	margin-top : 0px;
-	margin-bottom : 0px;
-	margin-left : 50px;
-	margin-right : 50px;
-	padding : 12px;
-	color : #545454;
-	font-size : 12px;
-	font-weight : normal;
-	line-height : 16px;
-	text-align : justify;
-	}
-.commentsbody {
+#comments{
+	margin-top: 1em;
+}
+.comment-body {
 	border-bottom : 1px solid #E8E8E8;
 	text-align : justify;
 	margin-bottom : 10px;
 	padding : 10px;
 	}
+
+.comment-author-admin {
+	background: url(images/grey-to-white-gradient.png) repeat-x scroll;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+ol.commentlist ul {
+	list-style-type: none;
+}
 /* @end */
 
 /* @group footer styles */
