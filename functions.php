@@ -1,4 +1,5 @@
-<?php  // enable threaded comments
+<?php  
+// enable threaded comments
 function enable_threaded_comments(){
 	if (!is_admin()) {
 		if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1))
@@ -7,9 +8,8 @@ function enable_threaded_comments(){
 }
 add_action('get_header', 'enable_threaded_comments');
 
-?>
 
-<?php  // enabling a taxonomy for Media
+// enabling a taxonomy for Media
 
 function create_my_taxonomies() {
 register_taxonomy('media', 'post', array( 
@@ -19,9 +19,6 @@ register_taxonomy('media', 'post', array(
 	'rewrite' => true));
 } add_action('init', 'create_my_taxonomies', 0);
 
-?>
-
-<?php 
 
 /* Sidebars */
 	
