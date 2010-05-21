@@ -12,7 +12,11 @@ add_action('get_header', 'enable_threaded_comments');
 <?php  // enabling a taxonomy for Media
 
 function create_my_taxonomies() {
-register_taxonomy('media', 'post', array( 'hierarchical' => false, 'label' => 'Media', 'query_var' => true, 'rewrite' => true));
+register_taxonomy('media', 'post', array( 
+	'hierarchical' => false, 
+	'label' => 'Media', 
+	'query_var' => true, 
+	'rewrite' => true));
 } add_action('init', 'create_my_taxonomies', 0);
 
 ?>
