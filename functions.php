@@ -268,7 +268,7 @@ function rss_credits_in_footer() {
 		if ( $show_comment_feed ){
 			echo   ' <a href="feed:' . get_bloginfo("comments_rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/comment.gif" border="0" alt="Comments Feed" ></a> ' ;}
 		if ( $show_credits ){
-			echo ' &bull; <div id="credits">Credits: <a href="http://www.wordpress.org">Wordpress</a> | <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio">WPFolio</a> | <a href="http://eyebeam.org/">Eyebeam</a></div>' ;}
+			echo ' &bull; Credits: <a href="http://www.wordpress.org">Wordpress</a> | <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio">WPFolio</a> | <a href="http://eyebeam.org/">Eyebeam</a>' ;}
 			
 			
 		/* After widget (defined by themes). */
