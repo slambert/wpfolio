@@ -518,8 +518,11 @@ function mytheme_wp_head() { ?>
 <?php }
 	add_action('wp_head', 'mytheme_wp_head');
 	add_action('admin_menu', 'mytheme_add_admin'); ?>
+
 	
 <?php                                             
+// Yearly Archives Widget
+
     function wpfolio_archives($args) {
 	extract($args);
 	$options = get_option('widget_archives');
@@ -531,7 +534,7 @@ function mytheme_wp_head() { ?>
 	echo $before_title . $title . $after_title;
 	if($d) {
 ?>
-	<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo attribute_escape(__('Select Month')); ?></option> <?php wp_get_archives("type=yearly&format=option&show_post_count=$c"); ?> </select>
+	<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo attribute_escape(__('Select Year')); ?></option> <?php wp_get_archives("type=yearly&format=option&show_post_count=$c"); ?> </select>
 <?php } else { ?>
 		<ul>
 		<?php wp_get_archives("type=yearly&show_post_count=$c"); ?>
