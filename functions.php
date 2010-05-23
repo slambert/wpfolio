@@ -1,4 +1,42 @@
-<?php  // enable threaded comments
+<?php  
+
+// Thumbnail Function
+function get_thumb ($post_ID){
+    $thumbargs = array(
+    'post_type' => 'attachment',
+    'numberposts' => 1,
+    'post_status' => null,
+    'post_parent' => $post_ID
+    );
+    $thumb = get_posts($thumbargs);
+    if ($thumb) {
+        return get_attachment_icon($thumb[0]->ID);
+    }
+} 
+
+$GLOBALS['content_width'] = 900; // This sets the Large image size to 900px
+
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size( 150, 150,true );
+
+// END - Thumbnail Function
+
+
+
+
+// Remove inline styles on gallery shortcode
+
+function twentyten_remove_gallery_css( $css ) {
+	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
+	}
+add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
+
+// END - Remove inline styles on gallery shortcode
+
+
+
+// enable threaded comments
+
 function enable_threaded_comments(){
 	if (!is_admin()) {
 		if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1))
@@ -18,10 +56,14 @@ register_taxonomy('media', 'post', array( 'hierarchical' => false, 'label' => 'M
 /* Sidebars */
 	
 	if ( function_exists('register_sidebar') )
-	    register_sidebar(array('name'=>'navbar'));   
+	    register_sidebar(array(
+		'name'=>'navbar'
+		));   
 	    
 	if ( function_exists('register_sidebar') )
-	    register_sidebar(array('name'=>'sidebar'));
+	    register_sidebar(array(
+		'name'=>'sidebar'
+		));
 	    
 	if ( function_exists('register_sidebar') )
 	register_sidebar(array(
@@ -42,6 +84,7 @@ register_taxonomy('media', 'post', array( 'hierarchical' => false, 'label' => 'M
 	'before_title' => '',
 	'after_title' => '',
 	));
+	
 /* END Sidebars */
 	
 /* Begin License and Name widget.*/
@@ -125,10 +168,11 @@ class Name_Date_In_Footer extends WP_Widget {
 
 		/* Set up some default widget settings. */
 		$default_name = get_bloginfo('name');
-		$defaults = array( 'start_year' => '2001', 'name' => $default_name, 'show_copyright'  => on, 'choose_copyright'  => '', 'optional_text' => '' );
+		$defaults = array( 'start_year' => '2001', 'name' => $default_name, 'show_copyright'  => on, 'choose_copyright'  => '', 'optional_text' => 'unless otherwise specified' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); 
 		$optional_text = format_to_edit($instance['optional_text']);
 		?>
+		
 			<!-- Writing the form for the admin widgets page -->
 			<p>
 			<label for="<?php echo $this->get_field_id( 'name' ); ?>">Your Name:</label>
@@ -220,7 +264,7 @@ function rss_credits_in_footer() {
 		if ( $show_comment_feed ){
 			echo   ' <a href="feed:' . get_bloginfo("comments_rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/comment.gif" border="0" alt="Comments Feed" ></a> ' ;}
 		if ( $show_credits ){
-			echo ' &bull; <small>Credits: <a href="http://www.wordpress.org">Wordpress</a> | <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio">WPFolio</a> | <a href="http://eyebeam.org/">Eyebeam</a></small>' ;}
+			echo ' &bull; <div id="credits">Credits: <a href="http://www.wordpress.org">Wordpress</a> | <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio">WPFolio</a> | <a href="http://eyebeam.org/">Eyebeam</a></div>' ;}
 			
 			
 		/* After widget (defined by themes). */
@@ -245,7 +289,7 @@ function rss_credits_in_footer() {
 	function form( $instance ) {
 
 		/* Set up some default widget settings. */
-		$defaults = array( 'show_rss_feed' => on, 'show_comment_feed' => on, 'show_credits' => on, 'optional_text' => '' );
+		$defaults = array( 'show_rss_feed' => on, 'show_comment_feed' => off, 'show_credits' => on, 'optional_text' => '' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); 
 		$optional_text = format_to_edit($instance['optional_text']);
 		?>
@@ -279,36 +323,10 @@ function rss_credits_in_footer() {
 
 
 
-//Thumbnail Function
-function get_thumb ($post_ID){
-    $thumbargs = array(
-    'post_type' => 'attachment',
-    'numberposts' => 1,
-    'post_status' => null,
-    'post_parent' => $post_ID
-    );
-    $thumb = get_posts($thumbargs);
-    if ($thumb) {
-        return get_attachment_icon($thumb[0]->ID);
-    }
-} 
-
-
-// Remove inline styles on gallery shortcode
-
-function twentyten_remove_gallery_css( $css ) {
-	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
-	}
-add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
-
-// END - Remove inline styles on gallery shortcode
-
-
+//...BEGIN THEME OPTIONS...
 
 $themename = "WPFolio";
 $shortname = "WPFolio";
-
-//...BEGIN THEME OPTIONS...
 
 $options = array (
 
@@ -316,7 +334,7 @@ $options = array (
    array( "name" => "Headline Font",
            "id" => $shortname."_headline_font",
            "type" => "select",
-           "std" =>"Arial",
+           "std" =>"Helvetica",
            "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace" )),
 
 //Headline Font Size
@@ -329,7 +347,7 @@ $options = array (
 	array(  "name" => "Body Font",
             "id" => $shortname."_body_font",
             "type" => "select",
-            "std" => "Arial",
+            "std" => "Helvetica",
             "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", 
             "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace")),
 
@@ -379,6 +397,12 @@ $options = array (
 
 );
 //...END THEME OPTIONS...//
+
+
+
+
+
+// BEGIN Theme Admin Interface
 
 function mytheme_add_admin() {
 	global $themename, $shortname, $options;
@@ -461,7 +485,6 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
         	<td>
 
 				<input type="<?php echo $value['type']; ?>" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo get_option( $value['id'] ); } else { echo $value['std']; } ?>" class="color {pickerPosition:'right'}" />
-				<!--grabbed the above block almost whole with a few modifications. It works, but please make changes if I missed something - SL -->
 
         	</td>
     	</tr>
@@ -490,7 +513,8 @@ function mytheme_wp_head() { ?>
 <link href="<?php bloginfo('template_directory'); ?>/style.css" rel="stylesheet" type="text/css" />
 <?php }
 	add_action('wp_head', 'mytheme_wp_head');
-add_action('admin_menu', 'mytheme_add_admin'); ?>
+	add_action('admin_menu', 'mytheme_add_admin'); ?>
+	
 <?php                                             
     function wpfolio_archives($args) {
 	extract($args);
@@ -512,14 +536,14 @@ add_action('admin_menu', 'mytheme_add_admin'); ?>
 	}
 	echo $after_widget;
 }
-register_sidebar_widget('Yearly Archives', 'wpfolio_archives'); 
+register_sidebar_widget('WPFolio Yearly Archives', 'wpfolio_archives'); 
 
 
 
 // CATEGORY ARCHIVE WIDGET 
-function wpfolio_widget_categories($args, $widget_args = 1) {
-
-    $title = empty($options[$number]['title']) ? __('') : apply_filters('widget_title', $options[$number]['title']);
+	function wpfolio_widget_categories($args, $widget_args = 1) {
+	extract($args);
+    $title = empty($options[$number]['title']) ? __('Category') : apply_filters('widget_title', $options[$number]['title']);
 
     echo $before_widget;
     echo $before_title . $title . $after_title;
@@ -569,8 +593,5 @@ function wpfolio_widget_categories_control( $widget_args=null ) {
 
 wp_register_sidebar_widget('wpfolio_categories', __("WPFolio Categories"), 'wpfolio_widget_categories');
 wp_register_widget_control('wpfolio_categories', __("WPFolio Categories"),  'wpfolio_widget_categories_control');
-
-add_theme_support('post-thumbnails');
-set_post_thumbnail_size( 150, 150,true );
 
 ?>
