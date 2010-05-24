@@ -528,7 +528,7 @@ function mytheme_wp_head() { ?>
 	$options = get_option('widget_archives');
 	$c = $options['count'] ? '1' : '0';
 	$d = $options['dropdown'] ? '1' : '0';
-	$title = empty($options['title']) ? __('Archives') : apply_filters('widget_title', $options['title']);
+	$title = empty($options['title']) ? __('Yearly Archives') : apply_filters('widget_title', $options['title']);
 
 	echo $before_widget;
 	echo $before_title . $title . $after_title;
@@ -537,7 +537,7 @@ function mytheme_wp_head() { ?>
 	<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo attribute_escape(__('Select Year')); ?></option> <?php wp_get_archives("type=yearly&format=option&show_post_count=$c"); ?> </select>
 <?php } else { ?>
 		<ul>
-		<?php wp_get_archives("type=yearly&show_post_count=$c"); ?>
+		<?php wp_get_archives("title_li=&type=yearly&show_post_count=$c"); ?>
 		</ul>
 <?php
 	}

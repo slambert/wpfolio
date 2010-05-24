@@ -26,7 +26,7 @@ http://wpfolio.visitsteve.com/wiki
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />   
 
 <!-- leave this for stats -->   
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />  <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />  
 <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />  <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />    
 
@@ -35,6 +35,7 @@ http://wpfolio.visitsteve.com/wiki
     	foreach ($options as $value) {
    	if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
    		?>
+
  <style type="text/css" media="all">
  /* CSS inserted by theme options */
 	body { 
@@ -112,6 +113,16 @@ http://wpfolio.visitsteve.com/wiki
 	border-top: solid 1px #<?php echo $WPFolio_body_backgroundcolor; ?>;}
  </style>
 
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/superfish.css" type="text/css" media="screen"/>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.2.6.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/hoverIntent.js"></script>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/superfish.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+        $('ul.sf-menu').superfish();
+});
+</script>
+
 <?php //for support of js threaded comments
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 ?>
@@ -131,10 +142,8 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
 <!-- MENU  --> 
 	<div class="nav">
-		<ul>
-
+		<ul class="sf-menu">
 			<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('navbar') ) : else : ?> 
-
 				<ul>
 				<?php wp_list_categories('exclude=&title_li=&current_category=1,' );?>
 				<?php wp_get_archives('type=yearly'); ?> 
