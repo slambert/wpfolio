@@ -1,0 +1,73 @@
+body { 
+		font-family : Courier, monospace;
+		background-color: #25CC25;
+		color: #2E1A0B;}
+	h1,h2,h3,h4,h5,h6 {
+		font-family: Courier, monospace;}
+	h1 { 
+		font-size: 12px;}
+	h2 {
+		color: #;}
+	h3 {
+		color: #20203B;}
+	h4 {
+		color: #07290D;}
+	.headertext {
+		visibility:visible; }
+	.headertext h1 a {
+		color: #20203B; }
+	.container {
+		background-color: #FFEEE3;
+		color: #2E1A0B;}
+	.container p {
+		color: #2E1A0B; }
+	a:active  {
+		color: #20203B; }
+	a:hover  {
+		color: #20203B; }
+	#content {
+		font-family : Courier, monospace; }
+	.title {
+		font-family : Courier, monospace;}
+	.nav, .widgettitle {
+		font-family : Courier, monospace; 
+		text-transform:capitalize;}
+	div.nav a {
+			color: #07290D;}
+	.nav a:active {
+		color: #20203B;}
+	.nav a:hover {
+		color: #20203B;}
+	div.notable-post {
+		color: #2E1A0B;}
+	div.notable-post h3 a, link {
+		color: #20203B;}
+	div.notable-post a {
+		color: #07290D;}
+	div.notable-post a:hover {
+		color: #20203B;}
+	#sidebar h2.widgettitle {
+		color: #07290D;}
+	#content {
+		color: #2E1A0B; }
+	#links{
+		color: #20203B;}
+	#links h1, h2 {
+		color: #20203B;}
+	#links ul {
+		color: #07290D;}
+	#links ul li {
+		color: #07290D;}
+	#links ul li ul {
+		color: #07290D;}
+	#links a {
+		color: #07290D;}
+	#links a:hover {
+		color: #20203B;}
+	div.prevnext{
+		text-transform:capitalize;}
+	div.prevnext a:hover {
+		background-color: #20203B;}
+	div.footer {
+	background-color: #25CC25;}
+	}
