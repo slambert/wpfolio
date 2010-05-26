@@ -23,6 +23,8 @@ Tags: fixed-width, photoblogging, one-column, theme-options
 /* are handled by the header.php file and editable in 	*/
 /* Current Theme Options in the Wordpress dashboard. 	*/
 
+@import url('css/wpfolio.css');
+
 /* BEGIN user editable area */
 body  { 
 	/* font-family : ($WPFolio_body_font)  */
