@@ -316,99 +316,19 @@ function rss_credits_in_footer() {
 		<p><label for="<?php echo $this->get_field_id( 'optional_text' ); ?>">Optional Text</label><textarea class="widefat" rows="1" cols="20" id="<?php echo $this->get_field_id('optional_text'); ?>" name="<?php echo $this->get_field_name('optional_text'); ?>"><?php echo $optional_text; ?></textarea>
 </p>
 		
-			<?php
+<?php
 	}
 }
 
 /* End RSS and Credits Widget */
 
+include(TEMPLATEPATH . '/lib/theme_options.php');
 
-
-
-
-//...BEGIN THEME OPTIONS...
-
-$themename = "WPFolio";
-$shortname = "WPFolio";
-
-$options = array (
-
-//Headline Font
-   array( "name" => "Headline Font",
-           "id" => $shortname."_headline_font",
-           "type" => "select",
-           "std" =>"Helvetica",
-           "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace" )),
-
-//Headline Font Size
-	array( "name" => "Headline Font Size",
-			"id" => $shortname."_headline_size",
-            "std" => "28px",
-            "type" => "text"),
-
-//Body Font
-	array(  "name" => "Body Font",
-            "id" => $shortname."_body_font",
-            "type" => "select",
-            "std" => "Helvetica",
-            "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", 
-            "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace")),
-
-//Body Foreground Color            
-	array(	"name" => "Body Foreground Color",
-            "id" => $shortname."_foreground_color",
-            "std" => "ffffff",
-			"type" => "color"),        
-
-//Body Background Color
-	array(	"name" => "Body Background Color",
-            "id" => $shortname."_body_backgroundcolor",
-            "std" => "E0E0E0",
-            "type" => "color"), 
-                     
-//Body Font Color
-	array(	"name" => "Body Font Color",
-            "id" => $shortname."_body_color",
-            "std" => "000000",
-            "type" => "color"),
-
-//Highlight Font Color
-	array(	"name" => "Highlight Font Color",
-			"id" => $shortname."_highlight_color",
-			"std" => "666666",
-			"type" => "color"),
-
-//Secondary Font Color
-   array( "name" => "Secondary Font Color",
-           "id" => $shortname."_second_color",
-           "std" => "ABABAB",
-           "type" => "color"), 
-
-//Blog Title Visibility (replace for image based headers)  
-   array(  "name" => "Blog Title Visibility",
-            "id" => $shortname."_visible",
-            "type" => "select",
-            "std" => "visible",
-            "options" => array("visible", "hidden")),
-
-//Text Transform (uppercase, lowercase, or capitalize)
-   array( "name" => "Text Transform",
-           "id" => $shortname."_text_transform",
-           "type" => "select",
-           "std" =>"none", 
-           "options" => array("none", "uppercase", "lowercase", "capitalize" )),
-
-);
-//...END THEME OPTIONS...//
-
-
-
-
-
-// BEGIN Theme Admin Interface
+/* BEGIN Theme Admin Interface */
 
 function mytheme_add_admin() {
 	global $themename, $shortname, $options;
+	$dir = TEMPLATEPATH . '/css';
 	if ( $_GET['page'] == basename(__FILE__) )
 	{
 		if ( 'save' == $_REQUEST['action'] )
@@ -426,6 +346,24 @@ function mytheme_add_admin() {
 					delete_option( $value['id'] ); 
 				} 
 			}
+			chdir($dir);
+			$filename = 'wpfolio.css';
+			foreach ($options as $value) {
+   	if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } }
+   		
+			ob_start();
+			include(TEMPLATEPATH . '/lib/theme_css.php');
+			$wpfolio_css .= ob_get_contents();
+			ob_end_clean();
+			if (file_exists($filename)){
+			$fh = fopen($filename,'w');
+			}
+			if (is_writable($filename)) {
+			fwrite($fh, $wpfolio_css);
+			} else {
+			echo $filename . ' is not writeable';
+			}
+			/* $css_file =file_get_contents($filename); */
 			header("Location: themes.php?page=functions.php&saved=true");
 			die;
 		} 
@@ -443,83 +381,20 @@ function mytheme_add_admin() {
 function mytheme_admin() {
 global $themename, $shortname, $options;
 if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
+    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
 
+include(TEMPLATEPATH . '/lib/theme_interface.php');
 
-<!-- WPFolio Theme Interface -->
-
-<script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/jscolor/jscolor.js"></script>
-<div class="wrap">
-
-<h2><?php echo $themename; ?> Settings</h2>
-
-<p>Remember to set up <a href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 3 custom widgets for changing your navigation, including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
-
-<form method="post">
-	<table class="optiontable">
-	
-	<?php foreach ($options as $value) { 
-    if ($value['type'] == "text") { ?>
-        <tr valign="top"> 
-    		<th scope="row"><?php echo $value['name']; ?>:</th>
-    		<td>
-        		<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo get_option( $value['id'] ); } else { echo $value['std']; } ?>" />
-    		</td>
-		</tr>
-	
-	<?php } elseif ($value['type'] == "select") { ?>
-
-		<tr valign="top"> 
-        	<th scope="row"><?php echo $value['name']; ?>:</th>
-        	<td>
-            	<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
-                <?php foreach ($value['options'] as $option) { ?>
-                <option<?php if ( get_option( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
-                <?php } ?>
-            	</select>
-        	</td>
-    	</tr>
-
-	<?php } elseif ($value['type'] == "color") { ?><!--if the option needs a color picker, use js color picker-->
-		<!--Code taken from Allan Cole's Autofocus Plus Theme - thanks! -->
-
-		<tr valign="top"> 
-        	<th scope="row"><?php echo $value['name']; ?>:</th>
-        	<td>
-
-				<input type="<?php echo $value['type']; ?>" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo get_option( $value['id'] ); } else { echo $value['std']; } ?>" class="color {pickerPosition:'right'}" />
-
-        	</td>
-    	</tr>
-
-<?php } }?>
-</table>
-
-<p class="submit">
-	<input name="save" type="submit" value="Save changes" />    
-	<input type="hidden" name="action" value="save" />
-</p>
-</form>
-
-<form method="post">
-<p class="submit">
-	<input name="reset" type="submit" value="Reset" />
-	<input type="hidden" name="action" value="reset" />
-</p>
-
-</form>
-
-<?php
 }
 
 function mytheme_wp_head() { ?>
 <link href="<?php bloginfo('template_directory'); ?>/style.css" rel="stylesheet" type="text/css" />
 <?php }
 	add_action('wp_head', 'mytheme_wp_head');
-	add_action('admin_menu', 'mytheme_add_admin'); ?>
+	add_action('admin_menu', 'mytheme_add_admin');
 
 	
-<?php                                             
+                                            
 // Yearly Archives Widget
 
     function wpfolio_archives($args) {
