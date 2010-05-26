@@ -108,8 +108,8 @@ http://wpfolio.visitsteve.com/wiki
 	div.prevnext a:hover {
 		background-color: #<?php echo $WPFolio_highlight_color; ?>;}
 	div.footer {
-	background-color: #<?php echo $WPFolio_body_backgroundcolor; ?>;}
-	}
+	background-color: #<?php echo $WPFolio_foreground_color; ?>;
+	border-top: solid 1px #<?php echo $WPFolio_body_backgroundcolor; ?>;}
  </style>
 
 <?php //for support of js threaded comments

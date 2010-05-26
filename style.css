@@ -2,7 +2,7 @@
 
 Theme Name: WPFolio 
 
-Theme URI: http://wpfolio.visitsteve.com/wiki/
+Theme URI: http://eyebeam.org/projects/wpfolio
 
 Description: A Wordpress Theme designed for artists. Created by Steve Lambert, Patrick Carey, Jeff Crouse, Daniel Wiener (and you?) at the Eyebeam Center for Art and Technology. Free software under the GPLv3 license. We welcome your code.
 
@@ -10,7 +10,7 @@ Version: 1.5.2.1
 
 Author: Eyebeam Center for Art and Technology
 
-Author URI: http://eyebeam.org/projects/wpfolio
+Author URI: http://wpfolio.visitsteve.com/wiki/
 
 Tags: fixed-width, photoblogging, one-column, theme-options
 
@@ -472,13 +472,19 @@ ol.commentlist ul {
 /* @group footer styles */
 
 .footer {
-	padding: 5px 30px 20px;
 	text-align : left;
-	font-size : 11px; clear: both;
-	/* background-color: #E0E0E0; */
-	/*color: ($WPFolio_second_color) */
+	font-size : 11px; 
+	clear: both;
+	border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	margin-top: 10px;
+	padding: 10px 30px 25px;
 }
-	
+
 .footer a {
 	font-weight: normal;
 }
@@ -486,9 +492,7 @@ ol.commentlist ul {
 .footer a:hover {
 	font-weight: normal;
 	opacity: 0.75;
-}
-
-	
+}	
 .footer .left {
 float: left;
 }
