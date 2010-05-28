@@ -369,10 +369,28 @@ function mytheme_add_admin() {
 		} 
 		else if( 'reset' == $_REQUEST['action'] )
 		{
+			chdir($dir);
+			$filename = 'wpfolio.css';
+			
 			foreach ($options as $value) {
-				delete_option( $value['id'] ); }
+				delete_option( $value['id'] ); 
+				if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } }
+				ob_start();
+			include(TEMPLATEPATH . '/lib/theme_css.php');
+			$wpfolio_css .= ob_get_contents();
+			ob_end_clean();
+			if (file_exists($filename)){
+			$fh = fopen($filename,'w');
+			}
+			if (is_writable($filename)) {
+			fwrite($fh, $wpfolio_css);
+			} else {
+			echo $filename . ' is not writeable';
+			}
+			$css_file =file_get_contents($filename);
 				header("Location: themes.php?page=functions.php&reset=true");
 				die;
+				
 	 }
 	}
 	add_theme_page($themename." Options", "Current Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
