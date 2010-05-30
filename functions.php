@@ -326,10 +326,35 @@ include(TEMPLATEPATH . '/lib/theme_options.php');
 
 /* BEGIN Theme Admin Interface */
 
+function modify_css_routine($option_action = null) {
+global $themename, $shortname, $options;
+foreach ($options as $value) {
+				if ($option_action === 'reset') {
+				delete_option( $value['id'] );
+				}
+				
+				if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); }} 
+ $dir = TEMPLATEPATH . '/css'; /* set up the folder and file for the theme options css. do I need  if exists statements for safety and do I need to change the directory back to the present one from the css directory?*/
+	chdir($dir);
+	$filename = 'wpfolio.css';
+				ob_start();
+			include(TEMPLATEPATH . '/lib/theme_css.php');
+			$wpfolio_css .= ob_get_contents();
+			ob_end_clean();
+			if (file_exists($filename)){
+			$fh = fopen($filename,'w');
+			}
+			if (is_writable($filename)) {
+			fwrite($fh, $wpfolio_css);
+			} else {
+			echo $filename . ' is not writeable';
+			}
+			}
+
 function mytheme_add_admin() {
 	global $themename, $shortname, $options;
-	$dir = TEMPLATEPATH . '/css';
-	if ( $_GET['page'] == basename(__FILE__) )
+		if ( $_GET['page'] == basename(__FILE__) )
+	
 	{
 		if ( 'save' == $_REQUEST['action'] )
 		{
@@ -346,48 +371,22 @@ function mytheme_add_admin() {
 					delete_option( $value['id'] ); 
 				} 
 			}
-			chdir($dir);
+			/*
+chdir($dir);
 			$filename = 'wpfolio.css';
-			foreach ($options as $value) {
-   	if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } }
-   		
-			ob_start();
-			include(TEMPLATEPATH . '/lib/theme_css.php');
-			$wpfolio_css .= ob_get_contents();
-			ob_end_clean();
-			if (file_exists($filename)){
-			$fh = fopen($filename,'w');
-			}
-			if (is_writable($filename)) {
-			fwrite($fh, $wpfolio_css);
-			} else {
-			echo $filename . ' is not writeable';
-			}
-			/* $css_file =file_get_contents($filename); */
+*/
+			modify_css_routine();
 			header("Location: themes.php?page=functions.php&saved=true");
 			die;
 		} 
 		else if( 'reset' == $_REQUEST['action'] )
 		{
-			chdir($dir);
+			/*
+chdir($dir);
 			$filename = 'wpfolio.css';
+*/
 			
-			foreach ($options as $value) {
-				delete_option( $value['id'] ); 
-				if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } }
-				ob_start();
-			include(TEMPLATEPATH . '/lib/theme_css.php');
-			$wpfolio_css .= ob_get_contents();
-			ob_end_clean();
-			if (file_exists($filename)){
-			$fh = fopen($filename,'w');
-			}
-			if (is_writable($filename)) {
-			fwrite($fh, $wpfolio_css);
-			} else {
-			echo $filename . ' is not writeable';
-			}
-			$css_file =file_get_contents($filename);
+			modify_css_routine('reset');
 				header("Location: themes.php?page=functions.php&reset=true");
 				die;
 				
