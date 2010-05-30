@@ -1,73 +1,73 @@
 body { 
-		font-family : Courier, monospace;
-		background-color: #25CC25;
-		color: #2E1A0B;}
+		font-family : Arial;
+		background-color: #E0E0E0;
+		color: #000000;}
 	h1,h2,h3,h4,h5,h6 {
-		font-family: Courier, monospace;}
+		font-family: Arial;}
 	h1 { 
-		font-size: 12px;}
+		font-size: 28px;}
 	h2 {
-		color: #;}
+		color: #;} /* need to fix this */
 	h3 {
-		color: #20203B;}
+		color: #666666;}
 	h4 {
-		color: #07290D;}
+		color: #ABABAB;}
 	.headertext {
 		visibility:visible; }
 	.headertext h1 a {
-		color: #20203B; }
+		color: #666666; }
 	.container {
-		background-color: #FFEEE3;
-		color: #2E1A0B;}
+		background-color: #ffffff;
+		color: #000000;}
 	.container p {
-		color: #2E1A0B; }
+		color: #000000; }
 	a:active  {
-		color: #20203B; }
+		color: #666666; }
 	a:hover  {
-		color: #20203B; }
+		color: #666666; }
 	#content {
-		font-family : Courier, monospace; }
+		font-family : Arial; }
 	.title {
-		font-family : Courier, monospace;}
+		font-family : Arial;}
 	.nav, .widgettitle {
-		font-family : Courier, monospace; 
-		text-transform:capitalize;}
+		font-family : Arial; 
+		text-transform:none;}
 	div.nav a {
-			color: #07290D;}
+			color: #ABABAB;}
 	.nav a:active {
-		color: #20203B;}
+		color: #666666;}
 	.nav a:hover {
-		color: #20203B;}
+		color: #666666;}
 	div.notable-post {
-		color: #2E1A0B;}
+		color: #000000;}
 	div.notable-post h3 a, link {
-		color: #20203B;}
+		color: #666666;}
 	div.notable-post a {
-		color: #07290D;}
+		color: #ABABAB;}
 	div.notable-post a:hover {
-		color: #20203B;}
+		color: #666666;}
 	#sidebar h2.widgettitle {
-		color: #07290D;}
+		color: #ABABAB;}
 	#content {
-		color: #2E1A0B; }
+		color: #000000; }
 	#links{
-		color: #20203B;}
+		color: #666666;}
 	#links h1, h2 {
-		color: #20203B;}
+		color: #666666;}
 	#links ul {
-		color: #07290D;}
+		color: #ABABAB;}
 	#links ul li {
-		color: #07290D;}
+		color: #ABABAB;}
 	#links ul li ul {
-		color: #07290D;}
+		color: #ABABAB;}
 	#links a {
-		color: #07290D;}
+		color: #ABABAB;}
 	#links a:hover {
-		color: #20203B;}
+		color: #666666;}
 	div.prevnext{
-		text-transform:capitalize;}
+		text-transform:none;}
 	div.prevnext a:hover {
-		background-color: #20203B;}
+		background-color: #666666;}
 	div.footer {
-	background-color: #25CC25;}
+	background-color: #E0E0E0;}
 	}
