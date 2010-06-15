@@ -600,4 +600,27 @@ function wpfolio_widget_categories_control( $widget_args=null ) {
 wp_register_sidebar_widget('wpfolio_categories', __("WPFolio Categories"), 'wpfolio_widget_categories');
 wp_register_widget_control('wpfolio_categories', __("WPFolio Categories"),  'wpfolio_widget_categories_control');
 
+
+
+
+//  Columned shortcode function - taken from http://bui4ever.com/web/wordpress-how-to-break-content-into-two-columns/
+//	Page Paragraph column short code (http://basicmaths.subtraction.com/demo/)
+//	Right
+function basic_rightcolumn($atts, $content = null) {
+	return '<span class="rightcolumn">' . $content . '</span><!--.rightcolumn-->';
+}
+add_shortcode("rightcolumn", "basic_rightcolumn");
+
+//	Top
+function basic_topcolumn($atts, $content = null) {
+	return '<span class="topcolumn">' . $content . '</span><!--.topcolumn-->';
+}
+add_shortcode("topcolumn", "basic_topcolumn");
+
+//	Left
+function basic_leftcolumn($atts, $content = null) {
+	return '<span class="leftcolumn">' . $content . '</span><!--.leftcolumn-->';
+}
+add_shortcode("leftcolumn", "basic_leftcolumn");
+
 ?>
