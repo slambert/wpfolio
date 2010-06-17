@@ -679,3 +679,8 @@ div.search-result img {
 .clear-both {
 	clear: both;
 }
+
+img#wpstats {
+position: absolute;
+left: -999em;
+}
