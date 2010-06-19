@@ -35,13 +35,14 @@
 
 				<h4><?php the_date('F d, Y', '', ''); ?></h4>
 				<?php the_content('continue...'); ?>
+				
+				<?php wp_link_pages(); ?>
 		
 				<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?> <?php the_tags('| Tags: ',', ',''); ?> | More: <?php the_category(', '); ?> <?php edit_post_link('edit this', '<span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK--></h5>
 			</div><!-- .notable-post -->
      
 		<?php comments_template(); ?> 	  
 
-		<?php wp_link_pages(); ?>
 		</div><!-- .notable --> 
 
 		<div id="sidebar">
@@ -82,6 +83,8 @@
 	<?php the_content(); ?>   
 	</div> <!-- .entry --> 		    
 
+	<?php wp_link_pages(); ?>
+	
 <div class="post-bottom-title">   
 <b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'media', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>  <?php comments_popup_link(__('| Comments (0)'), __('| Comments (1)'), __('| Comments (%)'), __(''), __('')); ?>
 
@@ -89,8 +92,6 @@
 </div><!-- .post-bottom-title -->
      
 <?php comments_template(); ?> 	  
-
-<?php wp_link_pages(); ?>
  
 </div><!-- #content -->
 
