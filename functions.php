@@ -26,6 +26,10 @@ set_post_thumbnail_size( 150, 150,true );
 // This theme uses wp_nav_menu()
 add_theme_support( 'nav-menus' );
 
+register_nav_menus( array(
+	'navbar' => __( 'Top Navigation Bar', 'navbar' ),
+) );
+
 // Add default posts and comments RSS feed links to head
 add_theme_support( 'automatic-feed-links' );
 
@@ -69,11 +73,6 @@ register_taxonomy('media', 'post', array(
 
 
 /* Sidebars */
-	
-	if ( function_exists('register_sidebar') )
-	    register_sidebar(array(
-		'name'=>'navbar'
-		));   
 	    
 	if ( function_exists('register_sidebar') )
 	    register_sidebar(array(
@@ -365,20 +364,14 @@ $options = array (
             "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", 
             "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace")),
 
-//Body Foreground Color            
-	array(	"name" => "Body Foreground Color",
+//Body Container Color            
+	array(	"name" => "Page Container Color",
             "id" => $shortname."_foreground_color",
             "std" => "ffffff",
 			"type" => "color"),        
-
-//Body Background Color
-	array(	"name" => "Body Background Color",
-            "id" => $shortname."_body_backgroundcolor",
-            "std" => "E0E0E0",
-            "type" => "color"), 
                      
-//Body Font Color
-	array(	"name" => "Body Font Color",
+//Font Color
+	array(	"name" => "Font Color",
             "id" => $shortname."_body_color",
             "std" => "000000",
             "type" => "color"),
@@ -528,87 +521,3 @@ function mytheme_wp_head() { ?>
 <?php }
 	add_action('wp_head', 'mytheme_wp_head');
 	add_action('admin_menu', 'mytheme_add_admin'); ?>
-
-	
-<?php                                             
-// Yearly Archives Widget
-
-    function wpfolio_archives($args) {
-	extract($args);
-	$options = get_option('widget_archives');
-	$c = $options['count'] ? '1' : '0';
-	$d = $options['dropdown'] ? '1' : '0';
-	$title = empty($options['title']) ? __('Yearly Archives') : apply_filters('widget_title', $options['title']);
-
-	echo $before_widget;
-	echo $before_title . $title . $after_title;
-	if($d) {
-?>
-	<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo attribute_escape(__('Select Year')); ?></option> <?php wp_get_archives("type=yearly&format=option&show_post_count=$c"); ?> </select>
-<?php } else { ?>
-		<ul>
-		<?php wp_get_archives("title_li=&type=yearly&show_post_count=$c"); ?>
-		</ul>
-<?php
-	}
-	echo $after_widget;
-}
-register_sidebar_widget('WPFolio Yearly Archives', 'wpfolio_archives'); 
-
-
-
-// CATEGORY ARCHIVE WIDGET 
-	function wpfolio_widget_categories($args, $widget_args = 1) {
-	extract($args);
-    $title = empty($options[$number]['title']) ? __('Category') : apply_filters('widget_title', $options[$number]['title']);
-
-    echo $before_widget;
-    echo $before_title . $title . $after_title;
-
-    $order = get_option('wpfolio_categories_order');
-    $order = explode(",", $order);
-    
-    foreach($order as $cat_name):
-    $cat_name = trim($cat_name);
-    $cat_id = get_cat_id($cat_name);	
-    $this_category = get_category($cat_id);
-    
-    $class =  is_category($cat_id)  ? "current-cat" : "";
-?>
-    <ul>
-	<li class="<?php print $class; ?>"><a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a></li>
-    </ul>
-<?php
-    endforeach;
-
-    echo $after_widget;
-}
-
-
-function wpfolio_widget_categories_control( $widget_args=null ) {
-	global $wp_registered_widgets;
-
-	if (!empty($_POST['widget-wpfolio-categories-submit'])) {
-		update_option('wpfolio_categories_order', $_POST['widget-wpfolio-categories-order']);
-	}
-	$order = get_option('wpfolio_categories_order');
-?>
-		<p>
-			<label for="categories-order-<?php echo $number; ?>">
-				<?php _e( 'List categories in order they will appear in the menu (i.e. painting, drawing, art work, etc):' ); ?>
-				<input class="widefat" id="wpfolio-categories-order" name="widget-wpfolio-categories-order" type="text" value="<?php echo $order; ?>" />
-				<small><?php _e( 'Note: no dashes or special characters.' ); ?></small>
-			</label>
-		</p>
-
-		<input type="hidden" name="widget-wpfolio-categories-submit" value="1" />
-		
-<?php
-}
-
-
-
-wp_register_sidebar_widget('wpfolio_categories', __("WPFolio Categories"), 'wpfolio_widget_categories');
-wp_register_widget_control('wpfolio_categories', __("WPFolio Categories"),  'wpfolio_widget_categories_control');
-
-?>
