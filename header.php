@@ -143,11 +143,10 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 <!-- MENU  --> 
 	<div class="nav">
 		<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-		<?php if ( has_nav_menu( 'navmenu' ) ) { ?>
-
+		<?php if ( has_nav_menu( 'navbar' ) ) { ?>
 		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'menu_class' => 'sf-menu', 'theme_location' => 'navbar' ) ); 
 		} else { ?>
-		<?php wp_page_menu( 'depth=1&show_home=Home&menu_class=menu-header' );
+		<?php wp_page_menu( 'depth=1&show_home=Home&menu_class=default-navbar' );
 		} ?>
 		
 	</div><!-- .nav -->
