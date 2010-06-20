@@ -21,7 +21,18 @@ set_post_thumbnail_size( 150, 150,true );
 
 // END - Thumbnail Function
 
+// some wp 3.0 features
 
+// This theme uses wp_nav_menu()
+add_theme_support( 'nav-menus' );
+
+// Add default posts and comments RSS feed links to head
+add_theme_support( 'automatic-feed-links' );
+
+// This theme allows users to set a custom background
+add_custom_background();
+
+// END wp 3.0 features
 
 
 // Remove inline styles on gallery shortcode

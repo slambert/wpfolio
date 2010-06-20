@@ -27,8 +27,6 @@ http://wpfolio.visitsteve.com/wiki
 
 <!-- leave this for stats -->   
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />  <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />  
-<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />  <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />    
 
 <?php wp_get_archives('type=monthly&format=link'); ?>  
  <?php global $options;
@@ -112,6 +110,18 @@ http://wpfolio.visitsteve.com/wiki
 	border-top: solid 1px #<?php echo $WPFolio_body_backgroundcolor; ?>;}
  </style>
 
+<!-- Superfish Support -->
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/superfish.css" type="text/css" media="screen"/>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.2.6.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/hoverIntent.js"></script>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/superfish.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('ul.sf-menu').superfish();
+});
+</script>
+<!-- end superfish -->
+
 <?php //for support of js threaded comments
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 ?>
@@ -131,22 +141,14 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
 <!-- MENU  --> 
 	<div class="nav">
-		<ul>
+		<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
+		<?php if ( has_nav_menu( 'navmenu' ) ) { ?>
 
-			<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('navbar') ) : else : ?> 
-
-				<ul>
-				<?php wp_list_categories('exclude=&title_li=&current_category=1,' );?>
-				<?php wp_get_archives('type=yearly'); ?> 
-				<?php wp_list_pages('exclude=&title_li=' );?>
-				</ul>
-			<?php endif; ?>
-		</ul>
+		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'menu_class' => 'sf-menu', 'theme_location' => 'navbar' ) ); 
+		} else { ?>
+		<?php wp_page_menu( 'depth=1&show_home=Home&menu_class=menu-header' );
+		} ?>
 
 	</div><!-- .nav -->
 <!-- END MENU -->  
 
-
-<!--
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('menubar') ) : else : ?> <?php endif; ?>
--->
