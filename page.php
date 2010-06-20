@@ -20,10 +20,12 @@
 ?></a>
 </div><!--.page title--> 
 
-<?php the_content(); ?>    
+<?php the_content(); ?>  
+
+<?php wp_link_pages(); ?>
+  
 <div class="post-bottom-title"> <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>	</div>
 <?php comments_template(); ?> 	 
-<?php wp_link_pages(); ?>
 <?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 </div><!-- .page -->
 </div><!-- #content -->

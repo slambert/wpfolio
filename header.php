@@ -130,7 +130,7 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
 </head>   
 
-<body>   
+<body <?php body_class(); ?>>  
 <div class="container">  
 	<div id="header">  
 		<div class="headertext">   
