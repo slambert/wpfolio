@@ -26,6 +26,7 @@ http://wpfolio.visitsteve.com/wiki
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />   
 
 <!-- leave this for stats -->   
+
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 
 <?php wp_get_archives('type=monthly&format=link'); ?>  
@@ -33,6 +34,7 @@ http://wpfolio.visitsteve.com/wiki
     	foreach ($options as $value) {
    	if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
    		?>
+
  <style type="text/css" media="all">
  /* CSS inserted by theme options */
 	body { 
@@ -111,6 +113,7 @@ http://wpfolio.visitsteve.com/wiki
  </style>
 
 <!-- Superfish Support -->
+
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/superfish.css" type="text/css" media="screen"/>
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.2.6.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/hoverIntent.js"></script>
@@ -148,7 +151,7 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 		} else { ?>
 		<?php wp_page_menu( 'depth=1&show_home=Home&menu_class=menu-header' );
 		} ?>
-
+		
 	</div><!-- .nav -->
 <!-- END MENU -->  
 
