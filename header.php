@@ -39,7 +39,6 @@ http://wpfolio.visitsteve.com/wiki
  /* CSS inserted by theme options */
 	body { 
 		font-family : <?php echo $WPFolio_body_font; ?>;
-		background-color: #<?php echo $WPFolio_body_backgroundcolor; ?>;
 		color: #<?php echo $WPFolio_body_color; ?>;}
 	h1,h2,h3,h4,h5,h6 {
 		font-family: <?php echo $WPFolio_headline_font; ?>;}
