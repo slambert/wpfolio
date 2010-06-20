@@ -6,7 +6,7 @@ Theme URI: http://eyebeam.org/projects/wpfolio
 
 Description: A Wordpress Theme designed for artists. Created by Steve Lambert, Patrick Carey, Jeff Crouse, Daniel Wiener (and you?) at the Eyebeam Center for Art and Technology. Free software under the GPLv3 license. We welcome your code.
 
-Version: 1.5.2.1
+Version: 1.5.3b20100619
 
 Author: Eyebeam Center for Art and Technology
 
@@ -333,48 +333,44 @@ div.prevnext_right :after {
 /* @end */
 
 /* @group navbar */
-div.nav .widgettitle  { 
-	/* font-family : ($WPFolio_body_font)  */
-	display: none; 
-	padding: 0em;
-	}
 .nav {
 	/* font-family: ($WPFolio_headline_font) */
 	/*color: ($WPFolio_second_color) */
 	text-decoration : none;
-	font-weight : bold;
-	padding: 0 30px;
 	margin: 0;
 	font-size: 12px;
+	padding: 0 30px;
+	text-transform: none;
 }
 
-.nav ul, .widgettitle ul { 
+.default-navbar ul { 
 	float:left;
 	margin: 0;
 	padding: 0;
+	text-align: left;
+	line-height: 1.5em;
 }
 
-.nav li, widgettitle li { 
+.default-navbar li { 
 	list-style: none; 
 	display: inline;
 	margin: 0;
 	padding: 0;
 }
-.nav a, link   {  
+.default-navbar a, link   {  
 	/*border : 1px solid #c0c0c0;*/
-	color : #545454;
 	text-decoration : none;
 	font-weight : normal;
 	margin-right: 2em;
 }
-.nav a:active  {  
+.default-navbar a:active  {  
 	/*border: 1px solid #c0c0c0;*/
 	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
 	font-weight : normal;
-	opacity: 0.25;
+	opacity: 0.75;
 }
-.nav a:hover  {  
+.default-navbar a:hover  {  
 	/*border: 1px solid #c0c0c0;*/
 	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
@@ -385,6 +381,10 @@ div.nav .widgettitle  {
 div.nav li.current_page_item a, div.nav li.current-cat a {
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+div.menu-header {
+	margin-left: -10px;
 }
 /* @end */
 

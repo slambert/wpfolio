@@ -113,9 +113,10 @@ http://wpfolio.visitsteve.com/wiki
 <!-- Superfish Support -->
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/superfish.css" type="text/css" media="screen"/>
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.2.6.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/hoverIntent.js"></script>
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/superfish.js" type="text/javascript"></script>
+<!--
+Add if you want to enable the SuperFish Navbar. It will need styling! 
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/superfish-navbar.css" type="text/css" media="screen"/> -->
+
 <script type="text/javascript">
 $(document).ready(function() {
 $('ul.sf-menu').superfish();
@@ -144,7 +145,7 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	<div class="nav">
 		<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 		<?php if ( has_nav_menu( 'navbar' ) ) { ?>
-		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'menu_class' => 'sf-menu', 'theme_location' => 'navbar' ) ); 
+		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'menu_class' => 'sf-menu sf-navbar', 'theme_location' => 'navbar' ) ); 
 		} else { ?>
 		<?php wp_page_menu( 'depth=1&show_home=Home&menu_class=default-navbar' );
 		} ?>
