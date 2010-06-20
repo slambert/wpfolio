@@ -45,10 +45,8 @@ http://wpfolio.visitsteve.com/wiki
 		font-family: <?php echo $WPFolio_headline_font; ?>;}
 	h1 { 
 		font-size: <?php echo $WPFolio_headline_size; ?>;}
-	h2 {
+	h2,h3 {
 		color: #<?php $WPFolio_highlight_color; ?>;}
-	h3 {
-		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	h4 {
 		color: #<?php echo $WPFolio_second_color; ?>;}
 	.headertext {
@@ -72,7 +70,7 @@ http://wpfolio.visitsteve.com/wiki
 		font-family : <?php echo $WPFolio_body_font; ?>; 
 		text-transform:<?php echo $WPFolio_text_transform ?>;}
 	div.nav a {
-			color: #<?php echo $WPFolio_second_color; ?>;}
+		color: #<?php echo $WPFolio_second_color; ?>;}
 	.nav a:active {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	.nav a:hover {
