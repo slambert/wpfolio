@@ -68,11 +68,10 @@ http://wpfolio.visitsteve.com/wiki
 	.nav, .widgettitle {
 		font-family : <?php echo $WPFolio_body_font; ?>; 
 		text-transform:<?php echo $WPFolio_text_transform ?>;}
-	div.nav a {
+	.sf-menu a, .sf-menu a:visited {
 		color: #<?php echo $WPFolio_second_color; ?>;}
-	.nav a:active {
-		color: #<?php echo $WPFolio_highlight_color; ?>;}
-	.nav a:hover {
+	.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
 		color: #<?php echo $WPFolio_highlight_color; ?>;}
 	div.notable-post {
 		color: #<?php echo $WPFolio_body_color; ?>;}
