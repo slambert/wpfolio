@@ -78,8 +78,6 @@ $('ul.sf-menu').superfish();
 <script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/hoverIntent.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/superfish.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/supersubs.js"></script>
-<script type="text/javascript" src="http://localhost:8888/wp/wp-content/themes/thematic/library/scripts/thematic-dropdowns.js"></script>
-
 
 <!-- end superfish -->
 
