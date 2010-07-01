@@ -13,6 +13,19 @@ The free Wordpress Theme for Artists
 Free Software under the GPLv3 
 http://wpfolio.visitsteve.com/wiki
 -->   
+
+<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<!-- calling wp_head -->
+<?php wp_head(); ?> 
+<!-- done calling wp_head -->
+<!-- calling monthly archives -->
+<?php wp_get_archives('type=monthly&format=link'); ?>  
+ <?php global $options;
+    	foreach ($options as $value) {
+   	if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
+   		?>
+<!-- done calling monthly archives -->
+  
 	<title>
 	<?php if ( is_page() ) { ?><?php bloginfo('name'); ?><?php wp_title('|'); ?><?php } ?>
 	<?php if ( is_home() ) { ?><?php bloginfo('name'); ?>&nbsp;|&nbsp;<?php bloginfo('description'); ?><?php } ?>
@@ -21,19 +34,6 @@ http://wpfolio.visitsteve.com/wiki
 	<?php if ( is_year() ) { ?><?php bloginfo('name'); ?>&nbsp;|&nbsp;<?php the_time('Y'); ?><?php } ?>
 	<?php if (function_exists('is_tag')) { if ( is_tag() ) { ?><?php bloginfo('name'); ?>&nbsp;|&nbsp;<?php  single_tag_title("Tag Archive:", true); } } ?>
 	</title>  
-
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />   
-
-<!-- leave this for stats -->   
-
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-
-<?php wp_get_archives('type=monthly&format=link'); ?>  
- <?php global $options;
-    	foreach ($options as $value) {
-   	if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
-   		?>
 
  <style type="text/css" media="all">
  /* CSS inserted by theme options */
@@ -127,7 +127,6 @@ $('ul.sf-menu').superfish();
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 ?>
 
-<?php wp_head(); ?> 
 
 </head>   
 
