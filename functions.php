@@ -48,7 +48,9 @@ add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
 
 // END - Remove inline styles on gallery shortcode
 
+// enqueue jQuery
 
+wp_enqueue_script('jquery');
 
 // enable threaded comments
 

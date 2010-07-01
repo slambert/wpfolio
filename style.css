@@ -6,7 +6,7 @@ Theme URI: http://eyebeam.org/projects/wpfolio
 
 Description: A Wordpress Theme designed for artists. Created by Steve Lambert, Patrick Carey, Jeff Crouse, Daniel Wiener (and you?) at the Eyebeam Center for Art and Technology. Free software under the GPLv3 license. We welcome your code.
 
-Version: 1.5.3b20100619
+Version: 1.5.3b20100626
 
 Author: Eyebeam Center for Art and Technology
 
@@ -16,12 +16,14 @@ Tags: fixed-width, photoblogging, one-column, theme-options
 
 */
 
-/* NOTE: Changing CSS affected by Theme Options 		*/
-/* To make changes to the CSS edit the CSS rules below. */
-/* rules commented out and wrapped in parentheses		*/
-/* i.e. ($WPFolio_body_font)      						*/
-/* are handled by the header.php file and editable in 	*/
-/* Current Theme Options in the Wordpress dashboard. 	*/
+/* 
+NOTE: Changing CSS affected by Theme Options
+To make changes to the CSS edit the CSS rules below.
+rules commented out and wrapped in parentheses
+i.e. ($WPFolio_body_font)      						
+are handled by the header.php file and editable in
+Current Theme Options in the Wordpress dashboard.
+*/
 
 /* BEGIN user editable area */
 body  { 
@@ -332,59 +334,73 @@ div.prevnext_right :after {
 }
 /* @end */
 
-/* @group navbar */
-.nav {
-	/* font-family: ($WPFolio_headline_font) */
-	/*color: ($WPFolio_second_color) */
-	text-decoration : none;
-	margin: 0;
-	font-size: 12px;
-	padding: 0 30px;
-	text-transform: none;
+/* @new navbar */
+
+div.nav {
+	margin-right: 30px;
+	margin-left: 30px;
 }
 
-.default-navbar ul { 
-	float:left;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	line-height: 1.5em;
+/*** SUPERFISH SKIN ***/
+.sf-menu {
+	float:			left;
+	margin-bottom:	1em;
+	font-size: .8em;
 }
-
-.default-navbar li { 
-	list-style: none; 
-	display: inline;
-	margin: 0;
-	padding: 0;
+.sf-menu a {
+	/*	border-top:		1px solid #CFDEFF; */
+	border-left: 1px solid rgba(255, 255, 255, 0.8);
+	padding: 		.75em 1em;
+	text-decoration:none;
+	font-weight: normal;
+	font-style: normal;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
 }
-.default-navbar a, link   {  
-	/*border : 1px solid #c0c0c0;*/
-	text-decoration : none;
-	font-weight : normal;
-	margin-right: 2em;
+.sf-menu li {
+	background:		rgba(255, 255, 255, 0.9);
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
 }
-.default-navbar a:active  {  
-	/*border: 1px solid #c0c0c0;*/
-	/*color: ($WPFolio_highlight_color) */
-	text-decoration : none;
-	font-weight : normal;
-	opacity: 0.75;
+.sf-menu li li {
+	background:		rgba(255, 255, 255, 0.9);
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
 }
-.default-navbar a:hover  {  
-	/*border: 1px solid #c0c0c0;*/
-	/*color: ($WPFolio_highlight_color) */
-	text-decoration : none;
-	font-weight : normal;
-	opacity: 0.75;
-	}
-
+.sf-menu li li li {
+	background:		rgba(255, 255, 255, 0.9);
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background:		rgba(225, 225, 225, 0.8);
+	outline:		0;
+}
 div.nav li.current_page_item a, div.nav li.current-cat a {
 	font-weight: bold;
 	text-transform: uppercase;
+	background:		rgba(200, 200, 200, 0.3);
 }
-
-div.menu-header {
-	margin-left: -10px;
+/*** arrows **/
+.sf-menu a.sf-with-ul {
+	padding-right: 	2.25em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position:		absolute;
+	display:		block;
+	right:			.75em;
+	top:			1.05em; /* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	background:		url('../images/arrows-ffffff.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top:			.8em;
+	background-position: 0 -100px; /* use translucent arrow for modern browsers*/
 }
 /* @end */
 
