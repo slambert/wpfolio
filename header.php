@@ -47,9 +47,8 @@ http://wpfolio.visitsteve.com/wiki
 		font-family: <?php echo $WPFolio_headline_font; ?>;}
 	h1 { 
 		font-size: <?php echo $WPFolio_headline_size; ?>;}
-	h1,h2,h3, a:active, a:hover, .sf-menu li:hover, .sf-menu li.sfHover,
-.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active, div.notable-post h3 a, link, 	div.notable-post a:hover, #links, #links h1, #links h2, #links a:hover, div.prevnext a:hover {
-		color: #<?php $WPFolio_highlight_color; ?>;}
+	h1,h2,h3, .headertext h1 a, a:link, a:active, a:hover, .sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active, div.notable-post h3 a, link, 	div.notable-post a:hover, #links, #links h1, #links h2, #links a:hover, div.prevnext a:hover {
+		color: #<?php echo $WPFolio_highlight_color; ?>; }
 	h4, .sf-menu a, .sf-menu a:visited, div.notable-post a, #sidebar h2.widgettitle, #links ul, #links ul li, #links ul li ul, links a {
 		color: #<?php echo $WPFolio_second_color; ?>;}
 	.headertext {
