@@ -123,9 +123,6 @@ $('ul.sf-menu').superfish();
 </script>
 <!-- end superfish -->
 
-<?php //for support of js threaded comments
-if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-?>
 
 
 </head>   
