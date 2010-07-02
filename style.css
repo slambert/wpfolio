@@ -88,6 +88,11 @@ h2.pagetitle {
 	text-transform: uppercase;
 	text-align: center;
 }
+
+.home h2.pagetitle {
+	display: none;
+}
+
 /* @end */
 
 /* @group links */
