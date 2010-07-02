@@ -377,11 +377,18 @@ div.nav {
 	background:		rgba(225, 225, 225, 0.8);
 	outline:		0;
 }
-div.nav li.current_page_item a, div.nav li.current-cat a {
+
+div.menu-header ul li.current-menu-item a {
 	font-weight: bold;
 	text-transform: uppercase;
 	background:		rgba(200, 200, 200, 0.3);
 }
+
+div.menu-header ul li ul.sub-menu a {
+	font-weight: normal;
+	text-transform: none;
+}
+
 /*** arrows **/
 .sf-menu a.sf-with-ul {
 	padding-right: 	2.25em;
