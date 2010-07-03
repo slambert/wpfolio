@@ -387,6 +387,7 @@ div.menu-header ul li.current-menu-item a {
 div.menu-header ul li ul.sub-menu a {
 	font-weight: normal;
 	text-transform: none;
+	background: none;
 }
 
 /*** arrows **/
