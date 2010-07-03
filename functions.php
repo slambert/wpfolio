@@ -85,8 +85,8 @@ register_taxonomy('media', 'post', array(
 	register_sidebar(array(
 	'name' => 'Footer Right',
 	'id' => 'footer_right',
-	'before_widget' => '',
-	'after_widget' => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
 	'before_title' => '',
 	'after_title' => '',
 	));
@@ -95,8 +95,8 @@ register_taxonomy('media', 'post', array(
 	register_sidebar(array(
 	'name' => 'Footer Left',
 	'id' => 'footer_left',
-	'before_widget' => '',
-	'after_widget' => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
 	'before_title' => '',
 	'after_title' => '',
 	));
