@@ -344,17 +344,17 @@ div.prevnext_right :after {
 div.nav {
 	margin-right: 30px;
 	margin-left: 30px;
+	margin-bottom: 3em;
 }
 
 /*** SUPERFISH SKIN ***/
 .sf-menu {
 	float:			left;
-	margin-bottom:	1em;
 	font-size: .8em;
 }
 .sf-menu a {
-	/*	border-top:		1px solid #CFDEFF; */
-	border-left: 1px solid rgba(255, 255, 255, 0.8);
+	/*	border-top:		1px solid #CFDEFF; 
+	border-left: 1px solid rgba(255, 255, 255, 0.8); */
 	padding: 		.75em 1em;
 	text-decoration:none;
 	font-weight: normal;
@@ -366,6 +366,7 @@ div.nav {
 	background:		rgba(255, 255, 255, 0.9);
 	-moz-border-radius: .5em;
 	-webkit-border-radius: .5em;
+	margin-right: .3em;
 }
 .sf-menu li li {
 	background:		rgba(255, 255, 255, 0.9);
@@ -382,14 +383,22 @@ div.nav {
 	background:		rgba(225, 225, 225, 0.8);
 	outline:		0;
 }
-div.nav li.current_page_item a, div.nav li.current-cat a {
+
+div.menu-header ul li.current-menu-item a {
 	font-weight: bold;
 	text-transform: uppercase;
 	background:		rgba(200, 200, 200, 0.3);
 }
+
+div.menu-header ul li ul.sub-menu a {
+	font-weight: normal;
+	text-transform: none;
+	background: none;
+}
+
 /*** arrows **/
 .sf-menu a.sf-with-ul {
-	padding-right: 	2.25em;
+	padding-right: 	1em;
 	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
 }
 .sf-sub-indicator {
@@ -419,7 +428,7 @@ a > .sf-sub-indicator {  /* give all except IE6 the correct values */
 	list-style:none;
 	width: 240px;
 	float: right;
-	margin-top: 20px;
+	margin-top: 12px;
 	line-height: 1.5em;
 }
 
@@ -538,7 +547,7 @@ div.notable {
 div.notable-post {
 	/*border: 1px solid #c0c0c0;*/
 	padding: 0;
-	margin: 20px 0 3em;
+	margin: 15px 0 3.5em;
 }
 
 h2.post-title a{
