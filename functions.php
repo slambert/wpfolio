@@ -560,7 +560,7 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 }
 
 function mytheme_wp_head() { ?>
-<link href="<?php bloginfo('template_directory'); ?>/style.css" rel="stylesheet" type="text/css" />
+<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
 <?php }
 	add_action('wp_head', 'mytheme_wp_head');
 	add_action('admin_menu', 'mytheme_add_admin'); ?>
