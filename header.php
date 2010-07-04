@@ -59,7 +59,7 @@ http://wpfolio.visitsteve.com/wiki
 		text-transform:<?php echo $WPFolio_text_transform ?>;}
 	div.footer {
 	background-color: #<?php echo $WPFolio_foreground_color; ?>;
-	border-top: solid 1px #<?php echo $WPFolio_body_backgroundcolor; ?>;}
+	border-top: solid 1px #<?php print get_theme_mod( 'background_color' ); ?>;}
  </style>
 
 <!-- Superfish Support -->
