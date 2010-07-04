@@ -74,9 +74,11 @@ Add if you want to enable the SuperFish Navbar. It will need styling!
 <script src="<?php bloginfo('template_directory'); ?>/js/superfish.js" type="text/javascript"></script>
 <script language="javascript" type="text/javascript" src="<?php echo bloginfo('template_directory') ?>/js/supersubs.js"></script>
 <script type="text/javascript">
+/* <![CDATA[ */
 $(document).ready(function() {
 $('ul.sf-menu').superfish();
 });
+/* ]]> */
 </script>
 
 <!-- end superfish -->
