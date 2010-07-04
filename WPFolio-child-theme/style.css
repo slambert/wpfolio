@@ -14,8 +14,14 @@ WPFolio is free and open source under the GNU Public License
 
 @import url('../WPFolio/style.css');
 
-/* add your changes below this line */
-
-#header {
-	background-image: url(images/dummy-header.png);
+/* below is an example of how you might add a header image */
+/* div#header {
+	background: url(images/dummy-header.png) 0 center;
 }
+
+div.headertext {
+	margin-left: 120px;
+}
+*/
+
+/* add your changes below this line */
