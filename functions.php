@@ -65,14 +65,18 @@ add_action('get_header', 'enable_threaded_comments');
 
 // enabling a taxonomy for Media
 
+
 function create_my_taxonomies() {
 register_taxonomy('media', 'post', array( 
-	'hierarchical' => false, 
-	'label' => 'Media', 
+	'label' => 'Media',
+	'hierarchical' => false,  
 	'query_var' => true, 
-	'rewrite' => true));
+	'rewrite' => true,
+	'public' => true,
+	'show_ui' => true,
+	'show_tagcloud' => true,
+	'show_in_nav_menus' => true,));
 } add_action('init', 'create_my_taxonomies', 0);
-
 
 /* Sidebars */
 	    
