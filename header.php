@@ -60,18 +60,19 @@ http://wpfolio.visitsteve.com/wiki
 	div.footer {
 	background-color: #<?php echo $WPFolio_foreground_color; ?>;
 	border-top: solid 1px #<?php echo get_theme_mod( 'background_color' ); ?>;}
+	.sf-menu { #<?php echo get_theme_mod( 'background_color' ); ?>;}
  </style>
 
 <!-- Superfish Support -->
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/superfish.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/superfish.css" type="text/css" media="screen"/>
 <!--
 Add if you want to enable the SuperFish Navbar. It will need styling! 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/superfish-navbar.css" type="text/css" media="screen"/> -->
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.2.6.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/hoverIntent.js"></script>
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/superfish.js" type="text/javascript"></script>
-<script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/supersubs.js"></script>
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/superfish-navbar.css" type="text/css" media="screen"/> -->
+<script src="<?php bloginfo('template_directory'); ?>/js/jquery-1.2.6.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/hoverIntent.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/superfish.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="<?php echo bloginfo('template_directory') ?>/js/supersubs.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 $('ul.sf-menu').superfish();
