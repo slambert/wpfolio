@@ -530,17 +530,25 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 <?php } }?>
 </table>
 
-<p class="submit">
-	<input name="save" type="submit" value="Save changes" />    
-	<input type="hidden" name="action" value="save" />
-</p>
-</form>
+<table>
+	<tr valign="top">
+		<td>
+			<p class="submit">
+			<input name="save" type="submit" value="Save changes" />    
+			<input type="hidden" name="action" value="save" />
+			</p>
+		</td>
+		</form>
 
-<form method="post">
-<p class="submit">
-	<input name="reset" type="submit" value="Reset" />
-	<input type="hidden" name="action" value="reset" />
-</p>
+<form method="post">	
+		<td>
+			<p class="submit">
+			<input name="reset" type="submit" value="Reset" />
+			<input type="hidden" name="action" value="reset" />
+			</p>
+		</td>
+	</tr>
+</table>
 
 </form>
 
