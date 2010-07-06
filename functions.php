@@ -354,7 +354,20 @@ $options = array (
            "id" => $shortname."_headline_font",
            "type" => "select",
            "std" =>"Helvetica",
-           "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace" )),
+           "options" => array(
+           "Arial, 'Helvetica Neue', Helvetica, sans-serif", 
+           "Arial Black, sans-serif", "Baskerville, Times, 'Times New Roman', serif", 
+           "'Courier New', Courier, monospace", "Georgia, Times, 'Times New Roman', serif", 
+           "'Gill Sans', 'Trebuchet MS', Calibri, sans-serif", 
+           "Helvetica, 'Helvetica Neue', Arial, sans-serif", 
+           "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif", 
+           "'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif", 
+           "Palatino, 'Palatino Linotype', 'Hoefler Text', Times, 'Times New Roman', serif", 
+           "Times, 'Times New Roman', Georgia, serif", 
+           "Verdana, Tahoma, Geneva, sans-serif"
+           )),
+           
+// font stack reccomendations from: http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
 
 //Headline Font Size
 	array( "name" => "Headline Font Size",
@@ -367,8 +380,19 @@ $options = array (
             "id" => $shortname."_body_font",
             "type" => "select",
             "std" => "Helvetica",
-            "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", 
-            "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace")),
+            "options" => array(
+            "Arial, 'Helvetica Neue', Helvetica, sans-serif", 
+            "'Courier New', Courier, monospace",
+            "Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif",
+            "'Gill Sans', Calibri, 'Trebuchet MS', sans-serif", 
+            "'Helvetica Neue', Arial, Helvetica, sans-serif", 
+            "'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif", 
+            "Palatino, 'Palatino Linotype', Georgia, Times, 'Times New Roman', serif", 
+            "Times, 'Times New Roman', Georgia, serif",
+            "Verdana, Geneva, Tahoma, sans-serif"  
+            )),
+
+// font stack reccomendations from: http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
 
 //Body Container Color            
 	array(	"name" => "Page Container Color",
