@@ -6,7 +6,7 @@ Theme URI: http://eyebeam.org/projects/wpfolio
 
 Description: A Wordpress Theme designed for artists. Created by Steve Lambert, Patrick Carey, Jeff Crouse, Daniel Wiener (and you?) at the Eyebeam Center for Art and Technology. Free software under the GPLv3 license. We welcome your code.
 
-Version: 1.5.3b0704
+Version: 1.5.3b0705
 
 Author: Eyebeam Center for Art and Technology
 
@@ -351,31 +351,36 @@ div.nav {
 	float:			left;
 	font-size: .8em;
 }
-.sf-menu a {
-	/*	border-top:		1px solid #CFDEFF; 
-	border-left: 1px solid rgba(255, 255, 255, 0.8); */
-	padding: 		.65em 1em;
-	text-decoration:none;
-	font-weight: normal;
-	font-style: normal;
+
+.sf-menu li {
+	border-top:	1px solid rgba(255, 255, 255, 0.9); 
+	border-left: 1px solid rgba(255, 255, 255, 0.9); 
+}
+.sf-menu li a {
 	-moz-border-radius: .5em;
 	-webkit-border-radius: .5em;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration:none;
+	padding: .65em 1em;
 }
 .sf-menu li {
 	background:		rgba(255, 255, 255, 0.9);
 	-moz-border-radius: .5em;
 	-webkit-border-radius: .5em;
 	margin-right: .3em;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
 }
 .sf-menu li li {
 	background:		rgba(255, 255, 255, 0.9);
-	-moz-border-radius: .5em;
-	-webkit-border-radius: .5em;
+	-moz-border-radius: 0em;
+	-webkit-border-radius: 0em;
 }
 .sf-menu li li li {
 	background:		rgba(255, 255, 255, 0.9);
-	-moz-border-radius: .5em;
-	-webkit-border-radius: .5em;
+	-moz-border-radius: 0em;
+	-webkit-border-radius: 0em;
 }
 .sf-menu li:hover, .sf-menu li.sfHover,
 .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
