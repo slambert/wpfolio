@@ -356,7 +356,8 @@ $options = array (
            "std" =>"Helvetica",
            "options" => array(
            "Arial, 'Helvetica Neue', Helvetica, sans-serif", 
-           "Arial Black, sans-serif", "Baskerville, Times, 'Times New Roman', serif", 
+           "Arial Black, sans-serif", 
+           "Baskerville, Times, 'Times New Roman', serif", 
            "'Courier New', Courier, monospace", "Georgia, Times, 'Times New Roman', serif", 
            "'Gill Sans', 'Trebuchet MS', Calibri, sans-serif", 
            "Helvetica, 'Helvetica Neue', Arial, sans-serif", 
@@ -482,7 +483,7 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 
 <!-- WPFolio Theme Interface -->
 
-<script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/jscolor/jscolor.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo bloginfo('template_directory') ?>/js/jscolor/jscolor.js"></script>
 <div class="wrap">
 
 <h2><?php echo $themename; ?> Settings</h2>
