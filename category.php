@@ -65,7 +65,7 @@
 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>     
 			<?php /* If this is a category archive */ if (is_category()) { ?>				 		 
 				<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2> 
-				<div id="category-description"><?php echo category_description(3); ?></div><!--#category-description--> 
+				<div id="category-description"><?php echo category_description(); ?></div><!--#category-description--> 
 			
 			<?php /* If this is an author archive */ } elseif (is_author()) { ?> 		  
 				<h2 class="pagetitle">Artist Archive</h2>  		    
