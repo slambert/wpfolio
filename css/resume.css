@@ -1,10 +1,10 @@
-/* @group Resume/CV styles - selectors repeated to cover every upper/lower case option of resume and cv  */
-div.RESUME ul, div.resume ul,div.Resume ul,div.CV ul,div.cv ul{
+/* @group Resume/CV styles  */
+div.cv-style ul {
 	vertical-align: 1em;
 	padding: 0;
 	margin-top: .9em;
 }
-div.RESUME ul li, div.resume ul li, div.Resume ul li, div.CV ul li, div.cv ul li {
+div.cv-style ul li {
 	list-style: none;
 	vertical-align: -1.5em;
 	padding: 0;
@@ -14,7 +14,7 @@ div.RESUME ul li, div.resume ul li, div.Resume ul li, div.CV ul li, div.cv ul li
 	line-height: 0;
 }
 
-div.RESUME ul li ul li, div.resume ul li ul li, div.Resume ul li ul li, div.CV ul li ul li,.cv ul li ul li  {
+div.cv-style ul li ul li  {
 	font-size: 1em;
 	font-weight: normal;
 	bottom: 1.8em;
@@ -27,7 +27,7 @@ div.RESUME ul li ul li, div.resume ul li ul li, div.Resume ul li ul li, div.CV u
 	margin-left: 6em;
 	line-height: 1.3em;
 }
-div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
+div.cv-style h3 {
 	margin-bottom: 1em;
 	font-size: 1.6em;
 }
