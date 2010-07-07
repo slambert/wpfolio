@@ -352,8 +352,9 @@ div.nav {
 }
 
 .sf-menu li {
-	border-top:	1px solid rgba(255, 255, 255, 0.9); 
-	border-left: 1px solid rgba(255, 255, 255, 0.9); 
+	border-top:	1px solid; 
+	border-left: 1px solid;
+	border-color: #ffffff;
 }
 .sf-menu li a {
 	-moz-border-radius: .5em;
@@ -368,15 +369,8 @@ div.nav {
 	-moz-border-radius: .5em;
 	-webkit-border-radius: .5em;
 	margin-right: .3em;
-	-moz-border-radius: .5em;
-	-webkit-border-radius: .5em;
 }
-.sf-menu li li {
-	background:		rgba(255, 255, 255, 0.9);
-	-moz-border-radius: 0em;
-	-webkit-border-radius: 0em;
-}
-.sf-menu li li li {
+.sf-menu li li, .sf-menu li li li {
 	background:		rgba(255, 255, 255, 0.9);
 	-moz-border-radius: 0em;
 	-webkit-border-radius: 0em;
