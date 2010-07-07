@@ -18,6 +18,10 @@ http://wpfolio.visitsteve.com/wiki
 <!-- calling wp_head -->
 <?php wp_head(); ?> 
 <!-- done calling wp_head -->
+<!--[if IE]>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
+<![endif]-->
+
 <!-- calling monthly archives -->
 <?php wp_get_archives('type=monthly&format=link'); ?>  
  <?php global $options;
