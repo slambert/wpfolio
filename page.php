@@ -11,7 +11,7 @@
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : start_wp(); ?> 
 
 <div id="content"> 
-	<div class="<?php wp_title('',true,''); ?>">
+	<div class="<?php wp_title('',true,''); ?><?php if (is_page('resume','Resume','RESUME','CV','cv')) { ?>, resume<? } else if (is_page()) { } ?>">
 
 		<h2 class="pagetitle"><a href="<?php the_permalink() ?>" title="Permalink"><?php if (is_page('home')) { echo ""; } else if (is_page("")) {
 	 echo the_title();

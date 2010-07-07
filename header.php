@@ -21,7 +21,9 @@ http://wpfolio.visitsteve.com/wiki
 <!--[if IE]>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
 <![endif]-->
-
+<?php if (is_page('resume','CV')) { ?>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/resume.css" type="text/css" media="screen" />
+<? } else if (is_page("")) { } ?>
 <!-- calling monthly archives -->
 <?php wp_get_archives('type=monthly&format=link'); ?>  
  <?php global $options;
