@@ -161,6 +161,11 @@ div#header    {
 	font-style: normal;}
 /* @end */
 
+#category-description {
+	width: 600px;
+	margin: auto;
+}
+
 /* @group .entry styles */
 
 div.entry {
@@ -351,11 +356,6 @@ div.nav {
 	font-size: .8em;
 }
 
-.sf-menu li {
-	border-top:	1px solid; 
-	border-left: 1px solid;
-	border-color: #ffffff;
-}
 .sf-menu li a {
 	-moz-border-radius: .5em;
 	-webkit-border-radius: .5em;
@@ -363,6 +363,7 @@ div.nav {
 	font-style: normal;
 	text-decoration:none;
 	padding: .65em 1em;
+	text-align: left;
 }
 .sf-menu li {
 	background:		rgba(255, 255, 255, 0.9);
@@ -371,6 +372,9 @@ div.nav {
 	margin-right: .3em;
 }
 .sf-menu li li, .sf-menu li li li {
+	border-top:	1px solid; 
+	border-left: 1px solid;
+	border-color: #ffffff;
 	background:		rgba(255, 255, 255, 0.9);
 	-moz-border-radius: 0em;
 	-webkit-border-radius: 0em;

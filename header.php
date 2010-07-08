@@ -18,12 +18,7 @@ http://wpfolio.visitsteve.com/wiki
 <!-- calling wp_head -->
 <?php wp_head(); ?> 
 <!-- done calling wp_head -->
-<!--[if IE]>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
-<![endif]-->
-<?php if (is_page('resume','CV')) { ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/resume.css" type="text/css" media="screen" />
-<? } else if (is_page("")) { } ?>
+
 <!-- calling monthly archives -->
 <?php wp_get_archives('type=monthly&format=link'); ?>  
  <?php global $options;
@@ -41,7 +36,7 @@ http://wpfolio.visitsteve.com/wiki
 	<?php if (function_exists('is_tag')) { if ( is_tag() ) { ?><?php bloginfo('name'); ?>&nbsp;|&nbsp;<?php  single_tag_title("Tag Archive:", true); } } ?>
 	</title>  
 
- <style type="text/css" media="all">
+<style type="text/css" media="all">
  /* CSS inserted by theme options */
 	body, #content, .title, .nav, .widgettitle { 
 		font-family : <?php echo $WPFolio_body_font; ?>;
@@ -88,7 +83,14 @@ $('ul.sf-menu').superfish();
 
 <!-- end superfish -->
 
+<!--[if IE]>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
+<![endif]-->
+<?php if (is_page('resume','CV')) { ?>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/resume.css" type="text/css" media="screen" />
+<? } else if (is_page("")) { } ?>
 
+<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
 
 </head>   
 
@@ -107,7 +109,9 @@ $('ul.sf-menu').superfish();
 		<?php if ( has_nav_menu( 'navbar' ) ) { ?>
 		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'menu_class' => 'sf-menu sf-navbar', 'theme_location' => 'navbar' ) ); 
 		} else { ?>
-		<?php wp_page_menu( 'depth=1&show_home=Home&menu_class=default-navbar' );
+		<ul class="sf-menu">
+		<?php wp_list_pages('exclude=&title_li=' );?>
+		</ul> <?
 		} ?>
 		
 	</div><!-- .nav -->
