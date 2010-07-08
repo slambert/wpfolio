@@ -363,6 +363,7 @@ div.nav {
 	font-style: normal;
 	text-decoration:none;
 	padding: .65em 1em;
+	text-align: left;
 }
 .sf-menu li {
 	background:		rgba(255, 255, 255, 0.9);
