@@ -161,6 +161,11 @@ div#header    {
 	font-style: normal;}
 /* @end */
 
+#category-description {
+	width: 600px;
+	margin: auto;
+}
+
 /* @group .entry styles */
 
 div.entry {
