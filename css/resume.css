@@ -1,6 +1,8 @@
-/* @group Resume/CV styles  */
+div.cv-style h2, div.cv-style h3 {
+	margin-bottom: 1em;
+	font-size: 1.6em;
+}
 div.cv-style ul {
-	vertical-align: 1em;
 	padding: 0;
 	margin-top: .9em;
 }
@@ -10,7 +12,6 @@ div.cv-style ul li {
 	padding: 0;
 	font-weight: bold;
 	font-style: italic;
-	font-size: 1em;
 	line-height: 0;
 }
 
@@ -23,13 +24,7 @@ div.cv-style ul li ul li  {
 	font-style: normal;
 	padding: 0;
 	margin-right: 0px;
-	margin-bottom: 1em;
 	margin-left: 6em;
 	line-height: 1.3em;
+	margin-bottom: .3em;
 }
-div.cv-style h3 {
-	margin-bottom: 1em;
-	font-size: 1.6em;
-}
-
-/* @end */
