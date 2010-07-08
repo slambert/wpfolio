@@ -2,26 +2,39 @@
 Theme Name: WPFolio Child Theme
 Theme URI: 
 Description: My changes to the WPFolio Theme.
-Author: You
-Author URI: http://yourdomain.com/about
+Author: You	
+Author URI: http://yourwebsite.com/about
 Template: WPFolio
 Version: 0.1
 Tags: WPFolio
 .
 WPFolio is free and open source under the GNU Public License
+http://wpfolio.visitsteve.com
 .
 */
 
 @import url('../WPFolio/style.css');
 
-/* below is an example of how you might add a header image */
-/* div#header {
+/* an example of how to add a header image */
+/* 
+div#header {
 	background: url(images/dummy-header.png) 0 center;
+	height: 105px;
 }
-
 div.headertext {
 	margin-left: 120px;
 }
 */
 
+/* an example of how to have square corners instead of round */
+/* .sf-menu li {
+	-moz-border-radius: .0em;
+	-webkit-border-radius: .0em;
+	}
+	
+.container, .footer { 
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	}
+*/
 /* add your changes below this line */
