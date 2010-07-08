@@ -105,7 +105,9 @@ $('ul.sf-menu').superfish();
 		<?php if ( has_nav_menu( 'navbar' ) ) { ?>
 		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'menu_class' => 'sf-menu sf-navbar', 'theme_location' => 'navbar' ) ); 
 		} else { ?>
-		<?php wp_page_menu( 'depth=1&show_home=Home&menu_class=default-navbar' );
+		<ul class="sf-menu">
+		<?php wp_list_pages('exclude=&title_li=' );?>
+		</ul> <?
 		} ?>
 		
 	</div><!-- .nav -->
