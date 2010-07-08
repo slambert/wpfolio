@@ -18,9 +18,6 @@ http://wpfolio.visitsteve.com/wiki
 <!-- calling wp_head -->
 <?php wp_head(); ?> 
 <!-- done calling wp_head -->
-<!--[if IE]>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
-<![endif]-->
 
 <!-- calling monthly archives -->
 <?php wp_get_archives('type=monthly&format=link'); ?>  
@@ -39,7 +36,7 @@ http://wpfolio.visitsteve.com/wiki
 	<?php if (function_exists('is_tag')) { if ( is_tag() ) { ?><?php bloginfo('name'); ?>&nbsp;|&nbsp;<?php  single_tag_title("Tag Archive:", true); } } ?>
 	</title>  
 
- <style type="text/css" media="all">
+<style type="text/css" media="all">
  /* CSS inserted by theme options */
 	body, #content, .title, .nav, .widgettitle { 
 		font-family : <?php echo $WPFolio_body_font; ?>;
@@ -86,7 +83,11 @@ $('ul.sf-menu').superfish();
 
 <!-- end superfish -->
 
+<!--[if IE]>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
+<![endif]-->
 
+<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
 
 </head>   
 
