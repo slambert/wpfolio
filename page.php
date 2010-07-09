@@ -18,7 +18,7 @@
 	}
 ?></a></h2>
 		
-		<?php if (is_page('resume','Resume','RESUME','CV','cv')) { ?>
+		<?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
 		<div class="cv-style">
 		<?php the_content(); ?> 
 		</div><!-- .cvstyle -->

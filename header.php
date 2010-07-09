@@ -86,7 +86,7 @@ $('ul.sf-menu').superfish();
 <!--[if IE]>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
 <![endif]-->
-<?php if (is_page('resume','CV')) { ?>
+<?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/resume.css" type="text/css" media="screen" />
 <? } else if (is_page("")) { } ?>
 
