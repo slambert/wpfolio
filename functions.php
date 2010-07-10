@@ -220,7 +220,7 @@ class Name_Date_In_Footer extends WP_Widget {
 			<p>&nbsp;</p>	
 			<p>
 			<input class="checkbox" type="checkbox" <?php checked( $instance['show_copyright'], on ); ?> id="<?php echo $this->get_field_id( 'show_copyright' ); ?>" name="<?php echo $this->get_field_name( 'show_copyright' ); ?>" />
-			<label for="<?php echo $this->get_field_id( 'show_copyright' ); ?>">Display License?</label>
+			<label for="<?php echo $this->get_field_id( 'show_copyright' ); ?>">Display License Symbol?</label>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'optional_text' ); ?>">Optional Text</label><textarea class="widefat" rows="1" cols="20" id="<?php echo $this->get_field_id('optional_text'); ?>" name="<?php echo $this->get_field_name('optional_text'); ?>"><?php echo $optional_text; ?></textarea>
