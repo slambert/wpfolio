@@ -74,7 +74,7 @@ li.sfHover > a > .sf-sub-indicator {
 /*** shadows for all but IE6 ***/
 .sf-shadow ul {
 	background:	url('../images/shadow.png') no-repeat bottom right;
-	padding: 0 7px 8px 0;
+	padding: 0 10px 9px 0;
 }
 .sf-shadow ul.sf-shadow-off {
 	background: transparent;
