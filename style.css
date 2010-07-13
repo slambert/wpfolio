@@ -96,7 +96,6 @@ h2.pagetitle {
 
 /* @group links */
 a  {     
-	color : #545454;
 	text-decoration : none;
 	font-weight : bold;
 }
@@ -108,12 +107,12 @@ a:link  {
 a:visited {    
 	/* color: ($WPFolio_body_color) */
 	text-decoration : none;
-	font-weight : bold;
+	font-weight : normal;
 }
 a:active  {     
 	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
-	font-weight : bold;
+	font-weight : normal;
 	}
 a:hover  {      
 	/*color: ($WPFolio_highlight_color) */
