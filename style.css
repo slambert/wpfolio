@@ -118,7 +118,12 @@ a:active  {
 a:hover  {      
 	/*color: ($WPFolio_highlight_color) */
 	text-decoration : none;
-	font-weight : bold;
+	font-weight : normal;
+	opacity: .75;
+}
+
+img a, a img, .wp-caption a:hover {
+	opacity: 1.0;
 }
 /* @end */
 
@@ -144,10 +149,6 @@ div#header    {
 	/*color: ($WPFolio_highlight_color) */
 	font-weight: normal; 
 	font-style: normal;  
-	}
-
-.headertext h1 a:hover { 
-	opacity: 0.25;
 	}
 
 #header h4{
@@ -469,10 +470,6 @@ div.notable-post p {
 div.notable-post a { 
 	/*color: ($WPFolio_second_color) */
 	}
-div.notable-post a:hover {
-	/*color: ($WPFolio_highlight_color) */
-	opacity: 0.75;
-	}
 
 /* @end */
 
@@ -512,11 +509,7 @@ div.notable-post a:hover {
 #sidebar a {
 	font-weight: normal;
 	font-style: normal;
-} 
-#sidebar a:hover {
-	opacity: 0.75;
-	}
-
+}
 #sidebar form {
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -557,7 +550,7 @@ ol.commentlist ul {
 }
 /* @end */
 
-/* @group footer styles */
+/* @group footer */
 
 .footer {
 	text-align : left;
@@ -572,14 +565,8 @@ ol.commentlist ul {
 	margin-top: 10px;
 	padding: 10px 30px 25px;
 }
-
 .footer a {
 	font-weight: normal;
-}
-
-.footer a:hover {
-	font-weight: normal;
-	opacity: 0.75;
 }	
 .footer .left {
 float: left;
