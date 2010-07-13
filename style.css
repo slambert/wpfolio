@@ -123,12 +123,7 @@ a:hover  {
 /* @end */
 
 /* @group header */
-/* To change your header image create an image that is 	*/
-/* 900 pixels wide by ~150 pixels high and name it 		*/
-/* header.jpg and place in the images folder in your 	*/
-/* theme directory. Then add the url as noted below.	*/
 div#header    {
-	background-image: url(); /* <-- add url to background image between these parentheses */
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	margin-left: 0;
