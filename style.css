@@ -159,6 +159,7 @@ div#header    {
 #category-description {
 	width: 600px;
 	margin: auto;
+	text-align: justify;
 }
 
 /* @group .entry styles */
@@ -337,7 +338,7 @@ div.prevnext_right :after {
 }
 /* @end */
 
-/* @new navbar */
+/* @group new navbar */
 
 div.nav {
 	margin-right: 30px;
@@ -412,6 +413,67 @@ a > .sf-sub-indicator {  /* give all except IE6 the correct values */
 	top:			.8em;
 	background-position: 0 -100px; /* use translucent arrow for modern browsers*/
 }
+
+/* @end */
+
+/* @group blog styles */
+
+div.notable {
+	width: 600px;
+	float: left;
+}
+
+div.notable-post {
+	/*border: 1px solid #c0c0c0;*/
+	padding: 0;
+	margin: 15px 0 3.5em;
+}
+
+h2.post-title a{
+	text-align: left;
+	font-size: 1.2em;
+	font-weight: normal;
+	font-style: normal;
+	padding: 0;
+	margin: 0;
+}
+.notable-post h2 {
+	padding: 0;
+	margin-top: 0px;
+	line-height: 1.2em;
+}
+
+.notable-post h3 {
+	padding: 0px;
+	margin-top: 0px;
+	line-height: 1.2em;
+	margin-bottom: .5em;
+}
+
+div.notable-post h3 a, link {
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.notable-post h4 {
+	margin-bottom: 1em;
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.notable-post p {
+	margin-bottom: 1em;
+	margin-top: 0;
+}
+
+div.notable-post a { 
+	/*color: ($WPFolio_second_color) */
+	}
+div.notable-post a:hover {
+	/*color: ($WPFolio_highlight_color) */
+	opacity: 0.75;
+	}
+
 /* @end */
 
 /* @group sidebar */
@@ -533,66 +595,6 @@ float: right;
 
 /* @end */
 
-/* @group blog styles */
-
-div.notable {
-	width: 600px;
-	float: left;
-}
-
-div.notable-post {
-	/*border: 1px solid #c0c0c0;*/
-	padding: 0;
-	margin: 15px 0 3.5em;
-}
-
-h2.post-title a{
-	text-align: left;
-	font-size: 1.2em;
-	font-weight: normal;
-	font-style: normal;
-	padding: 0;
-	margin: 0;
-}
-.notable-post h2 {
-	padding: 0;
-	margin-top: 0px;
-	line-height: 1.2em;
-}
-
-.notable-post h3 {
-	padding: 0px;
-	margin-top: 0px;
-	line-height: 1.2em;
-	margin-bottom: .5em;
-}
-
-div.notable-post h3 a, link {
-	font-weight: normal;
-	font-style: normal;
-}
-
-div.notable-post h4 {
-	margin-bottom: 1em;
-	font-weight: normal;
-	font-style: normal;
-}
-
-div.notable-post p {
-	margin-bottom: 1em;
-	margin-top: 0;
-}
-
-div.notable-post a { 
-	/*color: ($WPFolio_second_color) */
-	}
-div.notable-post a:hover {
-	/*color: ($WPFolio_highlight_color) */
-	opacity: 0.75;
-	}
-
-/* @end */
-
 /* @group gallery */
 
 .gallery {
@@ -648,7 +650,7 @@ code {
 	font-family: "Courier New", Courier, mono;
 }
 
-.info{     
+.info {     
 	margin-top : 0px;
 	margin-bottom : 5px;
 	margin-left : 10px;
@@ -657,7 +659,6 @@ code {
 	font-size : 12px;
 	font-weight : normal;
 	text-align : justify;
-	/*color: ($WPFolio_body_color) */
 	}
 
 div.search-result img {
