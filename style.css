@@ -299,17 +299,20 @@ margin: 1em auto; /*this might need to be removed*/
 }
 .prevnext a, link  {  
 	text-decoration : none;
-	padding : 3px;
+	padding : .5em;
 	}
-.prevnext a:active  { 
+.prev a:active  { 
 	text-decoration : none;
-	padding : 3px;
+	padding : .5em;
 	}
 .prevnext a:hover  {  
 	/* background-color: ($WPFolio_highlight_color) */
 	text-decoration : none;
-	padding : 3px;
-	}
+	padding : .5em;
+	background:	rgba(225, 225, 225, 0.8);
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+}
 
 .prev {
 	float: left;
