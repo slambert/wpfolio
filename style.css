@@ -123,7 +123,7 @@ a:hover  {
 	opacity: .75;
 }
 
-img a, a img, .wp-caption a:hover {
+img a, a img, .wp-caption a:hover, .wp-caption a:visited, .img-frame a:visited {
 	opacity: 1.0;
 }
 /* @end */
