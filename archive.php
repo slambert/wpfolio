@@ -84,8 +84,11 @@ if (in_array($categories_to_exclude, $reserved_names)) continue;
 </div><!-- entrycat -->
 
 <div class="entry">  
-<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380
-<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div> -->  	  
+		
+		<div class="prevnext">
+				<div class="prev"><?php previous_post_link('%link', 'Newer', TRUE); ?></div> <div class="next"><?php next_post_link('%link', 'Older', TRUE); ?></div>
+		</div> <!--.prevnext -->
+					  
 <?php else : ?>  	  
 <h2 class="center">Sorry, page not found</h2> 	 	 	 
 <?php endif; ?> 		    		  
