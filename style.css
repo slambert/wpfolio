@@ -97,17 +97,19 @@ h2.pagetitle {
 /* @group links */
 a  {     
 	text-decoration : none;
-	font-weight : bold;
+	font-weight : normal;
+	font-style: normal;
 }
 a:link  {      
 	/* color: ($WPFolio_body_color) */
 	text-decoration : none;
-	font-weight : bold;
-	}
+	font-weight : normal;
+	font-style: normal;
+}
 a:visited {    
 	/* color: ($WPFolio_body_color) */
-	text-decoration : none;
 	font-weight : normal;
+	opacity: .75;
 }
 a:active  {     
 	/*color: ($WPFolio_highlight_color) */
@@ -143,12 +145,6 @@ div#header    {
 	margin: 0;
 	
 }
-
-.headertext h1 a { 
-	/*color: ($WPFolio_highlight_color) */
-	font-weight: normal; 
-	font-style: normal;  
-	}
 
 #header h4{
 	padding-top: .15em;
@@ -189,7 +185,8 @@ div.entry.notblog p {
 .entrycat a {
 	text-align: center; 
 	padding: 10px;
-	font-weight: bold;
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* @end */
