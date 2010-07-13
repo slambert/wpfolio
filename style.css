@@ -557,7 +557,7 @@ ol.commentlist ul {
 }
 /* @end */
 
-/* @group footer styles */
+/* @group footer */
 
 .footer {
 	text-align : left;
@@ -570,26 +570,32 @@ ol.commentlist ul {
 	-moz-border-radius-bottomright: 10px;
 	-webkit-border-bottom-right-radius: 10px;
 	margin-top: 10px;
-	padding: 10px 30px 25px;
+	padding: 10px 30px 20px;
+	overflow: auto;
 }
-
 .footer a {
 	font-weight: normal;
 }
-
-.footer a:hover {
-	font-weight: normal;
-	opacity: 0.75;
+.footer .center {
+width: 100%;
+text-align: center;
 }	
 .footer .left {
+padding-top: .8em;
 float: left;
+padding-right: 10px;
+width: 440px;
 }
 
 .footer .right {
+padding-top: .8em;
 float: right;
+text-align: right;
+padding-left: 10px;
+width: 440px;
 }
 
-.footer .right img, .footer .left img {
+.footer .right img, .footer .left img, .footer .center img {
 	vertical-align: text-top;
 	}
 

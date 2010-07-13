@@ -105,6 +105,16 @@ register_taxonomy('media', 'post', array(
 	'after_title' => '',
 	));
 	
+	if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer Center',
+	'id' => 'footer_center',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '',
+	'after_title' => '',
+	));
+	
 /* END Sidebars */
 	
 /* Begin License and Name widget.*/
