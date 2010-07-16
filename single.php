@@ -19,16 +19,7 @@
 		<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
 
 			<div class="notable-post">
-				
-					<!-- START PREVIOUS/NEXT BUTTONS --> 
 
-					<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380 
-					<div class="prevnext">
-					<?php next_post_link('%link', 'newer', TRUE); ?> <?php previous_post_link('%link', 'older', TRUE); ?>
-					</div> .prevnext -->
-
-					<!-- END PREVIOUS/NEXT BUTTONS -->
-				
 				<!--POST TITLE-->		
 				<h2 class="post-title"><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h2> 
 				<!--END POST TITLE-->
@@ -40,7 +31,12 @@
 		
 				<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?> <?php the_tags('| Tags: ',', ',''); ?> | More: <?php the_category(', '); ?> <?php edit_post_link('edit this', '<span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK--></h5>
 			</div><!-- .notable-post -->
-     
+
+			<div class="prevnext">
+				<div class="prev"><?php previous_post_link('%link', 'Newer', TRUE); ?></div> <div class="next"><?php next_post_link('%link', 'Older', TRUE); ?></div>
+			</div> <!--.prevnext -->
+
+
 		<?php comments_template(); ?> 	  
 
 		</div><!-- .notable --> 
@@ -69,16 +65,7 @@
 <!-- begin post -->    
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
 
-	<div class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">   
-
-			<!-- START PREVIOUS/NEXT BUTTONS --> 
-
-			<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380 
-			<div class="prevnext">
-			<?php next_post_link('%link', 'newer', TRUE); ?> <?php previous_post_link('%link', 'older', TRUE); ?>
-			</div> .prevnext -->
-
-			<!-- END PREVIOUS/NEXT BUTTONS -->    
+	<div class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">     
 
 	<?php the_content(); ?>   
 	</div> <!-- .entry --> 		    
@@ -90,6 +77,10 @@
 
 <?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 </div><!-- .post-bottom-title -->
+
+			<div class="prevnext">
+					<div class="next"><?php next_post_link('%link', 'Earlier', TRUE); ?></div><div class="prev"><?php previous_post_link('%link', 'Later', TRUE); ?></div>
+					</div> <!--.prevnext --> 
      
 <?php comments_template(); ?> 	  
  

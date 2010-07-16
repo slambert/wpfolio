@@ -6,7 +6,7 @@ Theme URI: http://eyebeam.org/projects/wpfolio
 
 Description: A Wordpress Theme designed for artists. Created by Steve Lambert, Patrick Carey, Jeff Crouse, Daniel Wiener (and you?) at the Eyebeam Center for Art and Technology. Free software under the GPLv3 license. We welcome your code.
 
-Version: 1.5.3b0713
+Version: 1.5.3b0716
 
 Author: Eyebeam Center for Art and Technology
 
@@ -17,12 +17,13 @@ Tags: fixed-width, photoblogging, one-column, theme-options
 */
 
 /* 
-NOTE: Changing CSS affected by Theme Options
-To make changes to the CSS edit the CSS rules below.
-rules commented out and wrapped in parentheses
-i.e. ($WPFolio_body_font)      						
+NOTE: Modifying CSS 
+1. Use the included sample child theme
+2. rules commented out and wrapped in parentheses i.e. 
+($WPFolio_body_font)      						
 are handled by the header.php file and editable in
-Current Theme Options in the Wordpress dashboard.
+Current Theme Options in the Wordpress dashboard. They
+can be overridden by the child theme.
 */
 
 /* BEGIN user editable area */
@@ -39,8 +40,6 @@ body  {
 	width: 960px;
 	margin: 0px auto;
 	text-align: center;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 	padding: 0px;
 }
 
@@ -136,7 +135,7 @@ div#header    {
    	overflow: hidden;
 	text-align: left;
 	padding: 0;
-	margin: 0;
+	padding-left: 13px;
 	
 }
 
@@ -257,8 +256,6 @@ div.entry.notblog p {
 	border-style: none;
 	margin-top: 0;
 	margin-bottom: 0;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 }
 
 .alignright,img.alignright{
@@ -294,45 +291,42 @@ margin: 1em auto; /*this might need to be removed*/
 
 /* @group prev/next navigation */
 .prevnext {
-	text-decoration : none;
-	padding : 3px;
-	text-align : left;
-	font-size: 11px;
-	margin: 0px 30px 30px;
+	min-height: 1em;
+	margin: .5em 0px 2em;
 }
 .prevnext a, link  {  
 	text-decoration : none;
-	font-weight : normal;
-	padding : 3px;
+	padding : .5em;
 	}
-.prevnext a:active  { 
-	color : #FFFFFF;
+.prev a:active  { 
 	text-decoration : none;
-	font-weight : normal;
-	padding : 3px;
+	padding : .5em;
 	}
 .prevnext a:hover  {  
 	/* background-color: ($WPFolio_highlight_color) */
-	color : #ffffff;
 	text-decoration : none;
-	font-weight : normal;
-	padding : 3px;
-	}
+	padding : .5em;
+	background:	rgba(225, 225, 225, 0.8);
+}
 
-div.prevnext_left {
+.prev {
 	float: left;
+	margin-left: 150px;
+	display: block;
 }
 
-div.prevnext_right {
+.next {
 	float: right;
+	margin-right: 150px;
+	display: block;
 }
 
-div.prevnext_left :before {
+.prev :before {
 	content: "← ";
 	font-size: 1.2em;
 }
 
-div.prevnext_right :after {
+.next :after {
 	content: " →";
 	font-size: 1.2em;
 }
@@ -348,13 +342,11 @@ div.nav {
 
 /*** SUPERFISH SKIN ***/
 .sf-menu {
-	float:			left;
+	float: left;
 	font-size: .8em;
 }
 
 .sf-menu li a {
-	-moz-border-radius: .5em;
-	-webkit-border-radius: .5em;
 	font-weight: normal;
 	font-style: normal;
 	text-decoration:none;
@@ -362,29 +354,20 @@ div.nav {
 	text-align: left;
 }
 .sf-menu li {
-	background:		rgba(255, 255, 255, 0.9);
-	-moz-border-radius: .5em;
-	-webkit-border-radius: .5em;
 	margin-right: .3em;
 }
 .sf-menu li li, .sf-menu li li li {
-	border-top:	1px solid; 
-	border-left: 1px solid;
-	border-color: #ffffff;
-	background:		rgba(255, 255, 255, 0.9);
-	-moz-border-radius: 0em;
-	-webkit-border-radius: 0em;
+	/* border top/left get_theme_mod( 'background_color' ); */
 }
 .sf-menu li:hover, .sf-menu li.sfHover,
 .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
-	background:		rgba(225, 225, 225, 0.8);
+	background: rgba(225, 225, 225, 0.8);
 	outline:		0;
 }
 
 div.menu-header ul li.current-menu-item a {
-	font-weight: bold;
 	text-transform: uppercase;
-	background:		rgba(200, 200, 200, 0.3);
+	background:	none;
 }
 
 div.menu-header ul li ul.sub-menu a {
@@ -563,12 +546,6 @@ ol.commentlist ul {
 	text-align : left;
 	font-size : 11px; 
 	clear: both;
-	border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-webkit-border-bottom-right-radius: 10px;
 	margin-top: 10px;
 	padding: 10px 30px 20px;
 	overflow: auto;
