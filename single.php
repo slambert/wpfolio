@@ -79,7 +79,7 @@
 </div><!-- .post-bottom-title -->
 
 			<div class="prevnext">
-					<div class="next"><?php next_post_link('%link', 'Earlier', TRUE); ?></div><div class="prev"><?php previous_post_link('%link', 'Later', TRUE); ?></div>
+					<div class="next"><?php previous_post_link('%link', 'Later', TRUE); ?></div><div class="prev"><?php next_post_link('%link', 'Earlier', TRUE); ?></div> <!-- flipped on purpose -->
 					</div> <!--.prevnext --> 
      
 <?php comments_template(); ?> 	  
