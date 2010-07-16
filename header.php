@@ -54,14 +54,16 @@ http://wpfolio.visitsteve.com/wiki
 		color: #<?php echo $WPFolio_second_color; ?>;}
 	.headertext {
 		visibility:<?php echo$WPFolio_visible; ?>; }
-	.container, .sf-menu li {
+	.container, .sf-menu li a, .sf-menu li li, .sf-menu li li li{
 		background-color: #<?php echo $WPFolio_foreground_color; ?>;}
 	.nav, .widgettitle, div.prevnext{
 		text-transform:<?php echo $WPFolio_text_transform ?>;}
 	div.footer {
 	background-color: #<?php echo $WPFolio_foreground_color; ?>;
 	border-top: solid 1px #<?php echo get_theme_mod( 'background_color' ); ?>;}
-	.sf-menu { #<?php echo get_theme_mod( 'background_color' ); ?>;}
+	.sf-menu li li, .sf-menu li li li {
+	border-top: solid 1px #<?php echo get_theme_mod( 'background_color' ); ?>;
+	border-left: solid 1px #<?php echo get_theme_mod( 'background_color' ); ?>;} 
  </style>
 
 <!-- Superfish Support -->
