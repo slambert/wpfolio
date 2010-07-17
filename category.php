@@ -36,7 +36,7 @@
 	
 			<?php endwhile; ?>  
 
-		<div class="prevnext" align="center"><div class="prevnext_left"><?php next_posts_link('older posts') ?></div><!--.prevnext_left--> <div class="prevnext_right"><?php previous_posts_link('newer posts') ?></div><!--.prevnext_right--></div><!-- .prevnext --> 
+	<div class="prevnext"><div class="prev"><?php next_posts_link('Newer') ?></div> <div class="next"><?php previous_posts_link('Older') ?></div></div>
 			 
 			</div><!-- .notable -->	
 		<div id="sidebar">
@@ -65,23 +65,17 @@
 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>     
 			<?php /* If this is a category archive */ if (is_category()) { ?>				 		 
 				<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2> 
-			
+				<div id="category-description"><?php echo category_description(); ?></div><!--#category-description--> 
 			
 			<?php /* If this is an author archive */ } elseif (is_author()) { ?> 		  
 				<h2 class="pagetitle">Artist Archive</h2>  		    
 			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> 		  
 			<?php /*if this is a year archive */ } elseif (is_archive()) { ?>
 				<h2 class="pagetitle"><?php wp_title(''); ?></h2>
-				<div class="entry"></div><!-- .entry --><!-- why is this here? -->	
 			
 			<?php } ?>   		  		  
-
 		
-		
-		
-		<div class="entrycat"> 
-		
-		
+		<div class="entrycat"> 		
 		
 		<div class="img-container">
 		<?php while (have_posts()) : the_post(); ?> 
@@ -127,19 +121,14 @@
 		</div><!-- .entrycat -->
 	
 		
-		<div class="entry">  
-		<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380
-		<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div>-->
-		</div><!-- .entry -->
+		<div class="prevnext"><div class="prev"><?php next_posts_link('Earlier') ?></div> <div class="next"><?php previous_posts_link('Later') ?></div></div>
 		
 		</div> <!-- #content .entry -->	   				
 	<?php else : // have posts ?>  	  
 		<h2 class="center">Page not found</h2> 	 	 	 
 	<?php endif; // have posts ?> 
-
-		<?php wp_link_pages(); ?>
 		
-
+		<?php wp_link_pages(); ?>
   
 <!-- end post -->     
 

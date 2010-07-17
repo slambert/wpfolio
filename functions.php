@@ -21,7 +21,22 @@ set_post_thumbnail_size( 150, 150,true );
 
 // END - Thumbnail Function
 
+// some wp 3.0 features
 
+// This theme uses wp_nav_menu()
+add_theme_support( 'nav-menus' );
+
+register_nav_menus( array(
+	'navbar' => __( 'Top Navigation Bar', 'navbar' ),
+) );
+
+// Add default posts and comments RSS feed links to head
+add_theme_support( 'automatic-feed-links' );
+
+// This theme allows users to set a custom background
+add_custom_background();
+
+// END wp 3.0 features
 
 
 // Remove inline styles on gallery shortcode
@@ -33,7 +48,9 @@ add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
 
 // END - Remove inline styles on gallery shortcode
 
+// enqueue jQuery
 
+wp_enqueue_script('jquery');
 
 // enable threaded comments
 
@@ -48,21 +65,20 @@ add_action('get_header', 'enable_threaded_comments');
 
 // enabling a taxonomy for Media
 
+
 function create_my_taxonomies() {
 register_taxonomy('media', 'post', array( 
-	'hierarchical' => false, 
-	'label' => 'Media', 
+	'label' => 'Media',
+	'hierarchical' => false,  
 	'query_var' => true, 
-	'rewrite' => true));
+	'rewrite' => true,
+	'public' => true,
+	'show_ui' => true,
+	'show_tagcloud' => true,
+	'show_in_nav_menus' => true,));
 } add_action('init', 'create_my_taxonomies', 0);
 
-
 /* Sidebars */
-	
-	if ( function_exists('register_sidebar') )
-	    register_sidebar(array(
-		'name'=>'navbar'
-		));   
 	    
 	if ( function_exists('register_sidebar') )
 	    register_sidebar(array(
@@ -73,8 +89,8 @@ register_taxonomy('media', 'post', array(
 	register_sidebar(array(
 	'name' => 'Footer Right',
 	'id' => 'footer_right',
-	'before_widget' => '',
-	'after_widget' => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
 	'before_title' => '',
 	'after_title' => '',
 	));
@@ -83,8 +99,18 @@ register_taxonomy('media', 'post', array(
 	register_sidebar(array(
 	'name' => 'Footer Left',
 	'id' => 'footer_left',
-	'before_widget' => '',
-	'after_widget' => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '',
+	'after_title' => '',
+	));
+	
+	if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer Center',
+	'id' => 'footer_center',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
 	'before_title' => '',
 	'after_title' => '',
 	));
@@ -204,7 +230,7 @@ class Name_Date_In_Footer extends WP_Widget {
 			<p>&nbsp;</p>	
 			<p>
 			<input class="checkbox" type="checkbox" <?php checked( $instance['show_copyright'], on ); ?> id="<?php echo $this->get_field_id( 'show_copyright' ); ?>" name="<?php echo $this->get_field_name( 'show_copyright' ); ?>" />
-			<label for="<?php echo $this->get_field_id( 'show_copyright' ); ?>">Display License?</label>
+			<label for="<?php echo $this->get_field_id( 'show_copyright' ); ?>">Display License Symbol?</label>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'optional_text' ); ?>">Optional Text</label><textarea class="widefat" rows="1" cols="20" id="<?php echo $this->get_field_id('optional_text'); ?>" name="<?php echo $this->get_field_name('optional_text'); ?>"><?php echo $optional_text; ?></textarea>
@@ -338,7 +364,21 @@ $options = array (
            "id" => $shortname."_headline_font",
            "type" => "select",
            "std" =>"Helvetica",
-           "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace" )),
+           "options" => array( // wordpress bug filed: http://core.trac.wordpress.org/ticket/14220 when fixed, put fonts with more than one word in name in quotes.
+           "Arial, Helvetica Neue, Helvetica, sans-serif", 
+           "Arial Black, sans-serif", 
+           "Baskerville, Times, Times New Roman, serif", 
+           "Courier New, Courier, monospace", "Georgia, Times, Times New Roman, serif", 
+           "Gill Sans, Trebuchet MS, Calibri, sans-serif", 
+           "Helvetica, Helvetica Neue, Arial, sans-serif", 
+           "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif", 
+           "Lucida Sans, Lucida Grande, Lucida Sans Unicode, sans-serif", 
+           "Palatino, Palatino Linotype, Hoefler Text, Times, Times New Roman, serif", 
+           "Times, Times New Roman, Georgia, serif", 
+           "Verdana, Tahoma, Geneva, sans-serif"
+           )),
+           
+// font stack reccomendations from: http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
 
 //Headline Font Size
 	array( "name" => "Headline Font Size",
@@ -351,23 +391,28 @@ $options = array (
             "id" => $shortname."_body_font",
             "type" => "select",
             "std" => "Helvetica",
-            "options" => array("Arial, sans-serif", "Gill Sans, sans-serif", "Helvetica, sans-serif", "Lucida, sans-serif", "Verdana, sans-serif", 
-            "Arial Black, sans-serif", "Georgia, serif", "Palatino, serif", "Times, serif", "Courier, monospace")),
+            "options" => array(
+            "Arial, Helvetica Neue, Helvetica, sans-serif", 
+            "Courier New, Courier, monospace",
+            "Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif",
+            "Gill Sans, Calibri, Trebuchet MS, sans-serif", 
+            "Helvetica Neue, Arial, Helvetica, sans-serif", 
+            "Lucida Sans, Lucida Grande, Lucida Sans Unicode, sans-serif", 
+            "Palatino, Palatino Linotype, Georgia, Times, Times New Roman, serif", 
+            "Times, Times New Roman, Georgia, serif", 
+            "Verdana, Geneva, Tahoma, sans-serif"  
+            )),
 
-//Body Foreground Color            
-	array(	"name" => "Body Foreground Color",
+// font stack reccomendations from: http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
+
+//Body Container Color            
+	array(	"name" => "Page Container Color",
             "id" => $shortname."_foreground_color",
             "std" => "ffffff",
 			"type" => "color"),        
-
-//Body Background Color
-	array(	"name" => "Body Background Color",
-            "id" => $shortname."_body_backgroundcolor",
-            "std" => "E0E0E0",
-            "type" => "color"), 
                      
-//Body Font Color
-	array(	"name" => "Body Font Color",
+//Font Color
+	array(	"name" => "Font Color",
             "id" => $shortname."_body_color",
             "std" => "000000",
             "type" => "color"),
@@ -448,12 +493,12 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 
 <!-- WPFolio Theme Interface -->
 
-<script language="javascript" type="text/javascript" src="<?php echo bloginfo('stylesheet_directory') ?>/js/jscolor/jscolor.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo bloginfo('template_directory') ?>/js/jscolor/jscolor.js"></script>
 <div class="wrap">
 
 <h2><?php echo $themename; ?> Settings</h2>
 
-<p>Remember to set up <a href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 3 custom widgets for changing your navigation, including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
+<p>Remember to set up <a href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 4 widget areas and 2 custom widgets for including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
 
 <form method="post">
 	<table class="optiontable">
@@ -495,112 +540,68 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 <?php } }?>
 </table>
 
-<p class="submit">
-	<input name="save" type="submit" value="Save changes" />    
-	<input type="hidden" name="action" value="save" />
-</p>
+<table>
+	<tr valign="top">
+		<td>
+			<p class="submit">
+			<input name="save" type="submit" value="Save changes" />    
+			<input type="hidden" name="action" value="save" />
+			</p>
+		</td>
+		</form>
+
+<form method="post">	
+		<td>
+			<p class="submit">
+			<input name="reset" type="submit" value="Reset" />
+			<input type="hidden" name="action" value="reset" />
+			</p>
+		</td>
+	</tr>
+</table>
+
 </form>
 
-<form method="post">
-<p class="submit">
-	<input name="reset" type="submit" value="Reset" />
-	<input type="hidden" name="action" value="reset" />
-</p>
+<h2>WPFolio Community</h2>
 
-</form>
-
-<?php
-}
-
-function mytheme_wp_head() { ?>
-<link href="<?php bloginfo('template_directory'); ?>/style.css" rel="stylesheet" type="text/css" />
-<?php }
-	add_action('wp_head', 'mytheme_wp_head');
-	add_action('admin_menu', 'mytheme_add_admin'); ?>
-
+<h3>Support Site</h3>
+<p>If you haven't been already, check out the <a href="http://wpfolio.visitsteve.com">WPFolio Wiki</a> for help.</p>
 	
-<?php                                             
-// Yearly Archives Widget
+<h3>Sign up for email updates</h3>
+<p>Receive emails when new versions of WPFolio are available and other news to help you with updating. Your information will never be shared. Messages will be sent around 1-2 times per month, often less.</p>
 
-    function wpfolio_archives($args) {
-	extract($args);
-	$options = get_option('widget_archives');
-	$c = $options['count'] ? '1' : '0';
-	$d = $options['dropdown'] ? '1' : '0';
-	$title = empty($options['title']) ? __('Archives') : apply_filters('widget_title', $options['title']);
+	<form action="http://scripts.dreamhost.com/add_list.cgi" method="post"> 
+	<input name="list" type="hidden" value="update" />
+	<input name="domain" type="hidden" value="http://wpfolio.visitsteve.com" />
+	<input name="url" type="hidden" />
+	<input name="unsuburl" type="hidden" />
+	<input name="alreadyonurl" type="hidden" />
+	<input name="notonurl" type="hidden" />
+	<input name="invalidurl" type="hidden" />
+	<input name="emailconfirmurl" type="hidden" />
+	<input name="emailit" type="hidden" value="1" />
+	Name: <input name="name" /> 
+	E-mail: <input name="email" /> <br />
+	<input name="submit" type="submit" value="Join Our Announcement List" />
+	<input name="unsub" type="submit" value="Unsubscribe" />
+	</form>
+</p>
 
-	echo $before_widget;
-	echo $before_title . $title . $after_title;
-	if($d) {
-?>
-	<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo attribute_escape(__('Select Year')); ?></option> <?php wp_get_archives("type=yearly&format=option&show_post_count=$c"); ?> </select>
-<?php } else { ?>
-		<ul>
-		<?php wp_get_archives("type=yearly&show_post_count=$c"); ?>
-		</ul>
-<?php
-	}
-	echo $after_widget;
-}
-register_sidebar_widget('WPFolio Yearly Archives', 'wpfolio_archives'); 
+<h3>Donate to support WPFolio and Free Software</h3>
 
+<p>WPFolio is a labor of love. We make it to help you.</p>
 
+<p>WPFolio took us <em>a lot</em> of time to build, develop, and document. Did our project save you time? Save you the costs of a designer or webmaster? Would you have otherwise needed a tutor? If you met us in person, would you buy us a beer? A dinner? Would you like to see new features implemented? Please consider making a donation based on what you think WPFolio was worth to you. Although we'll likely never make back what we've put into this, it does mean a lot.</p>
 
-// CATEGORY ARCHIVE WIDGET 
-	function wpfolio_widget_categories($args, $widget_args = 1) {
-	extract($args);
-    $title = empty($options[$number]['title']) ? __('Category') : apply_filters('widget_title', $options[$number]['title']);
+<p>WPFolio is Free Software under the <a href="http://www.gnu.org/licenses/quick-guide-gplv3.html">GPLv3</a>. Our <a href="http://wpfolio.visitsteve.com">WPFolio Wiki</a> includes instructions to help you make the most of the WPFolio theme. You are free to modify, share, and distribute WPFolio however you like. We do all this because we want artists to have great websites using the best, free and open source software available. You can contribute by helping with the <a href="http://github.com/slambert/WPFolio/">development of the theme</a>, or by donating. </p>
 
-    echo $before_widget;
-    echo $before_title . $title . $after_title;
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post"> <input name="cmd" type="hidden" value="_s-xclick" /> <input name="hosted_button_id" type="hidden" value="ZMXNTHG3LHX8Q" /> <input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" type="image" /> </form>
 
-    $order = get_option('wpfolio_categories_order');
-    $order = explode(",", $order);
-    
-    foreach($order as $cat_name):
-    $cat_name = trim($cat_name);
-    $cat_id = get_cat_id($cat_name);	
-    $this_category = get_category($cat_id);
-    
-    $class =  is_category($cat_id)  ? "current-cat" : "";
-?>
-    <ul>
-	<li class="<?php print $class; ?>"><a href="<?php echo get_category_link($cat_id);?>"><?php echo $this_category->name ?></a></li>
-    </ul>
-<?php
-    endforeach;
+<p>Thanks.</p>
+<p> </p>
+<?php }
 
-    echo $after_widget;
-}
-
-
-function wpfolio_widget_categories_control( $widget_args=null ) {
-	global $wp_registered_widgets;
-
-	if (!empty($_POST['widget-wpfolio-categories-submit'])) {
-		update_option('wpfolio_categories_order', $_POST['widget-wpfolio-categories-order']);
-	}
-	$order = get_option('wpfolio_categories_order');
-?>
-		<p>
-			<label for="categories-order-<?php echo $number; ?>">
-				<?php _e( 'List categories in order they will appear in the menu (i.e. painting, drawing, art work, etc):' ); ?>
-				<input class="widefat" id="wpfolio-categories-order" name="widget-wpfolio-categories-order" type="text" value="<?php echo $order; ?>" />
-				<small><?php _e( 'Note: no dashes or special characters.' ); ?></small>
-			</label>
-		</p>
-
-		<input type="hidden" name="widget-wpfolio-categories-submit" value="1" />
-		
-<?php
-}
-
-
-
-wp_register_sidebar_widget('wpfolio_categories', __("WPFolio Categories"), 'wpfolio_widget_categories');
-wp_register_widget_control('wpfolio_categories', __("WPFolio Categories"),  'wpfolio_widget_categories_control');
-
-
+add_action('admin_menu', 'mytheme_add_admin');
 
 
 //  Columned shortcode function - taken from http://bui4ever.com/web/wordpress-how-to-break-content-into-two-columns/

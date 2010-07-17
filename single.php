@@ -19,29 +19,26 @@
 		<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
 
 			<div class="notable-post">
-				
-					<!-- START PREVIOUS/NEXT BUTTONS --> 
 
-					<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380 
-					<div class="prevnext">
-					<?php next_post_link('%link', 'newer', TRUE); ?> <?php previous_post_link('%link', 'older', TRUE); ?>
-					</div> .prevnext -->
-
-					<!-- END PREVIOUS/NEXT BUTTONS -->
-				
 				<!--POST TITLE-->		
 				<h2 class="post-title"><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h2> 
 				<!--END POST TITLE-->
 
 				<h4><?php the_date('F d, Y', '', ''); ?></h4>
 				<?php the_content('continue...'); ?>
+				
+				<?php wp_link_pages(); ?>
 		
 				<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?> <?php the_tags('| Tags: ',', ',''); ?> | More: <?php the_category(', '); ?> <?php edit_post_link('edit this', '<span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK--></h5>
 			</div><!-- .notable-post -->
-     
+
+			<div class="prevnext">
+				<div class="prev"><?php previous_post_link('%link', 'Newer', TRUE); ?></div> <div class="next"><?php next_post_link('%link', 'Older', TRUE); ?></div>
+			</div> <!--.prevnext -->
+
+
 		<?php comments_template(); ?> 	  
 
-		<?php wp_link_pages(); ?>
 		</div><!-- .notable --> 
 
 		<div id="sidebar">
@@ -68,29 +65,24 @@
 <!-- begin post -->    
 <?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
 
-	<div class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">   
-
-			<!-- START PREVIOUS/NEXT BUTTONS --> 
-
-			<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380 
-			<div class="prevnext">
-			<?php next_post_link('%link', 'newer', TRUE); ?> <?php previous_post_link('%link', 'older', TRUE); ?>
-			</div> .prevnext -->
-
-			<!-- END PREVIOUS/NEXT BUTTONS -->    
+	<div class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">     
 
 	<?php the_content(); ?>   
 	</div> <!-- .entry --> 		    
 
+	<?php wp_link_pages(); ?>
+	
 <div class="post-bottom-title">   
-<b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'media', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>  <?php comments_popup_link(__('| Comments (0)'), __('| Comments (1)'), __('| Comments (%)'), __(''), __('')); ?>
+<strong><a href="<?php the_permalink() ?>" title="Permalink for <?php the_title_attribute(); ?>"><?php the_title(); ?></a></strong>  | <?php the_time('Y') ?> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'media', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>  <?php comments_popup_link(__('| Comments (0)'), __('| Comments (1)'), __('| Comments (%)'), __(''), __('')); ?>
 
 <?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 </div><!-- .post-bottom-title -->
+
+			<div class="prevnext">
+					<div class="next"><?php previous_post_link('%link', 'Later', TRUE); ?></div><div class="prev"><?php next_post_link('%link', 'Earlier', TRUE); ?></div> <!-- flipped on purpose -->
+					</div> <!--.prevnext --> 
      
 <?php comments_template(); ?> 	  
-
-<?php wp_link_pages(); ?>
  
 </div><!-- #content -->
 

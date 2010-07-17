@@ -1,12 +1,12 @@
 /*
 
-Theme Name: WPFolio 
+Theme Name: WPFolio
 
 Theme URI: http://eyebeam.org/projects/wpfolio
 
 Description: A Wordpress Theme designed for artists. Created by Steve Lambert, Patrick Carey, Jeff Crouse, Daniel Wiener (and you?) at the Eyebeam Center for Art and Technology. Free software under the GPLv3 license. We welcome your code.
 
-Version: 1.5.2.1
+Version: 1.5.3b0716
 
 Author: Eyebeam Center for Art and Technology
 
@@ -16,33 +16,31 @@ Tags: fixed-width, photoblogging, one-column, theme-options
 
 */
 
-/* NOTE: Changing CSS affected by Theme Options 		*/
-/* To make changes to the CSS edit the CSS rules below. */
-/* rules commented out and wrapped in parentheses		*/
-/* i.e. ($WPFolio_body_font)      						*/
-/* are handled by the header.php file and editable in 	*/
-/* Current Theme Options in the Wordpress dashboard. 	*/
+/*
+NOTE: Modifying CSS
+1. Use the included sample child theme
+2. rules commented out and wrapped in parentheses i.e.
+($WPFolio_body_font)
+are handled by the header.php file and editable in
+Current Theme Options in the Wordpress dashboard. They
+can be overridden by the child theme.
+*/
 
 /* BEGIN user editable area */
-body  { 
-	/* font-family : ($WPFolio_body_font)  */
-	/* background-color: ($WPFolio_body_backgroundcolor)  */
-	/* color: ($WPFolio_body_color)   */
-	padding: 5px; 
+body {
+	/* font-family : ($WPFolio_body_font)*/
+	/* color: ($WPFolio_body_color)*/
+	padding: 5px;
 }
-
-.container { 
-	/* color: ($WPFolio_body_color)   */
-	/* background-color: ($WPFolio_foreground_color)  */
+.container {
+	/* color: ($WPFolio_body_color)*/
+	/* background-color: ($WPFolio_foreground_color)*/
 	margin-top : 30px;
 	width: 960px;
 	margin: 0px auto;
 	text-align: center;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 	padding: 0px;
 }
-
 #content {
 	font-weight : normal;
 	text-align : left;
@@ -52,77 +50,70 @@ body  {
 	padding: 0;
 	margin: 30px 30px 5px;
 }
-
 /* @group htags */
 
 h1,h2,h3,h4,h5,h6,form,fieldset {
-	/* font-family: ($WPFolio_headline_font)  */
+	/* font-family: ($WPFolio_headline_font)*/
 	margin:0;
 	padding:0;
 }
-
-h1 { 
-	/*font-size: ($WPFolio_headline_size)  */}
-h2 { 
-	/*color: (WPFolio_highlight_color)  */ 
+h1 {
+	/*font-size: ($WPFolio_headline_size)*/
+}
+h2 {
+	/*color: (WPFolio_highlight_color)*/
 }
 h3 {
-	/*color: ($WPFolio_highlight_color)  */
+	/*color: ($WPFolio_highlight_color)*/
 }
 h4 {
-	/*color: ($WPFolio_second_color)  */
+	/*color: ($WPFolio_second_color)*/
 }
 .low {
 	display:none;
 }
-
 #content h2, #content h3 {
 	font-weight: normal;
 	letter-spacing: .1em;
 	padding-top: 0;
 }
-
 h2.pagetitle {
 	text-transform: uppercase;
 	text-align: center;
 }
+.home h2.pagetitle {
+	display: none;
+}
 /* @end */
-
 /* @group links */
-a  {     
+a {
 	color : #545454;
 	text-decoration : none;
 	font-weight : bold;
 }
-a:link  {      
-	/* color: ($WPFolio_body_color) */
-	text-decoration : none;
-	font-weight : bold;
-	}
-a:visited {    
-	/* color: ($WPFolio_body_color) */
+a:link {
+	/* color: ($WPFolio_body_color)*/
 	text-decoration : none;
 	font-weight : bold;
 }
-a:active  {     
-	/*color: ($WPFolio_highlight_color) */
+a:visited {
+	/* color: ($WPFolio_body_color)*/
 	text-decoration : none;
 	font-weight : bold;
-	}
-a:hover  {      
-	/*color: ($WPFolio_highlight_color) */
+}
+a:active {
+	/*color: ($WPFolio_highlight_color)*/
+	text-decoration : none;
+	font-weight : bold;
+}
+a:hover {
+	/*color: ($WPFolio_highlight_color)*/
 	text-decoration : none;
 	font-weight : bold;
 }
 /* @end */
-
 /* @group header */
-/* To change your header image create an image that is 	*/
-/* 900 pixels wide by ~150 pixels high and name it 		*/
-/* header.jpg and place in the images folder in your 	*/
-/* theme directory. Then add the url as noted below.	*/
-div#header    {
-	background-image: url(); /* <-- add url to background image between these parentheses */
+div#header {
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	margin-left: 0;
@@ -131,44 +122,40 @@ div#header    {
 	min-height: 50px;
 	overflow: hidden;
 }
-.headertext {  
+.headertext {
    	overflow: hidden;
 	text-align: left;
 	padding: 0;
-	margin: 0;
-	
+	padding-left: 13px;
 }
-
-.headertext h1 a { 
-	/*color: ($WPFolio_highlight_color) */
-	font-weight: normal; 
-	font-style: normal;  
-	}
-
-.headertext h1 a:hover { 
+.headertext h1 a {
+	/*color: ($WPFolio_highlight_color)*/
+	font-weight: normal;
+	font-style: normal;
+}
+.headertext h1 a:hover {
 	opacity: 0.25;
-	}
-
+}
 #header h4{
 	padding-top: .15em;
 	font-weight: normal;
 	font-style: normal;}
 /* @end */
-
+#category-description {
+	width: 600px;
+	margin: auto;
+	text-align: justify;
+}
 /* @group .entry styles */
-
 div.entry {
 	padding : 0px;
 	font-size : 11px;
-	text-align : center; 
 	clear:both;
 	margin: 0px auto 20px;
 }
-
 div.entry.notblog p {
 	text-align: left;
 }
-
 .entrycat {
 	margin-top : 0px;
 	margin-bottom : 0px;
@@ -179,29 +166,25 @@ div.entry.notblog p {
 	font-weight : normal;
 	line-height : 16px;
 	text-align : center;
-	}
+}
 .entrycat a {
-	text-align: center; 
+	text-align: center;
 	padding: 10px;
 	font-weight: bold;
 }
-
 /* @end */
-
 /* @group images */
 .entry img {
 	margin : 0 0 0px;
 	padding : 8px;
 	border : 1px solid #c0c0c0;
-	}
-
+}
 .entrycat img {
 	margin : 3px 3px 3px 3px;
 	padding : 5px;
 	border : 1px solid #c0c0c0;
 	margin-bottom: 2px;
-	}
-	
+}
 .wp-caption {
 	border: 1px solid #ddd;
 	text-align: center;
@@ -214,67 +197,58 @@ div.entry.notblog p {
 	border-radius: 3px;
 	font-style: italic;
 }
-
 .wp-caption img {
 	margin: 0;
 	padding: 0;
 	border: 0 none;
 }
-
-.img-frame { 
-	width: 25%; 
-	min-width: 220px; 
-	height:225px; 
-	float: left; 
-	display: inline; 
-	margin-top: 10px; 
-	}
-.img-container { 
-	text-align:center; 
-	margin-right:auto; 
-	margin-left: auto; 
-	display: inline-table; 
-	}
-.img-frame-caption { 
-	width:60%; 
-	margin-left:auto; 
+.img-frame {
+	width: 25%;
+	min-width: 220px;
+	height:225px;
+	float: left;
+	display: inline;
+	margin-top: 10px;
+}
+.img-container {
+	text-align:center;
 	margin-right:auto;
-	}
+	margin-left: auto;
+	display: inline-table;
+}
+.img-frame-caption {
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+}
 .img-frame-caption a {
 	font-weight: normal;
 	font-style: normal;
 	padding: 0;
 }
-
 .page p img {
 	padding: 0;
 	border-style: none;
 	margin-top: 0;
 	margin-bottom: 0;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 }
-
 .alignright,img.alignright{
-float:right;
+	float:right;
 	margin-right: 0;
 	margin-left: 1em;
 	margin-bottom: 0;
 }
-
 .alignleft,img.alignleft{
-float:left;
+	float:left;
 	margin-right: 1em;
 	margin-left: 0;
 	margin-bottom: 0;
 }
-
 .aligncenter, img.aligncenter{
-display:block;
-text-align:center;
-margin: 1em auto; /*this might need to be removed*/
+	display:block;
+	text-align:center;
+	margin: 1em auto;/*this might need to be removed*/
 }
-
 .notable .alignnone{
 	/* alignnone defaults to center for artworks, but not for blog */
 }
@@ -283,125 +257,167 @@ margin: 1em auto; /*this might need to be removed*/
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-	}
+}
 /* @end */
-
 /* @group prev/next navigation */
 .prevnext {
-	text-decoration : none;
-	padding : 3px;
-	text-align : left;
-	font-size: 11px;
-	margin: 0px 30px 30px;
+	min-height: 1em;
+	margin: .5em 0px 2em;
 }
-.prevnext a, link  {  
+.prevnext a, link {
 	text-decoration : none;
-	font-weight : normal;
-	padding : 3px;
-	}
-.prevnext a:active  { 
-	color : #FFFFFF;
+	padding : .5em;
+}
+.prev a:active {
 	text-decoration : none;
-	font-weight : normal;
-	padding : 3px;
-	}
-.prevnext a:hover  {  
-	/* background-color: ($WPFolio_highlight_color) */
-	color : #ffffff;
+	padding : .5em;
+}
+.prevnext a:hover {
+	/* background-color: ($WPFolio_highlight_color)*/
 	text-decoration : none;
-	font-weight : normal;
-	padding : 3px;
-	}
-
-div.prevnext_left {
+	padding : .5em;
+	background:	rgba(225, 225, 225, 0.8);
+}
+.prev {
 	float: left;
+	margin-left: 150px;
+	display: block;
 }
-
-div.prevnext_right {
+.next {
 	float: right;
+	margin-right: 150px;
+	display: block;
 }
-
-div.prevnext_left :before {
+.prev :before {
 	content: "← ";
 	font-size: 1.2em;
 }
-
-div.prevnext_right :after {
+.next :after {
 	content: " →";
 	font-size: 1.2em;
 }
 /* @end */
-
-/* @group navbar */
-div.nav .widgettitle  { 
-	/* font-family : ($WPFolio_body_font)  */
-	display: none; 
-	padding: 0em;
-	}
-.nav {
-	/* font-family: ($WPFolio_headline_font) */
-	/*color: ($WPFolio_second_color) */
-	text-decoration : none;
-	font-weight : bold;
-	padding: 0 30px;
-	margin: 0;
-	font-size: 12px;
+/* @group new navbar */
+div.nav {
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-bottom: 3em;
 }
-
-.nav ul, .widgettitle ul { 
-	float:left;
-	margin: 0;
-	padding: 0;
+/*** SUPERFISH SKIN ***/
+.sf-menu {
+	float: left;
+	font-size: .8em;
 }
-
-.nav li, widgettitle li { 
-	list-style: none; 
-	display: inline;
-	margin: 0;
-	padding: 0;
+.sf-menu li a {
+	font-weight: normal;
+	font-style: normal;
+	text-decoration:none;
+	padding: .65em 1em;
+	text-align: left;
 }
-.nav a, link   {  
-	/*border : 1px solid #c0c0c0;*/
-	color : #545454;
-	text-decoration : none;
-	font-weight : normal;
-	margin-right: 2em;
+.sf-menu li {
+	margin-right: .3em;
 }
-.nav a:active  {  
-	/*border: 1px solid #c0c0c0;*/
-	/*color: ($WPFolio_highlight_color) */
-	text-decoration : none;
-	font-weight : normal;
-	opacity: 0.25;
+.sf-menu li li, .sf-menu li li li {
+	/* border top/left get_theme_mod( 'background_color' );*/
 }
-.nav a:hover  {  
-	/*border: 1px solid #c0c0c0;*/
-	/*color: ($WPFolio_highlight_color) */
-	text-decoration : none;
-	font-weight : normal;
-	opacity: 0.75;
-	}
-
-div.nav li.current_page_item a, div.nav li.current-cat a {
-	font-weight: bold;
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background: rgba(225, 225, 225, 0.8);
+	outline:		0;
+}
+div.menu-header ul li.current-menu-item a {
 	text-transform: uppercase;
+	background:	none;
+}
+div.menu-header ul li ul.sub-menu a {
+	font-weight: normal;
+	text-transform: none;
+	background: none;
+}
+/*** arrows **/
+.sf-menu a.sf-with-ul {
+	padding-right: 	1em;
+	min-width:		1px;/* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position:		absolute;
+	display:		block;
+	right:			.75em;
+	top:			1.05em;/* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	background:		url('../images/arrows-ffffff.png') no-repeat -10px -100px;/* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top:			.8em;
+	background-position: 0 -100px;/* use translucent arrow for modern browsers*/
 }
 /* @end */
-
+/* @group blog styles */
+div.notable {
+	width: 600px;
+	float: left;
+}
+div.notable-post {
+	/*border: 1px solid #c0c0c0;*/
+	padding: 0;
+	margin: 15px 0 3.5em;
+}
+h2.post-title a{
+	text-align: left;
+	font-size: 1.2em;
+	font-weight: normal;
+	font-style: normal;
+	padding: 0;
+	margin: 0;
+}
+.notable-post h2 {
+	padding: 0;
+	margin-top: 0px;
+	line-height: 1.2em;
+}
+.notable-post h3 {
+	padding: 0px;
+	margin-top: 0px;
+	line-height: 1.2em;
+	margin-bottom: .5em;
+}
+div.notable-post h3 a, link {
+	font-weight: normal;
+	font-style: normal;
+}
+div.notable-post h4 {
+	margin-bottom: 1em;
+	font-weight: normal;
+	font-style: normal;
+}
+div.notable-post p {
+	margin-bottom: 1em;
+	margin-top: 0;
+}
+div.notable-post a {
+	/*color: ($WPFolio_second_color)*/
+}
+div.notable-post a:hover {
+	/*color: ($WPFolio_highlight_color)*/
+	opacity: 0.75;
+}
+/* @end */
 /* @group sidebar */
-
-#sidebar { 
-	/* color: ($WPFolio_highlight_color) */
+#sidebar {
+	/* color: ($WPFolio_highlight_color)*/
 	font-size : 12px;
 	font-weight : normal;
 	text-align : left;
 	list-style:none;
 	width: 240px;
 	float: right;
-	margin-top: 20px;
+	margin-top: 12px;
 	line-height: 1.5em;
 }
-
 #sidebar h2.widgettitle {
 	padding: 0;
 	font-size: 12px;
@@ -424,29 +440,24 @@ div.nav li.current_page_item a, div.nav li.current-cat a {
 #sidebar a {
 	font-weight: normal;
 	font-style: normal;
-} 
+}
 #sidebar a:hover {
 	opacity: 0.75;
-	}
-
+}
 #sidebar form {
 	padding-top: 1em;
 	padding-bottom: 1em;
 }
-
 #sidebar #searchform div label.screen-reader-text {
 	display: none;
 }
-
 #sidebar .widget_calendar table#wp-calendar {
 	margin-right: auto;
 	margin-left: auto;
 	width: 240px;
 	text-align: center;
 }
-
 /* @end */
-
 /* @group comments */
 #comments{
 	margin-top: 1em;
@@ -456,155 +467,50 @@ div.nav li.current_page_item a, div.nav li.current-cat a {
 	text-align : justify;
 	margin-bottom : 10px;
 	padding : 10px;
-	}
-
+}
 .comment-author-admin {
 	background: url(images/grey-to-white-gradient.png) repeat-x scroll;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
-
 ol.commentlist ul {
 	list-style-type: none;
 }
 /* @end */
-
-/* @group footer styles */
-
+/* @group footer */
 .footer {
 	text-align : left;
-	font-size : 11px; 
+	font-size : 11px;
 	clear: both;
-	border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-webkit-border-bottom-right-radius: 10px;
 	margin-top: 10px;
-	padding: 10px 30px 25px;
+	padding: 10px 30px 20px;
+	overflow: auto;
 }
-
 .footer a {
 	font-weight: normal;
 }
-
-.footer a:hover {
-	font-weight: normal;
-	opacity: 0.75;
-}	
+.footer .center {
+width: 100%;
+text-align: center;
+}
 .footer .left {
+padding-top: .8em;
 float: left;
+padding-right: 10px;
+width: 440px;
 }
-
 .footer .right {
+padding-top: .8em;
 float: right;
+text-align: right;
+padding-left: 10px;
+width: 440px;
 }
-
-.footer .right img, .footer .left img {
+.footer .right img, .footer .left img, .footer .center img {
 	vertical-align: text-top;
-	}
-
+}
 /* @end */
-
-/* @group blog styles */
-
-div.notable {
-	width: 600px;
-	float: left;
-}
-
-div.notable-post {
-	/*border: 1px solid #c0c0c0;*/
-	padding: 0;
-	margin: 20px 0 3em;
-}
-
-h2.post-title a{
-	text-align: left;
-	font-size: 1.2em;
-	font-weight: normal;
-	font-style: normal;
-	padding: 0;
-	margin: 0;
-}
-.notable-post h2 {
-	padding: 0;
-	margin-top: 0px;
-	line-height: 1.2em;
-}
-
-.notable-post h3 {
-	padding: 0px;
-	margin-top: 0px;
-	line-height: 1.2em;
-	margin-bottom: .5em;
-}
-
-div.notable-post h3 a, link {
-	font-weight: normal;
-	font-style: normal;
-}
-
-div.notable-post h4 {
-	margin-bottom: 1em;
-	font-weight: normal;
-	font-style: normal;
-}
-
-div.notable-post p {
-	margin-bottom: 1em;
-	margin-top: 0;
-}
-
-div.notable-post a { 
-	/*color: ($WPFolio_second_color) */
-	}
-div.notable-post a:hover {
-	/*color: ($WPFolio_highlight_color) */
-	opacity: 0.75;
-	}
-
-/* @end */
-
-/* @group Resume/CV styles - selectors repeated to cover every upper/lower case option of resume and cv  */
-div.RESUME ul, div.resume ul,div.Resume ul,div.CV ul,div.cv ul{
-	vertical-align: 1em;
-	padding: 0;
-	margin-top: .9em;
-}
-div.RESUME ul li, div.resume ul li, div.Resume ul li, div.CV ul li, div.cv ul li {
-	list-style: none;
-	vertical-align: -1.5em;
-	padding: 0;
-	font-weight: bold;
-	font-style: italic;
-	font-size: 1em;
-	line-height: 0;
-}
-
-div.RESUME ul li ul li, div.resume ul li ul li, div.Resume ul li ul li, div.CV ul li ul li,.cv ul li ul li  {
-	font-size: 1em;
-	font-weight: normal;
-	bottom: 1.8em;
-	position: relative;
-	vertical-align: 0em;
-	font-style: normal;
-	padding: 0;
-	margin-right: 0px;
-	margin-bottom: 1em;
-	margin-left: 6em;
-	line-height: 1.3em;
-}
-div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
-	margin-bottom: 1em;
-	font-size: 1.6em;
-}
-
-/* @end */
-
 /* @group gallery */
-
 .gallery {
 	margin: auto;
 }
@@ -620,11 +526,8 @@ div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
 .gallery-caption {
 	margin-left: 0;
 }
-
 /* @end */
-
 /* @group edit-link styles */
-
 .edit-link a:before {
 	content:"✎ ";
 	font-size: 1.3em;
@@ -636,11 +539,8 @@ div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
 	font-weight: normal;
 	padding: .5em .8em 2px .5em;
 }
-
-
 /* @end */
-
-.post-bottom-title {  
+.post-bottom-title {
 	margin-top : 5px;
 	margin-bottom : 0px;
 	margin-left : 30px;
@@ -648,17 +548,14 @@ div.RESUME h3, div.resume h3, div.Resume h3, div.CV h3, div.cv h3 {
 	text-align : center;
 	font-size : 11px;
 }
-
 .Page.not.found p {
 	font-size: 1.5em;
-	}
-
-code {    
+}
+code {
 	color : #8B1D1D;
 	font-family: "Courier New", Courier, mono;
 }
-
-.info{     
+.info {
 	margin-top : 0px;
 	margin-bottom : 5px;
 	margin-left : 10px;
@@ -667,15 +564,16 @@ code {
 	font-size : 12px;
 	font-weight : normal;
 	text-align : justify;
-	/*color: ($WPFolio_body_color) */
-	}
-
-div.search-result img {
+}
+div.archive-result img {
 	float: left;
 	margin-right: 2em;
 	margin-bottom: 1em;
 }
-
 .clear-both {
 	clear: both;
+}
+img#wpstats {
+position: absolute;
+left: -999em;
 }

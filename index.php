@@ -14,8 +14,8 @@
 
 	<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
 		
-
-		<div class="<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">   
+		<div class="<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 				<!-- START PREVIOUS/NEXT BUTTONS --> 
 
@@ -26,9 +26,12 @@
 
 				<!-- END PREVIOUS/NEXT BUTTONS -->    
 
-		<?php the_content(); ?>   
-		</div> <!-- .entry --> 		    
-
+		<?php the_content(); ?>  
+		</div> <!-- #post-id --> 
+		</div> <!-- .category-nicename-->  		    
+		
+		<?php wp_link_pages(); ?>
+		
 		<div class="post-bottom-title">   
 		<b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php the_tags('| Tags: ',', ',''); ?>  | <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>
 
@@ -36,9 +39,6 @@
 		</div><!-- .post-bottom-title -->
      
 	<?php comments_template(); ?> 	  
-
-	<?php wp_link_pages(); ?>
-
 
 <!-- <?php trackback_rdf(); ?> -->    
 <?php endforeach; else: ?> <?php _e('Sorry, no posts matched your criteria.'); ?>

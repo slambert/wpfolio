@@ -8,13 +8,6 @@ Got a great addition? Send us code, or fork the project in github and let us kno
 
 ======CHANGELOG=====
 
-== Version 1.5.1.20100509 ==
+try here: http://github.com/slambert/WPFolio/commits/master
 
-- added single.php with conditional tag - individual blog post and portfolio post are styled differently
- - blog posts have more uniform style
-- added note on basic install that tells people to set a static home page
-- simplified, cleaner CSS
- - removed php in CSS
- - more uniform headline styles
-- general code cleanup
-- removed auto email on 404, it wasn't working.
+or here: http://wpfolio.visitsteve.com

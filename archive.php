@@ -8,90 +8,94 @@
 <!-- generated with archive.php -->
 
 <!-- begin post -->    
-<div id="content" class="entry">  	  	 
-<?php if (have_posts()) : ?>  		     
-<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>     <?php /* If this is a category archive */ if (is_category()) { ?>				 		 
-<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2> 
+<div id="content" class="entry archive notable">
+	  	 
+	  	<?php // This code is adapted from the kubrick theme's archive.php ?> 
+		<?php if (have_posts()) : ?>
 
+ 	  <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
+ 	  <?php /* If this is a tag archive */ if (is_tag()) { ?>
+ 	  
+		<h2 class="pagetitle">Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h2>
+	  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
+		<h2 class="pagetitle">Artist Archive</h2>
+ 	  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+		<h2 class="pagetitle">Archives</h2>
+ 	  <?php } ?>
 
-<?php /* If this is an author archive */ } elseif (is_author()) { ?> 		  
-<h2 class="pagetitle">Artist Archive</h2>  		    
-<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> 		  
-<?php /*if this is a year archive */ } elseif (is_archive()) { ?>
-<h2 class="pagetitle"><?php wp_title(''); ?></h2>
+		<?php while (have_posts()) : the_post(); ?>
 
-<!-- START: why is this here? -->
-<div class="entry"></div><!-- .entry -->
-<!-- END: why is this here? -->
+<div class="notable-post">
+			<div class="archive-result">
+				
+				<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>">	
+				
+				<?php 
+				
+				
+				#If there is a post thumbnail , it will display. If not it is the thumb function. These
+				# can be edited in the functions.php file.
+				
+				if(has_post_thumbnail()){
+					the_post_thumbnail();
+				}
+				else{
+			
+				
+				echo get_thumb($post->ID); 
+			}
+				
+			
+				
+				
+				?>
+				
+				
+				
+				</a> 
+					
+			<!--POST TITLE-->		
+			<h2 class="post-title"><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2> 
+			<!--END POST TITLE-->
 
-<?php } ?>   		  		  	 	
+			<h4><?php the_date('F d, Y', '', ''); ?></h4>
 
-
-
-<div class="entrycat"> 
-
-
-
-<div class="img-container">
-
-<?php while (have_posts()) : the_post(); ?> 
-<?php /* if(in_category('news','latest', 'updates', 'blog', 'notable')) continue; */ ?>
-<?php
-$reserved_names = array('news','latest', 'updates', 'blog', 'notable','News','Latest', 'Updates', 'Blog', 'Notable'); 
-$category = get_the_category(); 
-$categories_to_exclude = $category[0]->cat_name;
-if (in_array($categories_to_exclude, $reserved_names)) continue;
-?>
-
-<div class="img-frame">
+			<?php the_excerpt('continue...'); ?>
 	
-	<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>">
-	
-	
-	
-	
-	<?php 
-	
-	
-	#If there is a post thumbnail , it will display. If not it is the thumb function. These
-	# can be edited in the functions.php file.
-	
-	if(has_post_thumbnail()){
-		the_post_thumbnail();
-	}
-	else{
+			<h5 class="clear-both"><?php the_time('Y') ?> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'media', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>
+<?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?> <?php edit_post_link('edit this', '<span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK--></h5>
+			</div><!-- .archive-result -->	
+		</div><!-- .notable-post -->
 
-	
-	echo get_thumb($post->ID); 
-}
-	
-
-	
-	
-	?>
-	
-	
-	
-	</a> 
-	<br />
-	<div class="img-frame-caption"><a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>"><?php the_title('' ); ?></a>
-	</div><!-- .img-frame-caption -->
-</div><!-- .img-frame -->
-
-<?php endwhile; ?>   
-
-</div><!-- img-container-->
-</div><!-- entrycat -->
-
+		<?php endwhile; ?>
+		
 <div class="entry">  
-<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380
-<div class="prevnext" align="center"><?php next_posts_link('Previous') ?> <?php previous_posts_link('Next') ?></div> -->  	  
-<?php else : ?>  	  
-<h2 class="center">Sorry, page not found</h2> 	 	 	 
-<?php endif; ?> 		    		  
+		
+		<div class="prevnext">
+				<div class="prev"><?php previous_post_link('%link', 'Newer', TRUE); ?></div> <div class="next"><?php next_post_link('%link', 'Older', TRUE); ?></div>
+		</div> <!--.prevnext -->
+
+	<?php else :
+
+		if ( is_author() ) {  // If this is an author archive
+			$userdata = get_userdatabylogin(get_query_var('author_name'));
+			printf("<h2 class='center'>Sorry, but there aren't any posts by %s yet.</h2>", $userdata->display_name);
+		} else if ( is_date() ) { // If this is a date archive
+			echo("<h2>Sorry, but there aren't any posts with this date.</h2>");
+		} else {
+			echo("<h2 class='center'>No posts found.</h2>");
+		}
+		get_search_form();
+
+	endif;
+?>
+	    		  
 </div>	<!-- .entry -->   	  
 <!-- end post -->     
 </div><!-- #content -->
+
+<?php get_sidebar(); ?>
+
 <?php     
 
 	// calling footer.php

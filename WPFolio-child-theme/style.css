@@ -1,0 +1,87 @@
+/*   
+Theme Name: WPFolio Child Theme
+Theme URI: 
+Description: My changes to the WPFolio Theme.
+Author: You	
+Author URI: http://yourwebsite.com/about
+Template: WPFolio
+Version: 0.1
+Tags: WPFolio
+.
+WPFolio is free and open source under the GNU Public License
+http://wpfolio.visitsteve.com
+.
+*/
+
+@import url('../WPFolio/style.css');
+
+/* HEADER IMAGE example */
+/* 
+div#header {
+	background: url(images/dummy-header.png) 0 center;
+	height: 105px;
+}
+div.headertext {
+	margin-left: 120px;
+}
+*/
+
+/* ROUNDED ACCENTS example */
+/*
+ .sf-menu li {
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	}
+	
+.container {
+	border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-moz-border-radius-bottomtop: 10px;
+	-webkit-border-top-right-radius: 10px;
+	}
+.footer {
+	border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+}
+
+.prevnext a:hover  {  
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	}
+	
+.sf-menu li a {
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+}
+.page p img {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+*/
+
+/* 4 IMAGE GALLERY example*/
+/* .gallery-item {
+	width: 25%;
+*/
+
+/* NAV BACKGROUND STYLES change these colors to whatever you like */
+
+/*
+.sf-menu li {
+	background: ;
+	}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background:	;
+	}
+.sf-menu li li, .sf-menu li li li {
+	background:	;
+	}
+*/
+
+/* add your changes below this line */
