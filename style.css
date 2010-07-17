@@ -141,11 +141,6 @@ div#header {
 	font-weight: normal;
 	font-style: normal;}
 /* @end */
-#category-description {
-	width: 600px;
-	margin: auto;
-	text-align: justify;
-}
 /* @group .entry styles */
 div.entry {
 	padding : 0px;
@@ -564,6 +559,13 @@ code {
 	font-size : 12px;
 	font-weight : normal;
 	text-align : justify;
+}
+.widemargins {
+	margin: auto 15%;
+}
+
+.justify {
+	text-align: justify;
 }
 div.archive-result img {
 	float: left;
