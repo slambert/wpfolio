@@ -560,7 +560,10 @@ code {
 	text-align : justify;
 }
 .widemargins {
-	margin: auto 15%;
+	margin: auto 135px;
+}
+.home .widemargins img {
+	margin: auto -135px;
 }
 .justify {
 	text-align: justify;
