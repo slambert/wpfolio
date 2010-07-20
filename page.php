@@ -23,11 +23,11 @@
 		<?php the_content(); ?> 
 		</div><!-- .cvstyle -->
 		
-		<? } else if (is_page()) { ?>
+		<?php } else if (is_page()) { ?>
 		<div class="widemargins">
 		<?php the_content(); ?> 
 		
-		<? } ?>
+		<?php } ?>
 		 
 		<?php wp_link_pages(); ?>
   

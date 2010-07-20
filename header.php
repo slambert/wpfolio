@@ -91,7 +91,7 @@ $('ul.sf-menu').superfish();
 <![endif]-->
 <?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/resume.css" type="text/css" media="screen" />
-<? } else if (is_page("")) { } ?>
+<?php } else if (is_page("")) { } ?>
 
 <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
 
@@ -114,7 +114,7 @@ $('ul.sf-menu').superfish();
 		} else { ?>
 		<ul class="sf-menu">
 		<?php wp_list_pages('exclude=&title_li=' );?>
-		</ul> <?
+		</ul> <?php
 		} ?>
 		
 	</div><!-- .nav -->
