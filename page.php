@@ -30,6 +30,7 @@
 		<?php } ?>
 		 
 		<?php wp_link_pages(); ?>
+		</div><!-- .widemargins -->
   
 		<div class="post-bottom-title"> <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>	</div><!-- .post-bottom-title -->
 		
