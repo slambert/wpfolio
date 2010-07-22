@@ -168,13 +168,9 @@ div.entry.notblog p {
 /* @group images */
 .entry img {
 	margin: 0 0 0px;
-	padding: 8px;
-	border: 1px solid #c0c0c0;
 }
 .entrycat img {
 	margin: 3px 3px 3px 3px;
-	padding: 5px;
-	border: 1px solid #c0c0c0;
 	margin-bottom: 2px;
 }
 .wp-caption {
@@ -354,7 +350,6 @@ div.notable {
 	float: left;
 }
 div.notable-post {
-	/*border: 1px solid #c0c0c0;*/
 	padding: 0;
 	margin: 15px 0 3.5em;
 }
@@ -511,9 +506,6 @@ width: 440px;
 	margin-top: 10px;
 	text-align: center;
 	width: 33%;
-}
-.gallery img {
-	border: 2px solid #cfcfcf;
 }
 .gallery-caption {
 	margin-left: 0;
