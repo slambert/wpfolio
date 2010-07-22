@@ -21,7 +21,6 @@
 		<?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
 		<div class="cv-style widemargins">
 		<?php the_content(); ?> 
-		</div><!-- .cvstyle -->
 		
 		<?php } else if (is_page()) { ?>
 		<div class="widemargins">
