@@ -16,8 +16,8 @@ function get_thumb ($post_ID){
 
 $GLOBALS['content_width'] = 900; // This sets the Large image size to 900px
 
-add_theme_support('post-thumbnails');
-set_post_thumbnail_size( 150, 150,true );
+add_theme_support('post-thumbnails'); // Adding support for post thumbnails and enabling the UI
+set_post_thumbnail_size( 150, 150,true ); // 150 pixels wide by 150 pixels tall, hard crop mode
 
 // END - Thumbnail Function
 
@@ -62,21 +62,187 @@ function enable_threaded_comments(){
 }
 add_action('get_header', 'enable_threaded_comments');
 
+// TAXONOMIES
+
+//hook into the init action and call create_book_taxonomies when it fires
+add_action( 'init', 'create_wpfolio_taxonomies', 0 );
 
 // enabling a taxonomy for Media
 
+//create a taxonomy "media", for the post type "wpfolio_artworks"
+function create_wpfolio_taxonomies() 
+{
 
-function create_my_taxonomies() {
-register_taxonomy('media', 'post', array( 
-	'label' => 'Media',
-	'hierarchical' => false,  
-	'query_var' => true, 
-	'rewrite' => true,
-	'public' => true,
-	'show_ui' => true,
+// Add media taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Media', 'taxonomy general name' ),
+    'singular_name' => _x( 'Medium', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Media' ),
+    'popular_items' => __( 'Popular Mediums' ),
+    'all_items' => __( 'All Mediums' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Media' ), 
+    'update_item' => __( 'Update Media' ),
+    'add_new_item' => __( 'Add New Media' ),
+    'new_item_name' => __( 'New Media Name' ),
+    'separate_items_with_commas' => __( 'Separate mediums with commas' ),
+    'add_or_remove_items' => __( 'Add or remove mediums' ),
+    'choose_from_most_used' => __( 'Choose from the most used mediums' )
+  ); 
+
+  register_taxonomy('media','wpfolio_artworks',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'query_var' => true,
+    'public' => true,
 	'show_tagcloud' => true,
-	'show_in_nav_menus' => true,));
-} add_action('init', 'create_my_taxonomies', 0);
+	'show_in_nav_menus' => true,
+    'rewrite' => array( 'slug' => 'medium' ),
+  ));
+  
+  // Add collaborator taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Collaborators', 'taxonomy general name' ),
+    'singular_name' => _x( 'Collaborator', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Collaborators' ),
+    'popular_items' => __( 'Popular Collaborators' ),
+    'all_items' => __( 'All Collaborators' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Collaborator' ), 
+    'update_item' => __( 'Update Collaborator' ),
+    'add_new_item' => __( 'Add New Collaborator' ),
+    'new_item_name' => __( 'New Collaborator Name' ),
+    'separate_items_with_commas' => __( 'Separate collaborators with commas' ),
+    'add_or_remove_items' => __( 'Add or remove collaborator' ),
+    'choose_from_most_used' => __( 'Choose from the most used collaborators' )
+  ); 
+
+  register_taxonomy('collaborators','wpfolio_artworks',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'query_var' => true,
+    'public' => true,
+	'show_tagcloud' => true,
+	'show_in_nav_menus' => true,
+    'rewrite' => array( 'slug' => 'collaborator' ),
+  ));
+}
+
+
+// ADD Art Work POST TYPE
+
+add_action('init', 'artwork_post_type_init');
+function artwork_post_type_init() 
+{
+  $labels = array(
+    'name' => _x('Art Works', 'post type general name'),
+    'singular_name' => _x('Art Work', 'post type singular name'),
+    'add_new' => _x('Add New', 'work'),
+    'add_new_item' => __('Add New Work'),
+    'edit_item' => __('Edit Art Work'),
+    'new_item' => __('New Work'),
+    'view_item' => __('View Art Work'),
+    'search_items' => __('Search Art Works'),
+    'not_found' =>  __('No art works found'),
+    'not_found_in_trash' => __('No art works found in Trash'), 
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    '_builtin' => false, // It's a custom post type, not built in!
+    'query_var' => true,
+    'rewrite' => array("slug" => "work"), // Permalinks format
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => 5,
+    'menu_icon' => get_template_directory_uri() . '/images/bw-palette-icon-16.png',
+    'supports' => array(
+		'title',
+		'editor',
+		//'excerpt',
+		//'trackbacks',
+		//'custom-fields',
+		'comments',
+		//'revisions',
+		'thumbnail',
+		'author',
+		//'page-attributes',
+		)
+
+  ); 
+  register_post_type('wpfolio_artworks',$args);
+}
+
+//add filter to insure the text Art Work, is displayed when user updates an Art Work 
+add_filter('post_updated_messages', 'show_updated_messages');
+function show_updated_messages( $messages ) {
+
+  $messages['wpfolio_artworks'] = array(
+    0 => '', // Unused. Messages start at index 1.
+    1 => sprintf( __('Art Work updated. <a href="%s">View art work</a>'), esc_url( get_permalink($post_ID) ) ),
+    2 => __('Custom field updated.'),
+    3 => __('Custom field deleted.'),
+    4 => __('Art Work updated.'),
+    /* translators: %s: date and time of the revision */
+    5 => isset($_GET['revision']) ? sprintf( __('Art Work restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    6 => sprintf( __('Art Work published. <a href="%s">View art work</a>'), esc_url( get_permalink($post_ID) ) ),
+    7 => __('Art Work saved.'),
+    8 => sprintf( __('Art Work submitted. <a target="_blank" href="%s">Preview art work</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+    9 => sprintf( __('Art Work scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview art work</a>'),
+      // translators: Publish box date format, see http://php.net/date
+      date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+    10 => sprintf( __('Art Work draft updated. <a target="_blank" href="%s">Preview art work</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+  );
+
+  return $messages;
+}
+
+//display contextual help for Art Works
+add_action( 'contextual_help', 'add_help_text', 10, 3 );
+
+function add_help_text($contextual_help, $screen_id, $screen) { 
+  //$contextual_help .= var_dump($screen); // use this to help determine $screen->id
+  if ('Art Work' == $screen->id ) {
+    $contextual_help =
+      '<p>' . __('Things to remember when adding or editing an art work:') . '</p>' .
+      '<ul>' .
+      '<li>' . __('Specify the correct ?genre such as ?Mystery, or ?Historic.') . '</li>' . //I dunno where this appears!
+      '<li>' . __('Specify the correct author of the work.  Remember that the Author module refers to you, the creator of this art work.') . '</li>' .
+      '</ul>' .
+      '<p>' . __('If you want to schedule the Art Work to be published in the future:') . '</p>' .
+      '<ul>' .
+      '<li>' . __('Under the Publish module, click on the Edit link next to Publish.') . '</li>' .
+      '<li>' . __('Change the date to the date to actual publish this show, then click on Ok.') . '</li>' .
+      '</ul>' .
+      '<p><strong>' . __('For more information:') . '</strong></p>' .
+      '<p>' . __('<a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">Edit Posts Documentation</a>') . '</p>' .
+      '<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>' ;
+  } elseif ( 'edit-show' == $screen->id ) {
+    $contextual_help = 
+      '<p>' . __('This is the help screen displaying the table of art works blah blah blah.') . '</p>' ;
+  }
+  return $contextual_help;
+}
+
+
+add_action('admin_head', 'plugin_header');
+function plugin_header() {
+        global $post_type;
+	?>
+	<style>
+	<?php if (($_GET['post_type'] == 'wpfolio_artworks') || ($post_type == 'wpfolio_artworks')) : ?>
+	#icon-edit { background:transparent url('<?php echo get_template_directory_uri() . '/images/bw-palette-icon-32.png';?>') no-repeat; }		
+	<?php endif; ?>
+        </style>
+        <?php
+}
 
 /* Sidebars */
 	    
