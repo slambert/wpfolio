@@ -79,11 +79,11 @@
 
 		if ( is_author() ) {  // If this is an author archive
 			$userdata = get_userdatabylogin(get_query_var('author_name'));
-			printf("<h2 class='center'>Sorry, but there aren't any posts by %s yet.</h2>", $userdata->display_name);
+			printf("<div class=\"entry\">  <h2 class='center'>Sorry, but there aren't any posts by %s yet.</h2>", $userdata->display_name);
 		} else if ( is_date() ) { // If this is a date archive
-			echo("<h2>Sorry, but there aren't any posts with this date.</h2>");
+			echo("<div class=\"entry\"> <h2>Sorry, but there aren't any posts with this date.</h2>");
 		} else {
-			echo("<h2 class='center'>No posts found.</h2>");
+			echo("<div class=\"entry\"><h2 class='center'>No posts found.</h2>");
 		}
 		get_search_form();
 
