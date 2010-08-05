@@ -30,7 +30,7 @@ set_post_thumbnail_size( 150, 150,true );
 // some wp 3.0 features
 
 // This theme uses wp_nav_menu()
-add_theme_support( 'nav-menus' );
+add_theme_support( 'menus' );
 
 register_nav_menus( array(
 	'navbar' => __( 'Top Navigation Bar', 'navbar' ),
