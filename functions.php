@@ -47,10 +47,10 @@ add_custom_background();
 
 // Remove inline styles on gallery shortcode
 
-function twentyten_remove_gallery_css( $css ) {
+function wpfolio_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 	}
-add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
+add_filter( 'gallery_style', 'wpfolio_remove_gallery_css' );
 
 // END - Remove inline styles on gallery shortcode
 
@@ -72,7 +72,7 @@ add_action('get_header', 'enable_threaded_comments');
 // enabling a taxonomy for Medium
 
 
-function create_my_taxonomies() {
+function wpfolio_create_taxonomies() {
 register_taxonomy('medium', 'post', array( 
 	'label' => 'Medium',
 	'hierarchical' => false,  
@@ -82,7 +82,7 @@ register_taxonomy('medium', 'post', array(
 	'show_ui' => true,
 	'show_tagcloud' => true,
 	'show_in_nav_menus' => true,));
-} add_action('init', 'create_my_taxonomies', 0);
+} add_action('init', 'wpfolio_create_taxonomies', 0);
 
 /* Sidebars */
 	    
@@ -458,7 +458,7 @@ $options = array (
 
 // BEGIN Theme Admin Interface
 
-function mytheme_add_admin() {
+function wpfolio_add_admin() {
 	global $themename, $shortname, $options;
 	if ( $_GET['page'] == basename(__FILE__) )
 	{
@@ -608,5 +608,5 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 <?php
 }
 
-add_action('admin_menu', 'mytheme_add_admin');
+add_action('admin_menu', 'wpfolio_add_admin');
 ?>
