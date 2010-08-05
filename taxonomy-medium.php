@@ -5,10 +5,10 @@
 
 ?>  
 
-<!-- generated with taxonomy-media.php (this template is designed to just show art/portfolio posts in the yearly archive view) -->
+<!-- generated with taxonomy-medium.php (this template is designed to just show art/portfolio posts in the yearly archive view) -->
 
 <!-- begin post -->    
-<div id="content" class="entry taxonomy-media">  
+<div id="content" class="entry taxonomy-medium">  
 	  	 
 		<?php if (have_posts()) : ?>
 		

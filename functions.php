@@ -69,12 +69,12 @@ function enable_threaded_comments(){
 add_action('get_header', 'enable_threaded_comments');
 
 
-// enabling a taxonomy for Media
+// enabling a taxonomy for Medium
 
 
 function create_my_taxonomies() {
-register_taxonomy('media', 'post', array( 
-	'label' => 'Media',
+register_taxonomy('medium', 'post', array( 
+	'label' => 'Medium',
 	'hierarchical' => false,  
 	'query_var' => true, 
 	'rewrite' => true,

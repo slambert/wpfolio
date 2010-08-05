@@ -62,7 +62,7 @@
 
 			<?php the_excerpt('continue...'); ?>
 	
-			<h5 class="clear-both"><?php the_time('Y') ?> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'media', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>
+			<h5 class="clear-both"><?php the_time('Y') ?> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'medium', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>
 <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?> <?php edit_post_link('edit this', '<span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK--></h5>
 			</div><!-- .archive-result -->	
 		</div><!-- .notable-post -->
