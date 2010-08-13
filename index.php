@@ -30,7 +30,7 @@
 		</div> <!-- #post-id --> 
 		</div> <!-- .category-nicename-->  		    
 		
-		<?php wp_link_pages(); ?>
+		 <?php wp_link_pages(array('before' => '<p class="link_pages"><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number'));  ?>
 		
 		<div class="post-bottom-title">   
 		<b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php the_tags('| Tags: ',', ',''); ?>  | <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>
