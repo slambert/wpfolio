@@ -12,7 +12,11 @@
 	<div class="notable-post">
 <!-- begin post -->
 
-	<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
+	<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	};
+	 if (($posts & empty($display_stats)) ) {
+	 	while ( have_posts() ) {
+	 		the_post();
+	  ?>   
 		
 		<div class="<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -41,8 +45,7 @@
 	<?php comments_template(); ?> 	  
 
 <!-- <?php trackback_rdf(); ?> -->    
-<?php endforeach; else: ?> <?php _e('Sorry, no posts matched your criteria.'); ?>
-<?php endif; ?>    
+<?php }} else{ _e('Sorry, no posts matched your criteria.'); }?>    
 
 	</div><!-- .notable-post-->
 	</div><!-- .notable -->
