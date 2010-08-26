@@ -460,9 +460,13 @@ $options = array (
 
 function wpfolio_add_admin() {
 	global $themename, $shortname, $options;
-	if ( $_GET['page'] == basename(__FILE__) )
+		
+	$page=isset($_GET['page'])?$_GET['page']:false;
+	$action=isset($_REQUEST['action'])?$_REQUEST['action']:false;
+	
+	if ( $page == basename(__FILE__) )
 	{
-		if ( 'save' == $_REQUEST['action'] )
+		if ( 'save' == $action )
 		{
 			foreach ($options as $value) {
 				update_option( $value['id'], $_REQUEST[ $value['id'] ] ); 
@@ -480,7 +484,7 @@ function wpfolio_add_admin() {
 			header("Location: themes.php?page=functions.php&saved=true");
 			die;
 		} 
-		else if( 'reset' == $_REQUEST['action'] )
+		else if( 'reset' == $action )
 		{
 			foreach ($options as $value) {
 				delete_option( $value['id'] ); }
