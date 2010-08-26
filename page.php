@@ -34,7 +34,7 @@
 		<div class="post-bottom-title"> <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>	</div><!-- .post-bottom-title -->
 		
 		<div class="widemargins">
-		<?php comments_template(); ?> 	 
+		<?php comments_template('', true); ?> 	 
 		<?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 		</div><!--.widemargins-->
 
