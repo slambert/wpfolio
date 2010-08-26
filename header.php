@@ -23,7 +23,7 @@ http://wpfolio.visitsteve.com/wiki
 <?php wp_get_archives('type=monthly&format=link'); ?>  
  <?php global $options;
     	foreach ($options as $value) {
-   	if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
+   	if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
    		?>
 <!-- done calling monthly archives -->
   
@@ -101,7 +101,7 @@ $('ul.sf-menu').superfish();
 <div class="container">  
 	<div id="header">  
 		<div class="headertext">   
-		<h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1> 		 
+		<h1><a href="<?php echo home_url( '/' ); ?>"><?php bloginfo('name'); ?></a></h1> 		 
 		<h4><?php bloginfo('description'); ?></h4>  
 		</div><!-- .headertext -->
 	</div><!-- #header -->
