@@ -14,7 +14,7 @@
 	<div class="<?php wp_title('',true,''); ?>">
 
 		<h2 class="pagetitle"><a href="<?php the_permalink() ?>" title="Permalink"><?php if (is_page('home')) { echo ""; } else if (is_page("")) {
-	 echo the_title();
+	 the_title();
 	}
 ?></a></h2>
 		
