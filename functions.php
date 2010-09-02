@@ -454,8 +454,6 @@ $options = array (
 
 
 
-
-
 // BEGIN Theme Admin Interface
 
 function wpfolio_add_admin() {
@@ -469,16 +467,16 @@ function wpfolio_add_admin() {
 		if ( 'save' == $action )
 		{
 			foreach ($options as $value) {
-				update_option( $value['id'], $_REQUEST[ $value['id'] ] ); 
+				wpfolio_updateSetting( $value['id'], $_REQUEST[ $value['id'] ] ); 
 			}
 			
 			foreach ($options as $value)
 			{
 				if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-					update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); 
+					wpfolio_updateSetting( $value['id'], $_REQUEST[ $value['id'] ]  ); 
 				}
 				else {
-					delete_option( $value['id'] ); 
+					wpfolio_updateSetting( $value['id'],$value['std'] ); 
 				} 
 			}
 			header("Location: themes.php?page=functions.php&saved=true");
@@ -487,9 +485,10 @@ function wpfolio_add_admin() {
 		else if( 'reset' == $action )
 		{
 			foreach ($options as $value) {
-				delete_option( $value['id'] ); }
-				header("Location: themes.php?page=functions.php&reset=true");
-				die;
+				wpfolio_updateSetting( $value['id'],$value['std'] );
+			}
+			header("Location: themes.php?page=functions.php&reset=true");
+			die;
 	 }
 	}
 	add_theme_page($themename." Options", "Current Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
@@ -518,7 +517,7 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
         <tr valign="top"> 
     		<th scope="row"><?php echo $value['name']; ?>:</th>
     		<td>
-        		<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo get_option( $value['id'] ); } else { echo $value['std']; } ?>" />
+        		<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( wpfolio_getSetting( $value['id'] ) === NULL ) { echo $value['std']; } else { echo wpfolio_getSetting( $value['id'] );  } ?>" />
     		</td>
 		</tr>
 	
@@ -529,7 +528,7 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
         	<td>
             	<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
                 <?php foreach ($value['options'] as $option) { ?>
-                <option<?php if ( get_option( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
+                <option<?php if ( wpfolio_getSetting( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
                 <?php } ?>
             	</select>
         	</td>
@@ -542,7 +541,7 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
         	<th scope="row"><?php echo $value['name']; ?>:</th>
         	<td>
 
-				<input type="<?php echo $value['type']; ?>" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo get_option( $value['id'] ); } else { echo $value['std']; } ?>" class="color {pickerPosition:'right'}" />
+				<input type="<?php echo $value['type']; ?>" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php if ( wpfolio_getSetting( $value['id'] ) === NULL )  { echo $value['std']; } else { echo wpfolio_getSetting( $value['id'] ); } ?>" class="color {pickerPosition:'right'}" />
 
         	</td>
     	</tr>
@@ -613,4 +612,48 @@ if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><stron
 }
 
 add_action('admin_menu', 'wpfolio_add_admin');
+
+/**
+ * Gets the value for a setting
+ *
+ * @param $setting
+ * @param $cache
+ * @return Mixed
+ */
+function wpfolio_getSetting ( $setting, $cache = TRUE ) {
+	global $shortname;
+	
+	static $_settings = NULL;
+
+	if ( ! $cache ) {
+		$_settings = NULL;
+	}
+	
+	if ( $_settings === NULL ) {
+		$_settings = get_option ( $shortname, NULL );
+	}
+	
+	if ($_settings === NULL ){
+		$return = NULL;
+	} else {
+		$return = $_settings[$setting];
+	}
+	return $return;
+}
+
+/**
+ * Updates a setting
+ *
+ * @param $setting
+ * @param $value
+ */
+function wpfolio_updateSetting ( $setting, $value ) {
+	global $shortname;
+	
+	$_settings = get_option ( $shortname );
+	$_settings[$setting] = $value;
+	update_option ( $shortname, $_settings );
+	wpfolio_getSetting ( 'wpfolio_version', FALSE );
+}
+
 ?>
