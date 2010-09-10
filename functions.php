@@ -1,10 +1,10 @@
 <?php  
 
 // customize admin footer text
-function custom_admin_footer() {
+function wpfolio_admin_footer() {
 	echo 'Thank you for creating with <a href="http://wordpress.org/" target="_blank">WordPress</a>. | <a href="http://codex.wordpress.org/" target="_blank">Documentation</a> | <a href="http://wordpress.org/support/forum/4" target="_blank">Feedback</a> | <a href="http://wpfolio.visitsteve.com/">Theme by WPFolio</a>';
 } 
-add_filter('admin_footer_text', 'custom_admin_footer');
+add_filter('admin_footer_text', 'wpfolio_admin_footer');
 
 // Thumbnail Function
 function get_thumb ($post_ID){
@@ -60,13 +60,13 @@ wp_enqueue_script('jquery');
 
 // enable threaded comments
 
-function enable_threaded_comments(){
+function wpfolio_enable_threaded_comments(){
 	if (!is_admin()) {
 		if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1))
 			wp_enqueue_script('comment-reply');
 		}
 }
-add_action('get_header', 'enable_threaded_comments');
+add_action('get_header', 'wpfolio_enable_threaded_comments');
 
 
 // enabling a taxonomy for Medium
