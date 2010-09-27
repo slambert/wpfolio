@@ -8,7 +8,8 @@
 <!-- generated with page.php -->
    
 <!-- begin page -->    
-<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : start_wp(); ?> 
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
 
 <div id="content"> 
 	<div class="<?php wp_title('',true,''); ?>">
@@ -44,10 +45,9 @@
 
 <!-- <?php trackback_rdf(); ?> -->    
 
-<?php endforeach; else: ?> 
-<?php _e('Sorry, no posts matched your criteria.'); ?>
-<?php endif; ?>    
-
+<?php endwhile; else: ?>
+<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>
 
 <!-- end page -->     
 
