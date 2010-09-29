@@ -23,7 +23,7 @@ http://wpfolio.visitsteve.com/wiki
 <?php wp_get_archives('type=monthly&format=link'); ?>  
  <?php global $options;
     	foreach ($options as $value) {
-   	if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
+   	if (wpfolio_getSetting( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = wpfolio_getSetting( $value['id'] ); } }
    		?>
 <!-- done calling monthly archives -->
   
@@ -43,7 +43,7 @@ http://wpfolio.visitsteve.com/wiki
 		font-family : <?php echo $WPFolio_body_font; ?>;
 		}
 	body, .container, .container p, #content, div.notable-post {
-		color: #<?php echo $WPFolio_body_color; ?>;
+		color: #c;
 		}
 	h1,h2,h3,h4,h5,h6 {
 		font-family: <?php echo $WPFolio_headline_font; ?>;}
@@ -119,4 +119,6 @@ $('ul.sf-menu').superfish();
 		
 	</div><!-- .nav -->
 <!-- END MENU -->  
+
+
 
