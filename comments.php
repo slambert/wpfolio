@@ -19,16 +19,17 @@
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link() ?></div>
 		<div class="alignright"><?php next_comments_link() ?></div>
-	</div>
+	</div><!--.navigation (for comments)-->
 
 	<ol class="commentlist">
 	<?php wp_list_comments(); ?>
-	</ol>
+	</ol><!--.commentlist-->
 
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link() ?></div>
 		<div class="alignright"><?php next_comments_link() ?></div>
-	</div>
+	</div><!--.navigation (2nd time appearing, for comments)-->
+	
  <?php else : // this is displayed if there are no comments so far ?>
 
 	<?php if ( comments_open() ) : ?>
