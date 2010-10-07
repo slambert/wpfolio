@@ -374,7 +374,7 @@ $options = array (
            "Arial, Helvetica Neue, Helvetica, sans-serif", 
            "Arial Black, sans-serif", 
            "Baskerville, Times, Times New Roman, serif", 
-           "Courier New, Courier, monospace", "Georgia, Times, Times New Roman, serif", 
+           "Courier New, Courier, monospace, Georgia, Times, Times New Roman, serif", 
            "Gill Sans, Trebuchet MS, Calibri, sans-serif", 
            "Helvetica, Helvetica Neue, Arial, sans-serif", 
            "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif", 
@@ -421,13 +421,13 @@ $options = array (
 	array(	"name" => "Font Color",
             "id" => $shortname."_body_color",
             "std" => "000000",
-            "type" => "color"),
+            "type" => "color" ),
 
 //Highlight Font Color
 	array(	"name" => "Highlight Font Color",
 			"id" => $shortname."_highlight_color",
 			"std" => "666666",
-			"type" => "color"),
+			"type" => "color" ),
 
 //Secondary Font Color
    array( "name" => "Secondary Font Color",

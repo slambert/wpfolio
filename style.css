@@ -2,7 +2,7 @@
 Theme Name: WPFolio
 Theme URI: http://wpfolio.visitsteve.com/wiki/
 Description: Designed specifically for artist's portfolios. Features large images, theme options, and plenty of versatility. GPLv3 licensed. We welcome your code.
-Version: 1.6a
+Version: 1.6.3
 Author: Steve Lambert & many others
 Tags: fixed-width, photoblogging, one-column, two-columns, theme-options, custom-background, threaded-comments, custom-menu, custom-colors
 License: GNU General Public License v3.0
@@ -46,21 +46,12 @@ h1,h2,h3,h4,h5,h6,form,fieldset{
 	margin:0;
 	padding:0;
 }
-h1{
-	/*font-size: ($WPFolio_headline_size)*/
-}
-h2{
-	/*color: (WPFolio_highlight_color)*/
-}
-h3{
-	/*color: ($WPFolio_highlight_color)*/
-}
+h1{ /*font-size: ($WPFolio_headline_size)*/ }
+h2, h3 { /*color: (WPFolio_highlight_color)*/ }
 h4{
 	/*color: ($WPFolio_second_color)*/
 }
-.low{
-	display:none;
-}
+.low{ display:none; }
 #content h2, #content h3{
 	font-weight: normal;
 	letter-spacing: .1em;
@@ -70,9 +61,7 @@ h2.pagetitle{
 	text-transform: uppercase;
 	text-align: center;
 }
-.home h2.pagetitle{
-	display: none;
-}
+.home h2.pagetitle{display: none;}
 /* @end */
 /* @group links */
 a{
@@ -114,8 +103,7 @@ div#header{
 .headertext{
    	overflow: hidden;
 	text-align: left;
-	padding: 0;
-	padding-left: 13px;
+	padding: 0 0 0 13px;
 }
 .headertext h1 a{
 	/*color: ($WPFolio_highlight_color)*/
@@ -158,9 +146,7 @@ div.entry.notblog p{
 }
 /* @end */
 /* @group images */
-.entry img{
-	margin: 0 0 0px;
-}
+.entry img{margin: 0;}
 .entrycat img{
 	margin: 3px 3px 3px 3px;
 	margin-bottom: 2px;
@@ -180,7 +166,7 @@ div.entry.notblog p{
 .wp-caption img{
 	margin: 0;
 	padding: 0;
-	border: 0 none;
+	border: none;
 }
 .img-frame{
 	width: 25%;
@@ -214,15 +200,11 @@ div.entry.notblog p{
 }
 .alignright,img.alignright{
 	float:right;
-	margin-right: 0;
-	margin-left: 1em;
-	margin-bottom: 0;
+	margin: 0 0 0 1em;
 }
 .alignleft,img.alignleft{
 	float:left;
-	margin-right: 1em;
-	margin-left: 0;
-	margin-bottom: 0;
+	margin: 0 1em 0 0;
 }
 .aligncenter, img.aligncenter{
 	display:block;
@@ -242,7 +224,7 @@ div.entry.notblog p{
 /* @group prev/next navigation */
 .prevnext{
 	min-height: 1em;
-	margin: .5em 0px 2em;
+	margin: .5em 0 2em;
 }
 .prevnext a, link{
 	text-decoration: none;
@@ -279,9 +261,7 @@ div.entry.notblog p{
 /* @end */
 /* @group new navbar */
 div.nav{
-	margin-right: 30px;
-	margin-left: 30px;
-	margin-bottom: 3em;
+	margin: 0 30px 3em;
 }
 /*** SUPERFISH SKIN ***/
 .sf-menu{
@@ -517,10 +497,7 @@ width: 440px;
 }
 /* @end */
 .post-bottom-title{
-	margin-top: 5px;
-	margin-bottom: 0px;
-	margin-left: 30px;
-	margin-right: 30px;
+	margin-top: 5px 30px 0;
 	text-align: center;
 	font-size: 11px;
 }
@@ -532,10 +509,7 @@ code{
 	font-family: "Courier New", Courier, mono;
 }
 .info{
-	margin-top: 0px;
-	margin-bottom: 5px;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-top: 0 10px 5px;
 	padding: 5px;
 	font-size: 12px;
 	font-weight: normal;

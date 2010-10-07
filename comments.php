@@ -47,4 +47,4 @@
 <?php comment_form(); ?>
 
 <?php endif; // If registration required and not logged in ?>
-</div>
+
