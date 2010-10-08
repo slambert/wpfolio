@@ -1,3 +1,5 @@
+/* @override http://annievought.com/wp-content/themes/slambert-WPFolio-374ec82/style.css */
+
 /*
 Theme Name: WPFolio
 Theme URI: http://wpfolio.visitsteve.com/wiki/
@@ -45,6 +47,7 @@ h1,h2,h3,h4,h5,h6,form,fieldset{
 	/* font-family: ($WPFolio_headline_font)*/
 	margin:0;
 	padding:0;
+	clear:both;
 }
 h1{ /*font-size: ($WPFolio_headline_size)*/ }
 h2, h3 { /*color: (WPFolio_highlight_color)*/ }
@@ -435,6 +438,22 @@ div.notable-post a:hover{
 ol.commentlist ul{
 	list-style-type: none;
 }
+.required{
+	color: red;
+}
+p.form-allowed-tags {
+	font-size: smaller;
+	clear: both;
+}
+#commentform label{
+	position: relative;
+	float: left;
+	width: 60px;
+	text-align: right;
+}
+#commentform input, #commentform textarea{
+	margin-left: 7px;
+}
 /* @end */
 /* @group footer */
 .footer{
@@ -505,7 +524,7 @@ width: 440px;
 	font-size: 1.5em;
 }
 code{
-	color: #8B1D1D;
+	color: gray;
 	font-family: "Courier New", Courier, mono;
 }
 .info{
