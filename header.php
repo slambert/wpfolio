@@ -1,18 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">   
 <head profile="http://gmpg.org/xfn/11">  
- 
-<!--
-This site is built using Wordpress with
- _       ______  ______      ___     
-| |     / / __ \/ ____/___  / (_)___ 
-| | /| / / /_/ / /_  / __ \/ / / __ \
-| |/ |/ / ____/ __/ / /_/ / / / /_/ /
-|__/|__/_/   /_/    \____/_/_/\____/ 
-The free Wordpress Theme for Artists
-Free Software under the GPLv3 
-http://wpfolio.visitsteve.com/wiki
--->   
 
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <!-- calling wp_head -->
