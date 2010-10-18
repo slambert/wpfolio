@@ -534,6 +534,13 @@ code{
 	font-weight: normal;
 	text-align: justify;
 }
+blockquote{
+	background: url(images/quote.png) no-repeat 15px 5px;
+	margin: 0;
+	padding: 1em 4em;
+	line-height: 1.5em;
+	font-style: italic;
+}
 .widemargins{
 	margin: auto 135px;
 }
