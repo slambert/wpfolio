@@ -656,4 +656,6 @@ function wpfolio_updateSetting ( $setting, $value ) {
 	wpfolio_getSetting ( 'wpfolio_version', FALSE );
 }
 
+
+
 ?>

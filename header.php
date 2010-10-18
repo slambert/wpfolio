@@ -55,6 +55,7 @@
 <!-- Superfish Support -->
 
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/superfish.css" type="text/css" media="screen"/>
+
 <!--
 Add if you want to enable the SuperFish Navbar. It will need styling! 
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/superfish-navbar.css" type="text/css" media="screen"/> -->
@@ -79,6 +80,7 @@ $('ul.sf-menu').superfish();
 <?php } else if (is_page("")) { } ?>
 
 <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
+
 
 <!-- calling wp_head -->
 <?php wp_head(); ?> <!-- done calling wp_head -->
