@@ -514,7 +514,7 @@ width: 440px;
 }
 /* @end */
 .post-bottom-title{
-	margin-top: 5px 30px 0;
+	margin: 5px 30px 0px;
 	text-align: center;
 	font-size: 11px;
 }
@@ -526,7 +526,7 @@ code{
 	font-family: "Courier New", Courier, mono;
 }
 .info{
-	margin-top: 0 10px 5px;
+	margin: 0px 10px 5px;
 	padding: 5px;
 	font-size: 12px;
 	font-weight: normal;
