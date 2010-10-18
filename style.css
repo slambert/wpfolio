@@ -429,9 +429,11 @@ div.notable-post a:hover{
 	padding: 10px;
 }
 .comment-author-admin{
-	background: url(images/grey-to-white-gradient.png) repeat-x scroll;
+	background: #fdf9c4 repeat-x scroll;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	border: 1px solid #eee;
+	border-bottom: none;
 }
 ol.commentlist ul{
 	list-style-type: none;
