@@ -20,15 +20,7 @@
 		
 		<div class="<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<!-- START PREVIOUS/NEXT BUTTONS --> 
-
-				<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380 
-				<div class="prevnext">
-				<?php next_post_link('%link', 'newer', TRUE); ?> <?php previous_post_link('%link', 'older', TRUE); ?>
-				</div> .prevnext -->
-
-				<!-- END PREVIOUS/NEXT BUTTONS -->    
+ 
 
 		<?php the_content(); ?>  
 		</div> <!-- #post-id --> 
@@ -41,6 +33,10 @@
 
 		<?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 		</div><!-- .post-bottom-title -->
+		
+		<!-- START PREVIOUS/NEXT BUTTONS --> 
+		<div class="prevnext"><div class="prev"><?php next_posts_link('Earlier') ?></div> <div class="next"><?php previous_posts_link('Later') ?></div></div>
+		<!-- END PREVIOUS/NEXT BUTTONS -->   
      
 	<?php comments_template(); ?> 	  
 
