@@ -508,11 +508,11 @@ width: 440px;
 	font-size: 1.3em;
 }
 .edit-link a.post-edit-link{
-	background-color:red;
-	color: #FFFFFF;
+	background-color: #FF0;
 	font-size: 12px;
 	font-weight: normal;
 	padding: .5em .8em 2px .5em;
+	color: #000;
 }
 /* @end */
 .post-bottom-title{
