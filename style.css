@@ -429,9 +429,11 @@ div.notable-post a:hover{
 	padding: 10px;
 }
 .comment-author-admin{
-	background: url(images/grey-to-white-gradient.png) repeat-x scroll;
+	background: #fdf9c4 repeat-x scroll;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	border: 1px solid #eee;
+	border-bottom: none;
 }
 ol.commentlist ul{
 	list-style-type: none;
@@ -506,15 +508,15 @@ width: 440px;
 	font-size: 1.3em;
 }
 .edit-link a.post-edit-link{
-	background-color:red;
-	color: #FFFFFF;
+	background-color: #FF0;
 	font-size: 12px;
 	font-weight: normal;
 	padding: .5em .8em 2px .5em;
+	color: #000;
 }
 /* @end */
 .post-bottom-title{
-	margin-top: 5px 30px 0;
+	margin: 5px 30px 0px;
 	text-align: center;
 	font-size: 11px;
 }
@@ -526,7 +528,7 @@ code{
 	font-family: "Courier New", Courier, mono;
 }
 .info{
-	margin-top: 0 10px 5px;
+	margin: 0px 10px 5px;
 	padding: 5px;
 	font-size: 12px;
 	font-weight: normal;

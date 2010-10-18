@@ -28,7 +28,7 @@
 		font-family : <?php echo $WPFolio_body_font; ?>;
 		}
 	body, .container, .container p, #content, div.notable-post {
-		color: #c;
+		color: #<?php echo $WPFolio_body_color; ?>;
 		}
 	h1,h2,h3,h4,h5,h6 {
 		font-family: <?php echo $WPFolio_headline_font; ?>;}
