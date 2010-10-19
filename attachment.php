@@ -30,16 +30,6 @@
 		</div><!-- .post-bottom-title -->
 	
 	
-	
-		
-     
-<?php comments_template(); ?> 	  
-	
-	
-	
-	
-	
-	
 	<?php endwhile; else: ?>
 	<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 	<?php endif; ?>
