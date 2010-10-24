@@ -147,6 +147,7 @@ div.entry.notblog p{
 }
 /* @end */
 /* @group images */
+img {border:none;}
 .entry img{margin: 0;}
 .entrycat img{
 	margin: 3px 3px 3px 3px;
