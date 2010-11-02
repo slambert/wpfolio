@@ -3,6 +3,9 @@
 <head profile="http://gmpg.org/xfn/11">  
 
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<!-- calling wp_head -->
+<?php wp_head(); ?>
+<!-- done calling wp_head -->
 
 <!-- calling monthly archives -->
 <?php wp_get_archives('type=monthly&format=link'); ?>  
@@ -54,8 +57,6 @@ $('ul.sf-menu').superfish();
 <link href="<?php bloginfo('url');?>/?wp_folio_css=css" rel="stylesheet" type="text/css" />
 
 
-<!-- calling wp_head -->
-<?php wp_head(); ?> <!-- done calling wp_head -->
 </head>   
 
 <body <?php body_class(); ?>>  
