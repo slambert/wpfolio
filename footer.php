@@ -25,14 +25,11 @@
 
 
 
-<!-- "WPFolio" design by Eyebeam OpenLab - http://http://dev.eyebeam.org/projects/wpfolio/ -->
-<!-- <?php echo $wpdb->num_queries; ?> queries. <?php timer_stop(1); ?> seconds. -->
 
-
-<?php wp_footer(); ?>   
 
 </div><!-- .container -->
-
-
-
+<!-- <?php echo $wpdb->num_queries; ?> queries. <?php timer_stop(1); ?> seconds. -->  
+<!-- calling wp_footer -->
+<?php wp_footer(); ?> 
+<!-- done calling wp_footer -->
 </body>  </html>

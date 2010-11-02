@@ -7,56 +7,54 @@
 
 <!-- generated with index.php -->
 
-<div id="content">  
-	<div class="notable">
-	<div class="notable-post">
-<!-- begin post -->
+	<div id="content">
+		<div class="notable">	
+		<!-- begin post -->
 
-	<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	};
-	 if (($posts & empty($display_stats)) ) {
+		<?php 	
+		if (! empty($display_stats) ) { get_stats(1); echo "<br />"; };
+	 	if (($posts & empty($display_stats)) ) {
 	 	while ( have_posts() ) {
 	 		the_post();
-	  ?>   
+	  	?>   
 		
-		<div class="<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>">
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div class="<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?>, notable-post">
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	 			<!--POST TITLE-->		
+				<h2 class="post-title"><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h2> 
+				<!--END POST TITLE-->
 
-				<!-- START PREVIOUS/NEXT BUTTONS --> 
-
-				<!--Removing Previous/Next until ticket 380 is fixed http://dev.eyebeam.org/projects/wpfolio/ticket/380 
-				<div class="prevnext">
-				<?php next_post_link('%link', 'newer', TRUE); ?> <?php previous_post_link('%link', 'older', TRUE); ?>
-				</div> .prevnext -->
-
-				<!-- END PREVIOUS/NEXT BUTTONS -->    
-
-		<?php the_content(); ?>  
-		</div> <!-- #post-id --> 
-		</div> <!-- .category-nicename-->  		    
+				<h4><?php the_date('F d, Y', '', ''); ?></h4>
+				<?php the_content('continue...'); ?>  
+				
+				<?php wp_link_pages(array('before' => '<p class="link_pages"><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number'));  ?>
+				
+			</div> <!-- #post-id --> 
+		</div> <!-- .category-nicename, .notable-post-->  		    
 		
-		 <?php wp_link_pages(array('before' => '<p class="link_pages"><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number'));  ?>
-		
-		<div class="post-bottom-title">   
-		<b><?php the_title(); ?></b>  | <a href="<?php the_permalink() ?>" title="Permalink"><?php the_time('Y') ?></a> | <?php the_category(', '); ?> <?php the_tags('| Tags: ',', ',''); ?>  | <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>
-
-		<?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
-		</div><!-- .post-bottom-title -->
-     
-	<?php comments_template(); ?> 	  
+				<h5><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?> <?php the_tags('| Tags: ',', ',''); ?> | More: <?php the_category(', '); ?> <?php edit_post_link('edit this', '<span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK--></h5>
 
 <!-- <?php trackback_rdf(); ?> -->    
 <?php }} else{ _e('Sorry, no posts matched your criteria.'); }?>    
 
-	</div><!-- .notable-post-->
+			<div class="prevnext">
+				<div class="prev"><?php next_posts_link('Earlier') ?></div> 
+				<div class="next"><?php previous_posts_link('Later') ?></div>
+			</div><!--.prevnext -->	  
+			
 	</div><!-- .notable -->
+
 	<div id="sidebar">
 		<ul>
 		<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar') ) ; ?> 
 		</ul>
-
 	</div><!-- #sidebar -->
+	
 </div><!-- #content -->
 <!-- end post-->     
+
+
+
 
 <?php     
 

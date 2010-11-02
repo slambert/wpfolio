@@ -12,24 +12,42 @@
 
 
 <div id="content"> 
-	<div class="<?php wp_title('',true,''); ?>">
+	
+	<div class="<?php wp_title('',true,'');  ?>">
 
-		<h2 class="pagetitle"><a href="<?php the_permalink() ?>" title="Permalink"><?php if (is_page('home')) { echo ""; } else if (is_page("")) {
-	 the_title();
-	}
-?></a></h2>
+		<h2 class="pagetitle"><a href="<?php the_permalink() ?>" title="Permalink">
+		
+		<?php if (is_page('home')) { 
+				
+				echo ""; 
+				
+				} 
+				
+				else if (is_page("")) 
+				{
+	 				the_title();
+				}
+		?>
+
+		</a></h2>
 		
 		<?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
+		
 		<div class="cv-style widemargins">
+		
 		<?php the_content(); ?> 
 		
+		
 		<?php } else if (is_page()) { ?>
+		
 		<div class="widemargins">
+		
 		<?php the_content(); ?> 
 		
 		<?php } ?>
 		 
 		<?php wp_link_pages(); ?>
+		
 		</div><!-- .widemargins -->
   
 		<div class="post-bottom-title"> <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)'), __(''), __('')); ?>	</div><!-- .post-bottom-title -->
