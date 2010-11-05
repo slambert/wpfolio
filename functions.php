@@ -496,10 +496,9 @@ function wpfolio_add_admin() {
 
 function mytheme_admin() {
 global $themename, $shortname, $options;
-define('saved');
-define('reset');
-if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
+
+if ( $_GET['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
+    if ( $_GET['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
 
 
 <!-- WPFolio Theme Interface -->
