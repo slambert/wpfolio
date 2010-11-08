@@ -61,6 +61,8 @@ add_filter( 'gallery_style', 'wpfolio_remove_gallery_css' );
 wp_enqueue_script('hoverIntent', get_bloginfo('template_directory').'/js/hoverIntent.js',array('jquery'));
 wp_enqueue_script('superfish', get_bloginfo('template_directory').'/js/superfish.js',array('hoverIntent'));
 wp_enqueue_script('supersubs', get_bloginfo('template_directory').'/js/supersubs.js',array('superfish'));
+wp_enqueue_script('wpfolio', get_bloginfo('template_directory').'/js/wpfolio.js',array('supersubs'));
+
 
 // enable threaded comments
 
