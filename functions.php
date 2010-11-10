@@ -685,7 +685,7 @@ function wp_folio_css(){
 			}
 		
 		body, .container, .container p, #content, div.notable-post {
-			color: <?php echo $WPFolio_body_color; ?> ;
+			color: #<?php echo $WPFolio_body_color; ?> ;
 			
 			}
 		
