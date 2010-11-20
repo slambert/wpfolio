@@ -152,8 +152,19 @@ div.entry.notblog p{
 }
 /* @end */
 /* @group images */
-img {border:none;}
-.entry img{margin: 0;}
+img {border:none;
+}
+.entry img{margin: 0;
+	padding: .5em 0;}
+.entry img.alignleft {
+	padding: .5em 1em .5em 0;}
+.entry img.alignright {
+	padding: .5em 0 .5em 1px;	
+}
+img.size-large, img.aligncenter {
+	margin: 0;
+	padding: .5em 0;
+}
 .entrycat img{
 	margin: 3px 3px 3px 3px;
 	margin-bottom: 2px;
@@ -330,7 +341,7 @@ div.notable{
 }
 div.notable-post{
 	padding: 0;
-	margin: 15px 0 3.5em;
+	margin: 15px 0 1.5em;
 }
 h2.post-title a{
 	text-align: left;
