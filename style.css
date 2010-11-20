@@ -48,7 +48,7 @@ h1,h2,h3,h4,h5,h6,form,fieldset{
 	clear:both;
 }
 h1{ /*font-size: ($WPFolio_headline_size)*/ }
-h2, h3 { /*color: (WPFolio_highlight_color)*/ }
+h1,h2,h3 { /*color: (WPFolio_highlight_color)*/ }
 h4{
 	/*color: ($WPFolio_second_color)*/
 }
@@ -57,6 +57,11 @@ h4{
 	font-weight: normal;
 	letter-spacing: .1em;
 	padding-top: 0;
+	padding: .2em 0em;
+}
+#content h1 {
+	letter-spacing: .1em;
+	padding: .2em 0em;
 }
 h2.pagetitle{
 	text-transform: uppercase;
