@@ -461,7 +461,10 @@ ol.commentlist ul{
 }
 p.form-allowed-tags {
 	font-size: smaller;
+	line-height: 1em;
 	clear: both;
+	width: 350px;
+	margin: 0 0 0 6.5em;
 }
 #commentform label{
 	position: relative;
