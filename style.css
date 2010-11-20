@@ -338,10 +338,11 @@ a > .sf-sub-indicator{  /* give all except IE6 the correct values */
 div.notable{
 	width: 600px;
 	float: left;
+	margin-top: -2em;
 }
 div.notable-post{
 	padding: 0;
-	margin: 15px 0 1.5em;
+	margin: 0 0 1.5em;
 }
 h2.post-title a{
 	text-align: left;
@@ -351,15 +352,15 @@ h2.post-title a{
 	padding: 0;
 	margin: 0;
 }
-.notable-post h2{
-	padding: 0;
-	margin-top: 0px;
+.notable-post h2, .notable-post h3{
 	line-height: 1.2em;
+}
+.notable-post h2.post-title{
+	margin-top: 2em;
 }
 .notable-post h3{
 	padding: 0px;
 	margin-top: 0px;
-	line-height: 1.2em;
 	margin-bottom: .5em;
 }
 div.notable-post h3 a, link{
