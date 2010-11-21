@@ -38,8 +38,8 @@
 <?php }} else{ _e('Sorry, no posts matched your criteria.'); }?>    
 
 			<div class="prevnext">
-				<div class="prev"><?php next_posts_link('Earlier') ?></div> 
-				<div class="next"><?php previous_posts_link('Later') ?></div>
+				<div class="prev"><?php previous_posts_link('Previous') ?></div> 
+				<div class="next"><?php next_posts_link('Next') ?></div>
 			</div><!--.prevnext -->	  
 			
 	</div><!-- .notable -->

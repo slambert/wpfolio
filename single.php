@@ -33,7 +33,7 @@
 			</div><!-- .notable-post -->
 
 			<div class="prevnext">
-				<div class="prev"><?php previous_post_link('%link', 'Newer', TRUE); ?></div> <div class="next"><?php next_post_link('%link', 'Older', TRUE); ?></div>
+				<div class="prev"><?php previous_post_link('%link', 'Previous', TRUE); ?></div> <div class="next"><?php next_post_link('%link', 'Next', TRUE); ?></div>
 			</div> <!--.prevnext -->
 
 
@@ -79,7 +79,7 @@
 </div><!-- .post-bottom-title -->
 
 			<div class="prevnext">
-					<div class="next"><?php previous_post_link('%link', 'Later', TRUE); ?></div><div class="prev"><?php next_post_link('%link', 'Earlier', TRUE); ?></div> <!-- flipped on purpose -->
+					<div class="next"><?php previous_post_link('%link', 'more', TRUE); ?></div><div class="prev"><?php next_post_link('%link', 'more', TRUE); ?></div> <!-- flipped on purpose for art examples only - hopefully this makes sense, I'm not sure it does. -->
 					</div> <!--.prevnext --> 
      
 <?php comments_template(); ?> 	  
