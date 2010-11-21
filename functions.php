@@ -6,7 +6,7 @@ function wpfolio_admin_footer() {
 } 
 add_filter('admin_footer_text', 'wpfolio_admin_footer');
 
-// Thumbnail Function
+// Thumbnail Function - this creates a default thumbnail if one is specified
 function get_thumb ($post_ID){
     $thumbargs = array(
     'post_type' => 'attachment',
@@ -20,14 +20,18 @@ function get_thumb ($post_ID){
     }
 } 
 
-$GLOBALS['content_width'] = 900; // This sets the Large image size to 900px
+// This sets the Large image size to 900px
+$GLOBALS['content_width'] = 900; 
 
+// This adds support for post thumbnails of 150px square
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size( 150, 150,true );
 
 // END - Thumbnail Function
 
-// some wp 3.0 features
+
+
+// Adding some WP 3.0 features
 
 // This theme uses wp_nav_menu()
 add_theme_support( 'menus' );
@@ -45,6 +49,7 @@ add_custom_background();
 // END wp 3.0 features
 
 
+
 // Remove inline styles on gallery shortcode
 
 function wpfolio_remove_gallery_css( $css ) {
@@ -54,6 +59,8 @@ add_filter( 'gallery_style', 'wpfolio_remove_gallery_css' );
 
 // END - Remove inline styles on gallery shortcode
 
+
+
 // enqueue jQuery
 //if you have a script that need jquery ... you don't need to call'it. You just have to put it in your dependancies.
 //wp_enqueue_script('jquery');
@@ -62,6 +69,7 @@ wp_enqueue_script('hoverIntent', get_bloginfo('template_directory').'/js/hoverIn
 wp_enqueue_script('superfish', get_bloginfo('template_directory').'/js/superfish.js',array('hoverIntent'));
 wp_enqueue_script('supersubs', get_bloginfo('template_directory').'/js/supersubs.js',array('superfish'));
 wp_enqueue_script('wpfolio', get_bloginfo('template_directory').'/js/wpfolio.js',array('supersubs'));
+
 
 
 // enable threaded comments
@@ -75,8 +83,8 @@ function wpfolio_enable_threaded_comments(){
 add_action('get_header', 'wpfolio_enable_threaded_comments');
 
 
-// enabling a taxonomy for Medium
 
+// enabling a taxonomy for Medium
 
 function wpfolio_create_taxonomies() {
 register_taxonomy('medium', 'post', array( 
