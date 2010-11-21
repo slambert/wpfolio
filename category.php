@@ -18,7 +18,7 @@
 	<?php if (have_posts()): ?>  
 
 						 
-		<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2> <!--CATEGORY TITLE-->
+		<!--category title is commented out <h2 class="pagetitle"><?php echo single_cat_title(); ?></h2> -->
 	  
 			<?php while (have_posts()) : the_post(); ?>     
 		
