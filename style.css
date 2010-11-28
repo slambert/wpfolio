@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 
 Theme Name: WPFolio 
@@ -680,4 +681,589 @@ div.search-result img {
 
 .clear-both {
 	clear: both;
+=======
+/*
+Theme Name: WPFolio
+Theme URI: http://wpfolio.visitsteve.com/wiki/
+Description: Designed specifically for artist's portfolios. Features large images, theme options, and plenty of versatility. GPLv3 licensed. We welcome your code.
+Version: 1.6.5b1
+Author: Steve Lambert & many others
+Tags: fixed-width, photoblogging, one-column, two-columns, theme-options, custom-background, threaded-comments, custom-menu, custom-colors
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl.html
+.
+NOTE: Modifying CSS
+1. Use the included sample child theme
+2. rules commented out and wrapped in parentheses i.e.
+($WPFolio_body_font)
+are handled by the header.php file and editable in
+Current Theme Options in the Wordpress dashboard. They
+can be overridden by the child theme.
+*/
+/* BEGIN user editable area */
+body{
+	/* font-family: ($WPFolio_body_font)*/
+	/* color: ($WPFolio_body_color)*/
+	padding: 5px;
+}
+.container{
+	/* color: ($WPFolio_body_color)*/
+	/* background-color: ($WPFolio_foreground_color)*/
+	margin-top: 30px;
+	width: 960px;
+	margin: 0px auto;
+	text-align: center;
+	padding: 0px;
+}
+#content{
+	font-weight: normal;
+	text-align: left;
+	line-height: 1.4em;
+	font-size: 12px;
+	clear: both;
+	padding: 0;
+	margin: 30px 30px 5px;
+}
+/* @group htags */
+h1,h2,h3,h4,h5,h6,form,fieldset{
+	/* font-family: ($WPFolio_headline_font)*/
+	margin:0;
+	padding:0;
+	clear:both;
+}
+h1{ /*font-size: ($WPFolio_headline_size)*/ }
+h1,h2,h3 { /*color: (WPFolio_highlight_color)*/ }
+h4{
+	/*color: ($WPFolio_second_color)*/
+}
+.low{ display:none; }
+#content h2, #content h3{
+	font-weight: normal;
+	letter-spacing: .1em;
+	padding-top: 0;
+	padding: .2em 0em;
+}
+#content h1 {
+	letter-spacing: .1em;
+	padding: .2em 0em;
+}
+h2.pagetitle{
+	text-transform: uppercase;
+	text-align: center;
+}
+.home h2.pagetitle{display: none;}
+/* @end */
+/* @group links */
+a{
+	color: #545454;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:link{
+	/* color: ($WPFolio_body_color)*/
+	text-decoration: none;
+	font-weight: bold;
+}
+a:visited{
+	/* color: ($WPFolio_body_color)*/
+	text-decoration: none;
+	font-weight: bold;
+}
+a:active{
+	/*color: ($WPFolio_highlight_color)*/
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover{
+	/*color: ($WPFolio_highlight_color)*/
+	text-decoration: none;
+	font-weight: bold;
+}
+/* @end */
+/* @group header */
+div#header{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin-left: 0;
+	padding: 1.5em 30px .5em;
+	max-height:150px;
+	min-height: 50px;
+	overflow: hidden;
+}
+.headertext{
+   	overflow: hidden;
+	text-align: left;
+	padding: 0 0 0 13px;
+}
+.headertext h1 a{
+	/*color: ($WPFolio_highlight_color)*/
+	font-weight: normal;
+	font-style: normal;
+}
+.headertext h1 a:hover{
+	opacity: 0.25;
+}
+#header h4{
+	padding-top: .15em;
+	font-weight: normal;
+	font-style: normal;}
+/* @end */
+/* @group .entry styles */
+div.entry{
+	padding: 0px;
+	font-size: 11px;
+	clear:both;
+	margin: 0px auto 20px;
+}
+div.entry.notblog p{
+	text-align: left;
+}
+.entrycat{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 16px;
+	text-align: center;
+}
+.entrycat a{
+	text-align: center;
+	padding: 10px;
+	font-weight: bold;
+}
+/* @end */
+/* @group images */
+img {border:none;
+}
+.entry img{margin: 0;
+	padding: .5em 0;}
+.entry img.alignleft {
+	padding: .5em 1em .5em 0;}
+.entry img.alignright {
+	padding: .5em 0 .5em 1px;	
+}
+img.size-large, img.aligncenter {
+	margin: 0;
+	padding: .5em 0;
+}
+.entrycat img{
+	margin: 3px 3px 3px 3px;
+	margin-bottom: 2px;
+}
+.wp-caption{
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-style: italic;
+}
+.wp-caption img{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.img-frame{
+	width: 25%;
+	min-width: 220px;
+	height:225px;
+	float: left;
+	display: inline;
+	margin-top: 10px;
+}
+.img-container{
+	text-align:center;
+	margin-right:auto;
+	margin-left: auto;
+	display: inline-table;
+}
+.img-frame-caption{
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.img-frame-caption a{
+	font-weight: normal;
+	font-style: normal;
+	padding: 0;
+}
+.page p img{
+	padding: 0;
+	border-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.alignright,img.alignright{
+	float:right;
+	margin: 0 0 0 1em;
+}
+.alignleft,img.alignleft{
+	float:left;
+	margin: 0 1em 0 0;
+}
+.aligncenter, img.aligncenter{
+	display:block;
+	text-align:center;
+	margin: 1em auto;/*this might need to be removed*/
+}
+.notable .alignnone{
+	/* alignnone defaults to center for artworks, but not for blog */
+}
+.entry .alignnone{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+/* @end */
+/* @group prev/next navigation */
+.prevnext{
+	min-height: 1em;
+	margin: .5em 0 2em;
+}
+.prevnext a, link{
+	text-decoration: none;
+	padding: .5em;
+}
+.prev a:active{
+	text-decoration: none;
+	padding: .5em;
+}
+.prevnext a:hover{
+	/* background-color: ($WPFolio_highlight_color)*/
+	text-decoration: none;
+	padding: .5em;
+	background:	rgba(225, 225, 225, 0.8);
+}
+.prev{
+	float: left;
+	margin-left: 150px;
+	display: block;
+}
+.next{
+	float: right;
+	margin-right: 150px;
+	display: block;
+}
+.prev :before{
+	content: "← ";
+	font-size: 1.2em;
+}
+.next :after{
+	content: " →";
+	font-size: 1.2em;
+}
+/* @end */
+/* @group new navbar */
+div.nav{
+	margin: 0 30px 3em;
+}
+/*** SUPERFISH SKIN ***/
+.sf-menu{
+	float: left;
+	font-size: .8em;
+}
+.sf-menu li a{
+	font-weight: normal;
+	font-style: normal;
+	text-decoration:none;
+	padding: .65em 1em;
+	text-align: left;
+}
+.sf-menu li{
+	margin-right: .3em;
+}
+.sf-menu li li, .sf-menu li li li{
+	/* border top/left get_theme_mod( 'background_color' );*/
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active{
+	background: rgba(225, 225, 225, 0.8);
+	outline:		0;
+}
+div.menu-header ul li.current-menu-item a{
+	text-transform: uppercase;
+	background:	none;
+}
+div.menu-header ul li ul.sub-menu a{
+	font-weight: normal;
+	text-transform: none;
+	background: none;
+}
+/*** arrows **/
+.sf-menu a.sf-with-ul{
+	padding-right: 	1em;
+	min-width:		1px;/* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator{
+	position:		absolute;
+	display:		block;
+	right:			.75em;
+	top:			1.05em;/* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	background:		url('../images/arrows-ffffff.png') no-repeat -10px -100px;/* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator{  /* give all except IE6 the correct values */
+	top:			.8em;
+	background-position: 0 -100px;/* use translucent arrow for modern browsers*/
+}
+/* @end */
+/* @group blog styles */
+div.notable{
+	width: 600px;
+	float: left;
+	margin-top: -2em;
+}
+div.notable-post{
+	padding: 0;
+	margin: 0 0 1.5em;
+}
+h2.post-title a{
+	text-align: left;
+	font-size: 1.2em;
+	font-weight: normal;
+	font-style: normal;
+	padding: 0;
+	margin: 0;
+}
+.notable-post h2, .notable-post h3{
+	line-height: 1.2em;
+}
+.notable-post h2.post-title{
+	margin-top: 2em;
+}
+.notable-post h3{
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: .5em;
+}
+div.notable-post h3 a, link{
+	font-weight: normal;
+	font-style: normal;
+}
+div.notable-post h4{
+	margin-bottom: 1em;
+	font-weight: normal;
+	font-style: normal;
+}
+div.notable-post p{
+	margin-bottom: 1em;
+	margin-top: 0;
+}
+div.notable-post a{
+	/*color: ($WPFolio_second_color)*/
+}
+div.notable-post a:hover{
+	/*color: ($WPFolio_highlight_color)*/
+	opacity: 0.75;
+}
+/* @end */
+/* @group sidebar */
+#sidebar{
+	/* color: ($WPFolio_highlight_color)*/
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	list-style:none;
+	width: 240px;
+	float: right;
+	line-height: 1.5em;
+}
+#sidebar h2.widgettitle{
+	padding: 0;
+	font-size: 12px;
+	margin-bottom: .5em;
+	text-align: center;
+	font-weight: normal;
+	margin-top: 1.5em;
+	text-transform: uppercase;
+}
+#sidebar ul{
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+#sidebar ul li{
+	margin-left: 0;
+	padding-left: 0;
+	margin-bottom: .5em;
+}
+#sidebar a{
+	font-weight: normal;
+	font-style: normal;
+}
+#sidebar a:hover{
+	opacity: 0.75;
+}
+#sidebar form{
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#sidebar #searchform div label.screen-reader-text{
+	display: none;
+}
+#sidebar .widget_calendar table#wp-calendar{
+	margin-right: auto;
+	margin-left: auto;
+	width: 240px;
+	text-align: center;
+}
+/* @end */
+/* @group comments */
+#comments{
+	margin-top: 1em;
+}
+.comment-body{
+	border-bottom: 1px solid #E8E8E8;
+	text-align: justify;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+.comment-author-admin{
+	background: #fdf9c4 repeat-x scroll;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #eee;
+	border-bottom: none;
+}
+ol.commentlist ul{
+	list-style-type: none;
+}
+.required{
+	color: red;
+}
+p.form-allowed-tags {
+	font-size: smaller;
+	line-height: 1em;
+	clear: both;
+	width: 350px;
+	margin: 0 0 0 6.5em;
+}
+#commentform label{
+	position: relative;
+	float: left;
+	width: 60px;
+	text-align: right;
+}
+#commentform input, #commentform textarea{
+	margin-left: 7px;
+}
+/* @end */
+/* @group footer */
+.footer{
+	text-align: left;
+	font-size: 11px;
+	clear: both;
+	margin-top: 10px;
+	padding: 10px 30px 20px;
+	overflow: auto;
+}
+.footer a{
+	font-weight: normal;
+}
+.footer .center{
+width: 100%;
+text-align: center;
+}
+.footer .left{
+padding-top: .8em;
+float: left;
+padding-right: 10px;
+width: 440px;
+}
+.footer .right{
+padding-top: .8em;
+float: right;
+text-align: right;
+padding-left: 10px;
+width: 440px;
+}
+.footer .right img, .footer .left img, .footer .center img{
+	vertical-align: text-top;
+}
+/* @end */
+/* @group gallery */
+.gallery{
+	margin: auto;
+}
+.gallery-item{
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 33%;
+}
+.gallery-caption{
+	margin-left: 0;
+}
+/* @end */
+/* @group edit-link styles */
+.edit-link a:before{
+	content:"✎ ";
+	font-size: 1.3em;
+}
+.edit-link a.post-edit-link{
+	background-color: #FF0;
+	font-size: 12px;
+	font-weight: normal;
+	padding: .5em .8em 2px .5em;
+	color: #000;
+}
+/* @end */
+.post-bottom-title{
+	margin: 5px 30px 0px;
+	text-align: center;
+	font-size: 11px;
+}
+.Page.not.found p{
+	font-size: 1.5em;
+}
+code{
+	color: gray;
+	font-family: "Courier New", Courier, mono;
+}
+.info{
+	margin: 0px 10px 5px;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: justify;
+}
+blockquote{
+	background: url(images/quote.png) no-repeat 15px 5px;
+	margin: 0;
+	padding: 1em 4em;
+	line-height: 1.5em;
+	font-style: italic;
+}
+.widemargins{
+	margin: auto 135px;
+}
+.home .widemargins img, .widemargins-override{
+	margin: auto -135px;
+}
+.justify{
+	text-align: justify;
+}
+div.archive-result img{
+	float: left;
+	margin-right: 2em;
+	margin-bottom: 1em;
+}
+.clear-both{
+	clear: both;
+}
+img#wpstats{
+position: absolute;
+left: -999em;
+>>>>>>> 6b9a4475948b3a23470fb9096dd4575852fc3e3d
 }

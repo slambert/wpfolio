@@ -12,7 +12,7 @@
 
 
 <div id="content"> 
-	<div class="<?php wp_title('',true,''); ?>">
+	<div class="<?php wp_title('',true,''); ?> 404">
 
 		<h2><?php wp_title('',true,''); ?></h2>
 
@@ -24,13 +24,9 @@
     <input type="submit" id="searchsubmit" value="Search" />
   </div><!-- .search -->
 </form>
-</h4>
 
 	</div> 	<!-- .dynamic-title-->	    
-</div><!-- #content-->
-   
-
-<!-- <?php trackback_rdf(); ?> -->     
+</div><!-- #content-->   
 
 
 <!-- end page -->     

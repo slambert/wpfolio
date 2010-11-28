@@ -1,0 +1,8 @@
+.sf-menu li, .sf-menu li li, .sf-menu li li li {
+	background: transparent;-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#E5FFFFFF,endColorstr=#E5FFFFFF)"; /* IE8 */    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E5FFFFFF,endColorstr=#E5FFFFFF);   /* IE6 & 7 */      zoom: 1;}
+	
+.sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background: transparent;-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF)"; /* IE8 */    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);   /* IE6 & 7 */      zoom: 1;}
+
+div.menu-header ul li.current-menu-item a {background: transparent;-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CC8C8C8,endColorstr=#4CC8C8C8)"; /* IE8 */    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CC8C8C8,endColorstr=#4CC8C8C8);   /* IE6 & 7 */      zoom: 1;}
+// colors translated from here: http://kimili.com/journal/rgba-hsla-css-generator-for-internet-explorer/
