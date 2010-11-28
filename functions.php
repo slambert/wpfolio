@@ -362,42 +362,14 @@ function rss_credits_in_footer() {
 		<p><label for="<?php echo $this->get_field_id( 'optional_text' ); ?>">Optional Text</label><textarea class="widefat" rows="1" cols="20" id="<?php echo $this->get_field_id('optional_text'); ?>" name="<?php echo $this->get_field_name('optional_text'); ?>"><?php echo $optional_text; ?></textarea>
 </p>
 		
-<?php
+			<?php
 	}
 }
 
 /* End RSS and Credits Widget */
 
-include(TEMPLATEPATH . '/lib/theme_options.php');
 
-/* BEGIN Theme Admin Interface */
 
-<<<<<<< HEAD
-function modify_css_routine($option_action = null) {
-global $themename, $shortname, $options;
-foreach ($options as $value) {
-				if ($option_action === 'reset') {
-				delete_option( $value['id'] );
-				}
-				
-				if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); }} 
- $dir = TEMPLATEPATH . '/css'; /* set up the folder and file for the theme options css. do I need  if exists statements for safety and do I need to change the directory back to the present one from the css directory?*/
-	chdir($dir);
-	$filename = 'wpfolio.css';
-				ob_start();
-			include(TEMPLATEPATH . '/lib/theme_css.php');
-			$wpfolio_css .= ob_get_contents();
-			ob_end_clean();
-			if (file_exists($filename)){
-			$fh = fopen($filename,'w');
-			}
-			if (is_writable($filename)) {
-			fwrite($fh, $wpfolio_css);
-			} else {
-			echo $filename . ' is not writeable';
-			}
-			}
-=======
 
 
 //...BEGIN THEME OPTIONS...
@@ -497,20 +469,14 @@ $options = array (
 
 
 // BEGIN Theme Admin Interface
->>>>>>> 6b9a4475948b3a23470fb9096dd4575852fc3e3d
 
 function wpfolio_add_admin() {
 	global $themename, $shortname, $options;
-<<<<<<< HEAD
-		if ( $_GET['page'] == basename(__FILE__) )
-	
-=======
 		
 	$page=isset($_GET['page'])?$_GET['page']:false;
 	$action=isset($_REQUEST['action'])?$_REQUEST['action']:false;
 	
 	if ( $page == basename(__FILE__) )
->>>>>>> 6b9a4475948b3a23470fb9096dd4575852fc3e3d
 	{
 		if ( 'save' == $action )
 		{
@@ -527,33 +493,16 @@ function wpfolio_add_admin() {
 					wpfolio_updateSetting( $value['id'],$value['std'] ); 
 				} 
 			}
-			/*
-chdir($dir);
-			$filename = 'wpfolio.css';
-*/
-			modify_css_routine();
 			header("Location: themes.php?page=functions.php&saved=true");
 			die;
 		} 
 		else if( 'reset' == $action )
 		{
-<<<<<<< HEAD
-			/*
-chdir($dir);
-			$filename = 'wpfolio.css';
-*/
-			
-			modify_css_routine('reset');
-				header("Location: themes.php?page=functions.php&reset=true");
-				die;
-				
-=======
 			foreach ($options as $value) {
 				wpfolio_updateSetting( $value['id'],$value['std'] );
 			}
 			header("Location: themes.php?page=functions.php&reset=true");
 			die;
->>>>>>> 6b9a4475948b3a23470fb9096dd4575852fc3e3d
 	 }
 	}
 	add_theme_page($themename." Options", "Current Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
@@ -561,20 +510,6 @@ chdir($dir);
 
 function mytheme_admin() {
 global $themename, $shortname, $options;
-<<<<<<< HEAD
-if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
-
-include(TEMPLATEPATH . '/lib/theme_interface.php');
-
-}
-
-function mytheme_wp_head() { ?>
-<link href="<?php bloginfo('template_directory'); ?>/style.css" rel="stylesheet" type="text/css" />
-<?php }
-	add_action('wp_head', 'mytheme_wp_head');
-	add_action('admin_menu', 'mytheme_add_admin');
-=======
 
 if ( $_GET['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
     if ( $_GET['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
@@ -704,37 +639,13 @@ function wpfolio_getSetting ( $setting, $cache = TRUE ) {
 	global $shortname;
 	
 	static $_settings = NULL;
->>>>>>> 6b9a4475948b3a23470fb9096dd4575852fc3e3d
 
 	if ( ! $cache ) {
 		$_settings = NULL;
 	}
 	
-<<<<<<< HEAD
-                                            
-// Yearly Archives Widget
-
-    function wpfolio_archives($args) {
-	extract($args);
-	$options = get_option('widget_archives');
-	$c = $options['count'] ? '1' : '0';
-	$d = $options['dropdown'] ? '1' : '0';
-	$title = empty($options['title']) ? __('Archives') : apply_filters('widget_title', $options['title']);
-
-	echo $before_widget;
-	echo $before_title . $title . $after_title;
-	if($d) {
-?>
-	<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo attribute_escape(__('Select Year')); ?></option> <?php wp_get_archives("type=yearly&format=option&show_post_count=$c"); ?> </select>
-<?php } else { ?>
-		<ul>
-		<?php wp_get_archives("type=yearly&show_post_count=$c"); ?>
-		</ul>
-<?php
-=======
 	if ( $_settings === NULL ) {
 		$_settings = get_option ( $shortname, NULL );
->>>>>>> 6b9a4475948b3a23470fb9096dd4575852fc3e3d
 	}
 	
 	if ($_settings === NULL ){

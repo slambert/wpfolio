@@ -30,20 +30,12 @@ Add if you want to enable the SuperFish Navbar. It will need styling!
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/superfish-navbar.css" type="text/css" media="screen"/> -->
 <!-- end superfish -->
 
-<<<<<<< HEAD
-<?php wp_get_archives('type=monthly&format=link'); ?>  
- <?php global $options;
-    	foreach ($options as $value) {
-   	if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
-   		?>
-=======
 <!--[if IE]>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
 <![endif]-->
 <?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/resume.css" type="text/css" media="screen" />
 <?php } else if (is_page("")) { } ?>
->>>>>>> 6b9a4475948b3a23470fb9096dd4575852fc3e3d
 
 <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
 <link href="<?php bloginfo('url');?>/?wp_folio_css=css" rel="stylesheet" type="text/css" />
@@ -75,6 +67,3 @@ Add if you want to enable the SuperFish Navbar. It will need styling!
 		
 	</div><!-- .nav -->
 <!-- END MENU -->  
-
-
-
