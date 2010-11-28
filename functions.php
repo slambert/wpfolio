@@ -505,7 +505,7 @@ function wpfolio_add_admin() {
 			die;
 	 }
 	}
-	add_theme_page($themename." Options", "Current Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
+	add_theme_page($themename." Options", "Current Theme Options", 'edit_theme_options', basename(__FILE__), 'mytheme_admin'); //edit_theme_options allows them to appear on multisite installations.
 }
 
 function mytheme_admin() {
