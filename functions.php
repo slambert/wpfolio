@@ -510,7 +510,8 @@ function wpfolio_add_admin() {
 /*
 TODO create an option to get rid of text on category pages - the "category | date | comments" link
 
-TODO go through and figure out what are more options that people want
+TODO go through and figure out what are more options that people want  
+
 */
 function mytheme_admin() {
 global $themename, $shortname, $options;
