@@ -11,7 +11,7 @@
    	if (wpfolio_getSetting( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = wpfolio_getSetting( $value['id'] ); } }
    		?>
 <!-- done calling monthly archives -->
-
+  
 	<title>
 	<?php if ( is_page() ) { ?><?php bloginfo('name'); ?><?php wp_title('|'); ?><?php } ?>
 	<?php if ( is_home() ) { ?><?php bloginfo('name'); ?>&nbsp;|&nbsp;<?php bloginfo('description'); ?><?php } ?>
