@@ -517,7 +517,7 @@ if ( $_GET['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.
 
 <!-- WPFolio Theme Interface -->
 
-<script language="javascript" type="text/javascript" src="<?php echo bloginfo('template_directory') ?>/js/jscolor/jscolor.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jscolor/jscolor.js"></script>
 <div class="wrap">
 
 <h2><?php echo $themename; ?> Settings</h2>
