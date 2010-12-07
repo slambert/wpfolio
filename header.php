@@ -31,10 +31,10 @@ Add if you want to enable the SuperFish Navbar. It will need styling!
 <!-- end superfish -->
 
 <!--[if IE]>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/css/ie-sucks.css" type="text/css" media="screen" />
 <![endif]-->
 <?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/resume.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/css/resume.css" type="text/css" media="screen" />
 <?php } else if (is_page("")) { } ?>
 
 <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
