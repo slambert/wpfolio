@@ -38,7 +38,7 @@ Add if you want to enable the SuperFish Navbar. It will need styling!
 <?php } else if (is_page("")) { } ?>
 
 <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
-<link href="<?php bloginfo('url');?>/?wp_folio_css=css" rel="stylesheet" type="text/css" />
+<link href="<?php echo home_url();?>/?wp_folio_css=css" rel="stylesheet" type="text/css" />
 
 
 <!-- calling wp_head -->
