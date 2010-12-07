@@ -310,9 +310,9 @@ function rss_credits_in_footer() {
 			echo $optional_text;
 			}
 		if ( $show_rss_feed ) {
-			echo ' <a href="feed:' . get_bloginfo("rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/rss.png" border="0" width="14" alt="RSS Feed" /></a> ';}
+			echo ' <a href="feed:' . get_bloginfo("rss2_url") . '"><img src="' . get_template_directory_uri() . '/images/rss.png" border="0" width="14" alt="RSS Feed" /></a> ';}
 		if ( $show_comment_feed ){
-			echo   ' <a href="feed:' . get_bloginfo("comments_rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/comment.gif" border="0" alt="Comments Feed" ></a> ' ;}
+			echo   ' <a href="feed:' . get_bloginfo("comments_rss2_url") . '"><img src="' . get_template_directory_uri() . '/images/comment.gif" border="0" alt="Comments Feed" ></a> ' ;}
 		if ( $show_credits ){
 			echo ' &bull; <small>Credits: <a href="http://www.wordpress.org">Wordpress</a> | <a href="http://wpfolio.visitsteve.com">WPFolio</a> | <a href="http://eyebeam.org/">Eyebeam</a></small>' ;}			
 			
