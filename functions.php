@@ -16,7 +16,7 @@ function get_thumb ($post_ID){
     );
     $thumb = get_posts($thumbargs);
     if ($thumb) {
-        return get_attachment_icon($thumb[0]->ID);
+        return wp_get_attachment_image();
     }
 } 
 
