@@ -49,8 +49,15 @@ h1,h2,h3,h4,h5,h6,form,fieldset{
 }
 h1{ /*font-size: ($WPFolio_headline_size)*/ }
 h1,h2,h3 { /*color: (WPFolio_highlight_color)*/ }
+h3 {
+	font-size: 1.4em;
+}
 h4{
 	/*color: ($WPFolio_second_color)*/
+	font-size: 1.2em;
+}
+h5{
+	font-size: 1em;
 }
 .low{ display:none; }
 #content h2, #content h3{
