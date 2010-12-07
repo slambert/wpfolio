@@ -452,6 +452,7 @@ div.notable-post a:hover{
 	margin-bottom: 10px;
 	padding: 10px;
 }
+.bypostauthor, 
 .comment-author-admin{
 	background: #fdf9c4 repeat-x scroll;
 	-moz-border-radius: 10px;
