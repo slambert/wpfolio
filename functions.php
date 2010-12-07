@@ -65,10 +65,10 @@ add_filter( 'gallery_style', 'wpfolio_remove_gallery_css' );
 //if you have a script that need jquery ... you don't need to call'it. You just have to put it in your dependancies.
 //wp_enqueue_script('jquery');
 
-wp_enqueue_script('hoverIntent', get_bloginfo('template_directory').'/js/hoverIntent.js',array('jquery'));
-wp_enqueue_script('superfish', get_bloginfo('template_directory').'/js/superfish.js',array('hoverIntent'));
-wp_enqueue_script('supersubs', get_bloginfo('template_directory').'/js/supersubs.js',array('superfish'));
-wp_enqueue_script('wpfolio', get_bloginfo('template_directory').'/js/wpfolio.js',array('supersubs'));
+wp_enqueue_script('hoverIntent', get_template_directory_uri().'/js/hoverIntent.js',array('jquery'));
+wp_enqueue_script('superfish', get_template_directory_uri().'/js/superfish.js',array('hoverIntent'));
+wp_enqueue_script('supersubs', get_template_directory_uri().'/js/supersubs.js',array('superfish'));
+wp_enqueue_script('wpfolio', get_template_directory_uri().'/js/wpfolio.js',array('supersubs'));
 
 
 
