@@ -186,7 +186,6 @@ img.size-large, img.aligncenter {
 	-khtml-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	font-style: italic;
 }
 .wp-caption img{
 	margin: 0;
@@ -250,8 +249,6 @@ img.size-large, img.aligncenter {
 	margin: 5px;
 	padding: 5px 0 0;
 	font-size: 1em;
-	font-weight: normal;
-	font-style: normal;
 }
 /* @end */
 /* @group prev/next navigation */
