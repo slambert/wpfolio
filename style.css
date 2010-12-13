@@ -2,7 +2,7 @@
 Theme Name: WPFolio
 Theme URI: http://wpfolio.visitsteve.com/wiki/
 Description: Designed specifically for artist's portfolios. Features large images, theme options, and plenty of versatility. GPLv3 licensed. We welcome your code.
-Version: 1.6.5.2
+Version: 1.6.53
 Author: Steve Lambert & many others
 Tags: fixed-width, photoblogging, one-column, two-columns, theme-options, custom-background, threaded-comments, custom-menu, custom-colors
 License: GNU General Public License v3.0
@@ -38,7 +38,7 @@ body{
 	font-size: 12px;
 	clear: both;
 	padding: 0;
-	margin: 30px 30px 5px;
+	margin: 0 30px;
 }
 /* @group htags */
 h1,h2,h3,h4,h5,h6,form,fieldset{
@@ -49,15 +49,20 @@ h1,h2,h3,h4,h5,h6,form,fieldset{
 }
 h1{ /*font-size: ($WPFolio_headline_size)*/ }
 h1,h2,h3 { /*color: (WPFolio_highlight_color)*/ }
+h3 {
+	font-size: 1.4em;
+}
 h4{
 	/*color: ($WPFolio_second_color)*/
+	font-size: 1.2em;
+}
+h5{
+	font-size: 1em;
 }
 .low{ display:none; }
 #content h2, #content h3{
 	font-weight: normal;
 	letter-spacing: .1em;
-	padding-top: 0;
-	padding: .2em 0em;
 }
 #content h1 {
 	letter-spacing: .1em;
@@ -127,7 +132,7 @@ div#header{
 /* @group .entry styles */
 div.entry{
 	padding: 0px;
-	font-size: 11px;
+	font-size: 12px;
 	clear:both;
 	margin: 0px auto 20px;
 }
@@ -179,7 +184,6 @@ img.size-large, img.aligncenter {
 	-khtml-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	font-style: italic;
 }
 .wp-caption img{
 	margin: 0;
@@ -238,6 +242,12 @@ img.size-large, img.aligncenter {
     margin-right: auto;
     text-align: center;
 }
+
+.wp-caption-text{
+	margin: 5px;
+	padding: 5px 0 0;
+	font-size: 1em;
+}
 /* @end */
 /* @group prev/next navigation */
 .prevnext{
@@ -279,7 +289,7 @@ img.size-large, img.aligncenter {
 /* @end */
 /* @group new navbar */
 div.nav{
-	margin: 0 30px 3em;
+	margin: 0 30px 3.5em;
 }
 /*** SUPERFISH SKIN ***/
 .sf-menu{
@@ -338,11 +348,10 @@ a > .sf-sub-indicator{  /* give all except IE6 the correct values */
 div.notable{
 	width: 600px;
 	float: left;
-	margin-top: -2em;
 }
 div.notable-post{
 	padding: 0;
-	margin: 0 0 1.5em;
+	margin: 0 0 5em;
 }
 h2.post-title a{
 	text-align: left;
@@ -353,10 +362,7 @@ h2.post-title a{
 	margin: 0;
 }
 .notable-post h2, .notable-post h3{
-	line-height: 1.2em;
-}
-.notable-post h2.post-title{
-	margin-top: 2em;
+	line-height: 1.8em;
 }
 .notable-post h3{
 	padding: 0px;
@@ -401,13 +407,14 @@ div.notable-post a:hover{
 	margin-bottom: .5em;
 	text-align: center;
 	font-weight: normal;
-	margin-top: 1.5em;
 	text-transform: uppercase;
 }
 #sidebar ul{
 	list-style: none;
 	margin-left: 0;
 	padding-left: 0;
+	margin-bottom: 2em;
+	margin-top: 0;
 }
 #sidebar ul li{
 	margin-left: 0;
@@ -445,6 +452,7 @@ div.notable-post a:hover{
 	margin-bottom: 10px;
 	padding: 10px;
 }
+.bypostauthor, 
 .comment-author-admin{
 	background: #fdf9c4 repeat-x scroll;
 	-moz-border-radius: 10px;
@@ -565,10 +573,19 @@ blockquote{
 	margin: auto 135px;
 }
 .home .widemargins img, .widemargins-override{
-	margin: auto -135px;
+margin: auto -135px;
 }
 .justify{
-	text-align: justify;
+text-align: justify;
+}
+.sticky {
+	border: 1px solid #ddd;
+	background-color: #f3f3f3;
+	padding: 0px 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 }
 div.archive-result img{
 	float: left;

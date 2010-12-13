@@ -6,8 +6,17 @@ Template Name: Archives
     get_header(); 
 
 ?>    
+
+<!-- generated with archives.php -->
+
 <div id="content">
-<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : start_wp(); ?>  
+
+<?php 	
+		if (! empty($display_stats) ) { get_stats(1); echo "<br />"; };
+	 	if (($posts & empty($display_stats)) ) {
+	 	while ( have_posts() ) {
+	 		the_post();
+	  	?>    
 
 <div class="entrycat"> 
 <h2>All Work</h2> 
