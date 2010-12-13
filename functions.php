@@ -505,14 +505,9 @@ function wpfolio_add_admin() {
 			die;
 	 }
 	}
-	add_theme_page($themename." Options", "Current Theme Options", 'edit_theme_options', basename(__FILE__), 'mytheme_admin'); //edit_theme_options allows them to appear on multisite installations.
+	add_theme_page($themename." Options", "Current Theme Options", 'edit_theme_options', basename(__FILE__), 'mytheme_admin'); 
 }
-/*
-TODO create an option to get rid of text on category pages - the "category | date | comments" link
 
-TODO go through and figure out what are more options that people want  
-
-*/
 function mytheme_admin() {
 global $themename, $shortname, $options;
 
