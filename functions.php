@@ -270,7 +270,9 @@ function wpfolio_add_admin() {
 			die;
 	 }
 	}
-	add_theme_page($themename." Options", "Current Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
+
+	add_theme_page($themename." Options", "Current Theme Options", 'edit_theme_options', basename(__FILE__), 'mytheme_admin'); 
+
 }
 
 function mytheme_admin() {
