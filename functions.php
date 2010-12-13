@@ -16,7 +16,7 @@ function get_thumb ($post_ID){
     );
     $thumb = get_posts($thumbargs);
     if ($thumb) {
-        return get_attachment_icon($thumb[0]->ID);
+        return wp_get_attachment_image();
     }
 } 
 
@@ -65,10 +65,10 @@ add_filter( 'gallery_style', 'wpfolio_remove_gallery_css' );
 //if you have a script that need jquery ... you don't need to call'it. You just have to put it in your dependancies.
 //wp_enqueue_script('jquery');
 
-wp_enqueue_script('hoverIntent', get_bloginfo('template_directory').'/js/hoverIntent.js',array('jquery'));
-wp_enqueue_script('superfish', get_bloginfo('template_directory').'/js/superfish.js',array('hoverIntent'));
-wp_enqueue_script('supersubs', get_bloginfo('template_directory').'/js/supersubs.js',array('superfish'));
-wp_enqueue_script('wpfolio', get_bloginfo('template_directory').'/js/wpfolio.js',array('supersubs'));
+wp_enqueue_script('hoverIntent', get_template_directory_uri().'/js/hoverIntent.js',array('jquery'));
+wp_enqueue_script('superfish', get_template_directory_uri().'/js/superfish.js',array('hoverIntent'));
+wp_enqueue_script('supersubs', get_template_directory_uri().'/js/supersubs.js',array('superfish'));
+wp_enqueue_script('wpfolio', get_template_directory_uri().'/js/wpfolio.js',array('supersubs'));
 
 
 
@@ -310,9 +310,9 @@ function rss_credits_in_footer() {
 			echo $optional_text;
 			}
 		if ( $show_rss_feed ) {
-			echo ' <a href="feed:' . get_bloginfo("rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/rss.png" border="0" width="14" alt="RSS Feed" /></a> ';}
+			echo ' <a href="feed:' . get_bloginfo("rss2_url") . '"><img src="' . get_template_directory_uri() . '/images/rss.png" border="0" width="14" alt="RSS Feed" /></a> ';}
 		if ( $show_comment_feed ){
-			echo   ' <a href="feed:' . get_bloginfo("comments_rss2_url") . '"><img src="' . get_bloginfo("template_url") . '/images/comment.gif" border="0" alt="Comments Feed" ></a> ' ;}
+			echo   ' <a href="feed:' . get_bloginfo("comments_rss2_url") . '"><img src="' . get_template_directory_uri() . '/images/comment.gif" border="0" alt="Comments Feed" ></a> ' ;}
 		if ( $show_credits ){
 			echo ' &bull; <small>Credits: <a href="http://www.wordpress.org">Wordpress</a> | <a href="http://wpfolio.visitsteve.com">WPFolio</a> | <a href="http://eyebeam.org/">Eyebeam</a></small>' ;}			
 			
@@ -517,12 +517,12 @@ if ( $_GET['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.
 
 <!-- WPFolio Theme Interface -->
 
-<script language="javascript" type="text/javascript" src="<?php echo bloginfo('template_directory') ?>/js/jscolor/jscolor.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jscolor/jscolor.js"></script>
 <div class="wrap">
 
 <h2><?php echo $themename; ?> Settings</h2>
 
-<p>Remember to set up <a href="<?php bloginfo('wpurl'); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 4 widget areas and 2 custom widgets for changing your navigation, including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
+<p>Remember to set up <a href="<?php echo site_url(); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 4 widget areas and 2 custom widgets for changing your navigation, including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
 
 <form method="post">
 	<table class="optiontable">

@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">   
+<html <?php language_attributes(); ?>>   
 <head profile="http://gmpg.org/xfn/11">  
 
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
@@ -24,21 +24,21 @@
 
 
 <!-- Superfish Support -->
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/superfish.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/css/superfish.css" type="text/css" media="screen"/>
 <!--
 Add if you want to enable the SuperFish Navbar. It will need styling! 
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/superfish-navbar.css" type="text/css" media="screen"/> -->
+<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/css/superfish-navbar.css" type="text/css" media="screen"/> -->
 <!-- end superfish -->
 
 <!--[if IE]>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie-sucks.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/css/ie-sucks.css" type="text/css" media="screen" />
 <![endif]-->
 <?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/resume.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/css/resume.css" type="text/css" media="screen" />
 <?php } else if (is_page("")) { } ?>
 
 <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
-<link href="<?php bloginfo('url');?>/?wp_folio_css=css" rel="stylesheet" type="text/css" />
+<link href="<?php echo home_url();?>/?wp_folio_css=css" rel="stylesheet" type="text/css" />
 
 
 <!-- calling wp_head -->
