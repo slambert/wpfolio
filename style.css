@@ -135,6 +135,7 @@ div.entry{
 	font-size: 12px;
 	clear:both;
 	margin: 0px auto 20px;
+	overflow: hidden;
 }
 div.entry.notblog p{
 	text-align: left;
@@ -348,6 +349,7 @@ a > .sf-sub-indicator{  /* give all except IE6 the correct values */
 div.notable{
 	width: 600px;
 	float: left;
+	overflow: hidden;
 }
 div.notable-post{
 	padding: 0;
