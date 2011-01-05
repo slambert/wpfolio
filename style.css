@@ -549,6 +549,9 @@ width: 440px;
 	font-size: 11px;
 	clear: both;
 }
+p.link_pages {
+	clear: both;
+}
 .Page.not.found p{
 	font-size: 1.5em;
 }
