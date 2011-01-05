@@ -21,8 +21,9 @@ require_once(THEMELIB . '/option-stylesheet.php');
 ////////////
 
 // This sets the Large image size to 900px
-$GLOBALS['content_width'] = 900; 
 
+if ( ! isset( $content_width ) ) 
+	$content_width = 900;
 
 // Remove inline styles on gallery shortcode
 
