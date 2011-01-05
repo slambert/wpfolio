@@ -576,7 +576,7 @@ blockquote{
 .widemargins{
 	margin: auto 135px;
 }
-.home .widemargins img, .widemargins-override{
+.widemargins-override{
 margin: auto -135px;
 }
 .justify{
