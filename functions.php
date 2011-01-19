@@ -3,7 +3,7 @@
 // Importing extra objects
 
 // Path constants
-define('THEMELIB', TEMPLATEPATH . '/library');
+define('THEMELIB', get_template_directory() . '/library');
 
 // Load widgets
 require_once(THEMELIB . '/widgets.php');
@@ -21,8 +21,9 @@ require_once(THEMELIB . '/option-stylesheet.php');
 ////////////
 
 // This sets the Large image size to 900px
-$GLOBALS['content_width'] = 900; 
 
+if ( ! isset( $content_width ) ) 
+	$content_width = 900;
 
 // Remove inline styles on gallery shortcode
 
@@ -44,7 +45,7 @@ function get_thumb ($post_ID){
     );
     $thumb = get_posts($thumbargs);
     if ($thumb) {
-        return wp_get_attachment_image();
+        return wp_get_attachment_image($thumb[0]->ID);
     }
 } 
 
@@ -276,8 +277,8 @@ function wpfolio_add_admin() {
 function mytheme_admin() {
 global $themename, $shortname, $options;
 
-if ( $_GET['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    if ( $_GET['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
+if ( isset($_GET['saved']) && $_GET['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
+    if ( isset($_GET['reset']) && $_GET['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
 
 
 <!-- WPFolio Theme Interface -->

@@ -27,24 +27,32 @@
 				{
 	 				the_title();
 				}
-		?>
-
-		</a></h2>
+		?></a></h2>
 		
 		<?php if (is_page(array('RESUME','Resume','resume','CV','cv'))) { ?>
 		
-		<div class="cv-style widemargins">
+		<div class="cv-style widemargins"><!-- conditional class added to resume/cv -->
 		
 		<?php the_content(); ?> 
 		
+		<?php } 
 		
-		<?php } else if (is_page()) { ?>
+		elseif (is_front_page()) { ?>
 		
-		<div class="widemargins">
+		<div class="front-page"><!-- conditional class added to Front Page -->
+		
+		<?php the_content(); ?> 
+		
+		<?php } 
+		
+		elseif (is_page()) { ?>
+		
+		<div class="widemargins"><!-- conditional class added to Pages -->
 		
 		<?php the_content(); ?> 
 		
 		<?php } ?>
+		
 		 
 		<?php wp_link_pages(); ?>
 		
