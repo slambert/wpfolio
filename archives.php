@@ -43,7 +43,7 @@ Template Name: Archives
 <?php endwhile; ?>  	
 </div> <!-- .entry cat (?)-->     
 
-<?php endforeach; else: ?>    
+   
 
 <p><h2 class="center">Sorry, page not found</h2></p> 
 <?php endif; ?>    
