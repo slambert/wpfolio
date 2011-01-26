@@ -232,6 +232,22 @@ $options = array (
 //...END THEME OPTIONS...//
 
 
+//...SETTINGS API...//
+
+function wpfolio_theme_settings(){
+	
+	register_setting( 'wpfolio_theme_settings', 'wpfolio', 'wpfolio_validate_options' );
+	
+	
+}
+
+add_action( 'admin_init', 'wpfolio_theme_settings' );
+
+$settings = get_option('wpfolio', $options);
+
+
+add_action('admin_menu', 'wpfolio_add_admin');
+
 
 
 // BEGIN Theme Admin Interface
@@ -239,43 +255,14 @@ $options = array (
 function wpfolio_add_admin() {
 	global $themename, $shortname, $options;
 		
-	$page=isset($_GET['page'])?$_GET['page']:false;
-	$action=isset($_REQUEST['action'])?$_REQUEST['action']:false;
-	
-	if ( $page == basename(__FILE__) )
-	{
-		if ( 'save' == $action )
-		{
-			foreach ($options as $value) {
-				wpfolio_updateSetting( $value['id'], $_REQUEST[ $value['id'] ] ); 
-			}
-			
-			foreach ($options as $value)
-			{
-				if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-					wpfolio_updateSetting( $value['id'], $_REQUEST[ $value['id'] ]  ); 
-				}
-				else {
-					wpfolio_updateSetting( $value['id'],$value['std'] ); 
-				} 
-			}
-			header("Location: themes.php?page=functions.php&saved=true");
-			die;
-		} 
-		else if( 'reset' == $action )
-		{
-			foreach ($options as $value) {
-				wpfolio_updateSetting( $value['id'],$value['std'] );
-			}
-			header("Location: themes.php?page=functions.php&reset=true");
-			die;
-	 }
-	}
-	add_theme_page($themename." Options", "Current Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
+
+add_theme_page($themename." Options", "Current Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
+
+
 }
 
 function mytheme_admin() {
-global $themename, $shortname, $options;
+global $themename, $shortname, $options, $settings;
 
 if ( isset($_GET['saved']) && $_GET['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
     if ( isset($_GET['reset']) && $_GET['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';?>
@@ -285,6 +272,7 @@ if ( isset($_GET['saved']) && $_GET['saved'] ) echo '<div id="message" class="up
 
 <script language="javascript" type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jscolor/jscolor.js"></script>
 <div class="wrap">
+	
 
 <h2><?php echo $themename; ?> Settings</h2>
 
@@ -292,8 +280,10 @@ if ( isset($_GET['saved']) && $_GET['saved'] ) echo '<div id="message" class="up
 
 <form method="post">
 	<table class="optiontable">
+		
+	<?php	var_dump($settings); ?>
 	
-	<?php foreach ($options as $value) { 
+	<?php foreach ($settings as $value) { 
     if ($value['type'] == "text") { ?>
         <tr valign="top"> 
     		<th scope="row"><?php echo $value['name']; ?>:</th>
@@ -392,7 +382,9 @@ if ( isset($_GET['saved']) && $_GET['saved'] ) echo '<div id="message" class="up
 <?php
 }
 
-add_action('admin_menu', 'wpfolio_add_admin');
+
+
+
 
 /**
  * Gets the value for a setting
@@ -401,6 +393,8 @@ add_action('admin_menu', 'wpfolio_add_admin');
  * @param $cache
  * @return Mixed
  */
+
+
 function wpfolio_getSetting ( $setting, $cache = TRUE ) {
 	global $shortname;
 	
@@ -422,6 +416,7 @@ function wpfolio_getSetting ( $setting, $cache = TRUE ) {
 	return $return;
 }
 
+
 /**
  * Updates a setting
  *
@@ -436,5 +431,6 @@ function wpfolio_updateSetting ( $setting, $value ) {
 	update_option ( $shortname, $_settings );
 	wpfolio_getSetting ( 'wpfolio_version', FALSE );
 }
+
 
 ?>
