@@ -3,7 +3,7 @@
 // Importing extra objects
 
 // Path constants
-define('THEMELIB', TEMPLATEPATH . '/library');
+define('THEMELIB', get_template_directory() . '/library');
 
 // Load widgets
 require_once(THEMELIB . '/widgets.php');
