@@ -1,7 +1,12 @@
 <?php
-/*
-Template Name: Full Width Page
-*/
+/**
+ * Template Name: Full Width Page
+ * 
+ * A custom page template that uses the full width of the page
+ *
+ * The "Template Name:" bit above allows this to be selectable
+ * from a dropdown menu on the edit page screen.
+ */
 ?>
 
 <?php
