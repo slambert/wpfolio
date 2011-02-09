@@ -246,7 +246,12 @@ add_action( 'admin_init', 'wpfolio_theme_settings' );
 $settings = get_option('wpfolio', $options);
 
 
+
+
 add_action('admin_menu', 'wpfolio_add_admin');
+
+
+
 
 
 
@@ -276,14 +281,20 @@ if ( isset($_GET['saved']) && $_GET['saved'] ) echo '<div id="message" class="up
 
 <h2><?php echo $themename; ?> Settings</h2>
 
+
 <p>Remember to set up <a href="<?php echo site_url(); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 4 widget areas and 2 custom widgets for changing your navigation, including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
 
 <form method="post">
+	
+	<?php settings_fields('wpfolio_theme_options'); ?>
+	
 	<table class="optiontable">
 		
-	<?php	var_dump($settings); ?>
 	
-	<?php foreach ($settings as $value) { 
+	
+	
+	
+	<?php foreach ($options as $value) { 
     if ($value['type'] == "text") { ?>
         <tr valign="top"> 
     		<th scope="row"><?php echo $value['name']; ?>:</th>
@@ -291,6 +302,8 @@ if ( isset($_GET['saved']) && $_GET['saved'] ) echo '<div id="message" class="up
         		<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( wpfolio_getSetting( $value['id'] ) === NULL ) { echo $value['std']; } else { echo wpfolio_getSetting( $value['id'] );  } ?>" />
     		</td>
 		</tr>
+		
+		
 	
 	<?php } elseif ($value['type'] == "select") { ?>
 
@@ -413,6 +426,11 @@ function wpfolio_getSetting ( $setting, $cache = TRUE ) {
 	} else {
 		$return = $_settings[$setting];
 	}
+	
+	
+
+	
+	
 	return $return;
 }
 
@@ -431,6 +449,11 @@ function wpfolio_updateSetting ( $setting, $value ) {
 	update_option ( $shortname, $_settings );
 	wpfolio_getSetting ( 'wpfolio_version', FALSE );
 }
+
+
+
+
+require_once ( get_template_directory() . '/library/theme-options.php' );
 
 
 ?>
