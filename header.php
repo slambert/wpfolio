@@ -6,10 +6,8 @@
 
 <!-- calling monthly archives -->
 <?php wp_get_archives('type=monthly&format=link'); ?>  
- <?php global $options;
-    	foreach ($options as $value) {
-   	if (wpfolio_getSetting( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = wpfolio_getSetting( $value['id'] ); } }
-   		?>
+ <?php global $settings; ?>
+    	
 <!-- done calling monthly archives -->
   
 	<title>
