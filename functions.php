@@ -1,5 +1,13 @@
 <?php  
 
+
+// Shortcode to add wide margins to a post page - works as is, but is applied in post lists
+
+function wide_margins_shortcode ($atts, $content = null) {
+	return '<div class="widemargins">' . do_shortcode($content) . '</div>';
+}
+add_shortcode("wide", "wide_margins_shortcode");
+
 // Importing extra objects
 
 // Path constants
