@@ -33,9 +33,8 @@ Template Name: Archives
 					the_post_thumbnail();
 				}
 				else{
-
-				echo get_thumb($post->ID); 
-			}
+					echo get_thumb($post->ID); 
+				}
 ?>
 </a> 
  
@@ -55,4 +54,3 @@ Template Name: Archives
     get_footer();
 
 ?>
-</div> <!-- is this superfluous? -->
