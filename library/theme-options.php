@@ -6,6 +6,13 @@
 $themename = "WPFolio";
 $shortname = "WPFolio";
 
+
+
+
+
+
+
+
 $options = array (
 
 //Headline Font
@@ -97,6 +104,7 @@ $options = array (
 
 
 
+
 /**
  * Gets the value for a setting
  *
@@ -104,7 +112,7 @@ $options = array (
  * @param $cache
  * @return Mixed
  */
-function wpfolio_getSetting ( $setting, $cache = TRUE ) {
+function wpfolio_getSetting ($setting, $cache = TRUE ) {
 	global $shortname;
 	
 	static $_settings = NULL;
@@ -134,7 +142,7 @@ add_action( 'admin_menu', 'theme_options_add_page' );
  * Init plugin options to white list our options
  */
 function theme_options_init(){
-	register_setting( 'wpfolio_options', 'WPFolio', 'theme_options_validate' );
+	register_setting('wpfolio', 'WPFolio', 'theme_options_validate' );
 }
 
 /**
@@ -214,13 +222,19 @@ $color_option = array(
 /**
  * Create the options page
  */
+
+
+
+
+
+
 function theme_options_do_page() {
 	global $font_options, $radio_options, $options;
 	
 	
 
-	$settings = get_option('wpfolio');
-
+	
+	
 
 	
 
@@ -248,18 +262,18 @@ function theme_options_do_page() {
 
 		<form method="post" action="options.php">
 
-			<?php settings_fields( 'wpfolio_options' ); ?>
+			<?php settings_fields( 'wpfolio' ); ?>
 
 			<p>Remember to set up <a href="<?php echo site_url(); ?>/wp-admin/widgets.php">widgets</a>. WPFolio includes 4 widget areas and 2 custom widgets for changing your navigation, including licensing information, and adding a link to your RSS feed.  Also, please check the <a href="http://dev.eyebeam.org/projects/wpfolio/wiki/WPFolio" target="_blank"> WPFolio site</a> for theme updates, documentation, and more.</p>
 
 
 			<table class="optiontable">
 
-
-
-
-
+				
 			<?php foreach ($options as $value) { 
+				
+				
+				
 		    if ($value['type'] == "text") { ?>
 		        <tr valign="top"> 
 		    		<th scope="row"><?php echo $value['name']; ?>:</th>
@@ -355,5 +369,120 @@ function theme_options_validate( $input ) {
 
 	return $input;
 }
+
+
+
+
+function check_oldOptions(){
+	
+	
+	$old_options = array();
+	
+	if(get_option('WPFolio_headline_font')){
+		
+		$old_options['WPFolio_headline_font'] = get_option('WPFolio_headline_font');
+		
+		delete_option('WPFolio_headline_font');
+		
+		
+	}
+	
+	if(get_option('WPFolio_headline_size')){
+		
+		
+		$old_options['WPFolio_headline_size'] = get_option('WPFolio_headline_size');
+		
+		delete_option('WPFolio_headline_size');
+		
+	}
+	
+	if(get_option('WPFolio_body_font')){
+		
+		$old_options['WPFolio_body_font'] = get_option('WPFolio_body_font');
+		
+		delete_option('WPFolio_body_font');
+	}
+	
+	if(get_option('WPFolio_foreground_color')){
+		
+		$old_options['WPFolio_foreground_color'] = get_option('WPFolio_foreground_color');
+		
+		delete_option('WPFolio_foreground_color');
+		
+	}
+	
+	if(get_option('WPFolio_foreground_color')){
+		
+		$old_options['WPFolio_foreground_color'] = get_option('WPFolio_foreground_color');
+		
+		delete_option('WPFolio_foreground_color');
+	}
+	
+	if(get_option('WPFolio_highlight_color')){
+		
+		$old_options['WPFolio_highlight_color'] = get_option('WPFolio_highlight_color');
+		
+		delete_option('WPFolio_highlight_color');
+		
+	}
+	
+	if(get_option('WPFolio_highlight_color')){
+		
+		$old_options['WPFolio_highlight_color'] = get_option('WPFolio_highlight_color');
+		
+		delete_option('WPFolio_highlight_color');
+		
+	}
+	
+	if(get_option('WPFolio_body_color')){
+		
+		$old_options['WPFolio_body_color'] = get_option('WPFolio_body_color');
+		
+		delete_option('WPFolio_body_color');
+		
+	}
+	
+	if(get_option('WPFolio_second_color')){
+		
+		$old_options['WPFolio_second_color'] = get_option('WPFolio_second_color');
+		
+		delete_option('WPFolio_second_color');
+		
+	}
+	
+	if(get_option('WPFolio_visible')){
+		
+		$old_options['WPFolio_visible'] = get_option('WPFolio_visible');
+		
+		delete_option('WPFolio_visible');
+	}
+	
+	if(get_option('WPFolio_text_transform')){
+		
+		$old_options['WPFolio_text_transform'] = get_option('WPFolio_text_transform');
+		
+		delete_option('WPFolio_text_transform');
+		
+	}
+	
+	
+	#END THE OLD OPTIONS ARRAY
+	
+
+	if(!empty($old_options)){
+		
+		update_option('wpfolio', $old_options);
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+}
+
+add_action('admin_init', 'check_oldOptions');
 
 // adapted from http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/
