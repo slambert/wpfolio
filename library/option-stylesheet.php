@@ -12,6 +12,7 @@ function wp_folio_css(){
     
 	global  $settings;
 	    
+		
 				if (array_key_exists('wp_folio_css', $_REQUEST)){
     				header('Content-Type: text/css');
 					?>
