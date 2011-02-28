@@ -22,8 +22,8 @@
 	</div><!-- .post-bottom-title -->
 
 	<div class="prevnext">
-		<div class="prev"><a href="<?php previous_image_link(); ?>" rel="prev">Previous</a></div>
-		<div class="next"><a href="<?php next_image_link(); ?>" rel="next">Next</a></div> 
+		<div class="prev"><?php previous_image_link( 0, 'Previous' ); ?></div>
+		<div class="next"><?php next_image_link( 0, 'Next' ); ?></div> 
 	</div> <!--.prevnext --> 	
 
 	<?php endwhile; else: ?>
