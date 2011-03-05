@@ -4,27 +4,26 @@ div.cv-style h2, div.cv-style h3 {
 }
 div.cv-style ul {
 	padding: 0;
-	margin-top: .9em;
+	margin-top: 1em;
 }
 div.cv-style ul li {
 	list-style: none;
-	vertical-align: -1.5em;
 	padding: 0;
+	margin:0;
 	font-weight: bold;
 	font-style: italic;
-	line-height: 0;
+	line-height: 1.3em;
+}
+
+div.cv-style ul li ul {
+	margin-top: -1.3em;
+	margin-left: 6em;
+	margin-bottom: 1.5em;
 }
 
 div.cv-style ul li ul li  {
-	font-size: 1em;
 	font-weight: normal;
-	bottom: 1.8em;
-	position: relative;
-	vertical-align: 0em;
 	font-style: normal;
-	padding: 0;
-	margin-right: 0px;
-	margin-left: 6em;
 	line-height: 1.3em;
-	margin-bottom: .3em;
+
 }
