@@ -56,7 +56,7 @@
 		
 		<?php } 
 		
-		elseif { ?>
+		else { ?>
 		
 		<div class="fullwidthpage"><!-- conditional class added to Full Width Pages -->
 		
