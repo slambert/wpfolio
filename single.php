@@ -86,7 +86,7 @@
 </div><!-- #content -->
 
 <!-- <?php trackback_rdf(); ?> -->    
-<?php endforeach; else: ?> <?php _e('Sorry, no posts matched your criteria.', 'default'); ?>
+<?php endforeach; else: ?> <?php _e('Sorry, no posts matched your criteria.', 'wpfolio'); ?>
 <?php endif; ?>    
 
 <!-- end post-->

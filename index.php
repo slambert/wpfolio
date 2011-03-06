@@ -37,7 +37,7 @@
 		</div> <!-- .category-nicename, .notable-post-->  		    
 		
 <!-- <?php trackback_rdf(); ?> -->    
-<?php }} else{ _e('Sorry, no posts matched your criteria.', 'default'); }?>    
+<?php }} else{ _e('Sorry, no posts matched your criteria.', 'wpfolio'); }?>    
 
 			<div class="prevnext">
 				<div class="prev"><?php previous_posts_link('Previous') ?></div> 

@@ -82,7 +82,7 @@
 <!-- <?php trackback_rdf(); ?> -->    
 
 <?php endwhile; else: ?>
-<p><?php _e('Sorry, no posts matched your criteria.', 'default'); ?></p>
+<p><?php _e('Sorry, no posts matched your criteria.', 'wpfolio'); ?></p>
 <?php endif; ?>
 
 <!-- end page -->     
