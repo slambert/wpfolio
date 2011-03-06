@@ -11,7 +11,7 @@
 <!-- begin post -->
 
 		<div class="notable">
-		<h2 class="pagetitle">Search Result for <?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = esc_html($s, 1); $count = $allsearch->post_count; _e(''); _e('<span class="search-terms">'); echo $key; _e('</span>'); _e(' &mdash; '); echo $count . ' '; _e('articles'); wp_reset_query(); ?></h2> <!-- Pagetitle shows number of search results-->
+		<h2 class="pagetitle">Search Result for <?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = esc_html($s, 1); $count = $allsearch->post_count; _e('', 'wpfolio'); _e('<span class="search-terms">', 'wpfolio'); echo $key; _e('</span>', 'wpfolio'); _e(' &mdash; ', 'wpfolio'); echo $count . ' '; _e('articles', 'wpfolio'); wp_reset_query(); ?></h2> <!-- Pagetitle shows number of search results-->
 		
 
 	<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
@@ -62,7 +62,7 @@
 <?php endforeach; else: ?> 
 	
 	<div class="notable-post">
-	<h2><?php _e('Sorry, nothing matched your search. Try again.'); ?></h2>
+	<h2><?php _e('Sorry, nothing matched your search. Try again.', 'wpfolio'); ?></h2>
 	</div><!-- .notable-post -->
 <?php endif; ?>    
 
