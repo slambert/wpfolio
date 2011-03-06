@@ -1,23 +1,5 @@
 <?php  
 
-
-// Enable post formats
-add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'video', 'audio', 'quote') );
-
-// Post formats conditional
-function wpfolio_post_formats() {
-		if ( has_post_format( 'aside' )) {
-		} else if ( has_post_format( 'gallery' )) {
-		} else if ( has_post_format( 'link' )) {		
-		} else if ( has_post_format( 'image' )) {			
-		} else if ( has_post_format( 'video' )) {			
-		} else if ( has_post_format( 'audio' )) {
-		} else if ( has_post_format( 'quote' )) {
-		} else {
-		}		
-} // end formats
-
-
 // Shortcode to add wide margins to a post page - works as is, but is applied in post lists
 
 function wide_margins_shortcode ($atts, $content = null) {
@@ -90,6 +72,24 @@ set_post_thumbnail_size( 150, 150,true );
 /////////////////////
 
 
+// Enable WP 3.1 post formats
+add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'video', 'audio', 'quote') );
+
+// Post formats conditional
+function wpfolio_post_formats() {
+		if ( has_post_format( 'aside' )) {
+		} else if ( has_post_format( 'gallery' )) {
+		} else if ( has_post_format( 'link' )) {		
+		} else if ( has_post_format( 'image' )) {			
+		} else if ( has_post_format( 'video' )) {			
+		} else if ( has_post_format( 'audio' )) {
+		} else if ( has_post_format( 'quote' )) {
+		} else {
+		}		
+} 
+// end 3.1 formats
+
+
 // Adding some WP 3.0 features
 
 // This theme uses wp_nav_menu()
@@ -107,6 +107,8 @@ add_custom_background();
 
 // END wp 3.0 features
 
+// Editor style is set to default 
+add_editor_style( 'editor-style.css' );
 
 // enqueue jQuery
 //if you have a script that need jquery ... you don't need to call'it. You just have to put it in your dependancies.
@@ -151,8 +153,7 @@ register_taxonomy('medium', 'post', array(
 } add_action('init', 'wpfolio_create_taxonomies', 0);
 	
 	
-	
-	
+		
 	
 /////////////////////////////////////
 // ADMIN & THEME OPTIONS INTERFACE //
