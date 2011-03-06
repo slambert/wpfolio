@@ -16,6 +16,7 @@
 	 	if (($posts & empty($display_stats)) ) {
 	 	while ( have_posts() ) {
 	 		the_post();
+	 		wpfolio_post_formats();
 	  	?>   
 		
 		<div class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?> notable-post">
@@ -36,7 +37,7 @@
 		</div> <!-- .category-nicename, .notable-post-->  		    
 		
 <!-- <?php trackback_rdf(); ?> -->    
-<?php }} else{ _e('Sorry, no posts matched your criteria.'); }?>    
+<?php }} else{ _e('Sorry, no posts matched your criteria.', 'default'); }?>    
 
 			<div class="prevnext">
 				<div class="prev"><?php previous_posts_link('Previous') ?></div> 

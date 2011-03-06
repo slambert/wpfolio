@@ -2,7 +2,21 @@
 
 
 // Enable post formats
-add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'video') );
+add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'video', 'audio', 'quote') );
+
+// Post formats conditional
+function wpfolio_post_formats() {
+		if ( has_post_format( 'aside' )) {
+		} else if ( has_post_format( 'gallery' )) {
+		} else if ( has_post_format( 'link' )) {		
+		} else if ( has_post_format( 'image' )) {			
+		} else if ( has_post_format( 'video' )) {			
+		} else if ( has_post_format( 'audio' )) {
+		} else if ( has_post_format( 'quote' )) {
+		} else {
+		}		
+} // end formats
+
 
 // Shortcode to add wide margins to a post page - works as is, but is applied in post lists
 

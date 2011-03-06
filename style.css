@@ -605,3 +605,21 @@ img#wpstats{
 position: absolute;
 left: -999em;
 }
+
+/* Post Format Styles */
+
+.format-aside{
+}
+.format-gallery{
+	background-color: aqua;
+}
+.format-link{
+}
+.format-image{
+}
+.format-video{
+}
+.format-audio{
+}
+.format-quote{
+}
