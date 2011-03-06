@@ -13,8 +13,8 @@ Template Name: Archives
 
 <?php 	
 		if (! empty($display_stats) ) { get_stats(1); echo "<br />"; };
-	 	if (($posts & empty($display_stats)) ) {
-	 	while ( have_posts() ) {
+	 	if (($posts && empty($display_stats)) ) :
+	 	while ( have_posts() ) :
 	 		the_post();
 	  	?>    
 
@@ -38,14 +38,15 @@ Template Name: Archives
 ?>
 </a> 
  
- <?php the_title(''); ?>
+<?php the_title(''); ?>
 <?php endwhile; ?>  	
 </div> <!-- .entry cat (?)-->     
 
    
 
 <p><h2 class="center">Sorry, page not found</h2></p> 
-<?php endif; ?>    
+<?php endif; ?>
+
 <!-- end post -->   
 </div><!-- #content -->
 <?php     

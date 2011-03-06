@@ -56,7 +56,7 @@
 		
 		<?php } 
 		
-		elseif { ?>
+		else {  ?>
 		
 		<div class="fullwidthpage"><!-- conditional class added to Full Width Pages -->
 		
@@ -64,7 +64,6 @@
 		
 		<?php } ?>
 		
-		 
 		<?php wp_link_pages(); ?>
 		
 		</div><!-- .conditional class -->
