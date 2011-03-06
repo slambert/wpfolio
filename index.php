@@ -16,6 +16,7 @@
 	 	if (($posts & empty($display_stats)) ) {
 	 	while ( have_posts() ) {
 	 		the_post();
+	 		wpfolio_post_formats();
 	  	?>   
 		
 		<div class="entry <?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename; ?> notable-post">
