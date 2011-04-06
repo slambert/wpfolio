@@ -1,12 +1,63 @@
 README FILE for WPFolio
+WPFolio is a free and open source theme for WordPress designed by artists
+specifically for visual artists.
 
-For more info: http://wpfolio.visitsteve.com/
+more info: http://wpfolio.visitsteve.com/
 
+Features include:
+
+   * designed by artists to meet artists needs
+   * minimal design that emphasizes your images (at 900px wide!)
+   * Features separate design for your portfolio and a news/blog section
+   * widget-ready sidebar
+   * automatic rss feeds so users can subscribe to updates to your site
+   * easy to update and maintain
+   * includes Theme Options so you can customize colors and fonts without
+modifying code
+   * uses the latest web standards
+   * allows you to choose thumbnails to represent your project
+   * easy for users to navigate
+   * free and open source code
+   * Sample Child Theme included
+   * Custom Background and Menus
+
+
+## Layout 
+
+WPFolio has 2 layout styles, one for your portfolio and one for news.
+
+Portfolio style has no sidebar and uses the full 900px layout for your
+large work samples.
+
+News style has a sidebar and looks more like a tradtional blog.
+
+
+## Widget Areas 
+
+WPFolio has 4 Widget Areas
+
+**SIDEBAR** - appears on the default index page and in pages with a "news"
+layout
+
+**FOOTER CENTER** - spans the entire width of the footer
+
+**FOOTER LEFT and FOOTER RIGHT** - divide the footer in half
+
+### Custom Widgets
+
+WPFolio includes several custom widgets.
+	* Add RSS, Credits to Footer
+	* License and Name in Footer
+
+## MISC
+
+### MODIFYING CODE
 Want to modify this theme? Do it the smart way:
 http://themeshaper.com/modify-wordpress-themes/
-Got a great addition? Send us code, or fork the project in github and let us know. http://github.com/slambert/WPFolio
+Got a great addition? Send us code, or fork the project in github and let
+us know. http://github.com/slambert/WPFolio
 
-======CHANGELOG=====
+### CHANGELOG
 
 try here: http://github.com/slambert/WPFolio/commits/master
 
