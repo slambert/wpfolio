@@ -6,7 +6,6 @@ more info: http://wpfolio.visitsteve.com/
 
 Features include:
 
-   * designed by artists to meet artists needs
    * minimal design that emphasizes your images (at 900px wide!)
    * Features separate design for your portfolio and a news/blog section
    * widget-ready sidebar
@@ -20,9 +19,11 @@ modifying code
    * free and open source code
    * Sample Child Theme included
    * Custom Background and Menus
+   * designed by artists to meet artists needs
 
-
-## Layout 
+--------
+ Layout
+-------- 
 
 WPFolio has 2 layout styles, one for your portfolio and one for news.
 
@@ -31,33 +32,42 @@ large work samples.
 
 News style has a sidebar and looks more like a tradtional blog.
 
-
-## Widget Areas 
+--------------
+ Widget Areas 
+--------------
 
 WPFolio has 4 Widget Areas
 
-**SIDEBAR** - appears on the default index page and in pages with a "news"
-layout
+SIDEBAR - appears on the default index page and in pages with a "news" layout
 
-**FOOTER CENTER** - spans the entire width of the footer
+FOOTER CENTER - spans the entire width of the footer
 
-**FOOTER LEFT and FOOTER RIGHT** - divide the footer in half
+FOOTER LEFT and FOOTER RIGHT - divide the footer in half
 
-### Custom Widgets
+== Custom Widgets ==
 
 WPFolio includes several custom widgets.
 	* Add RSS, Credits to Footer
 	* License and Name in Footer
 
-## MISC
+------
+ MISC
+------
 
-### MODIFYING CODE
+We use the term "more" rather than "previous / next" in navigating between posts.
+
+We automatically format the year for displaying the year the artwork was made in portfolio format posts. For art, the date is usually just a year. We use detailed dates on the blog layout.
+
+
+== MODIFYING CODE ==
 Want to modify this theme? Do it the smart way:
 http://themeshaper.com/modify-wordpress-themes/
 Got a great addition? Send us code, or fork the project in github and let
 us know. http://github.com/slambert/WPFolio
 
-### CHANGELOG
+-----------
+ CHANGELOG
+-----------
 
 try here: http://github.com/slambert/WPFolio/commits/master
 

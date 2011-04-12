@@ -24,7 +24,7 @@
 				<h2 class="post-title"><a title="'<?php the_title_attribute(); ?>', posted on <?php the_time('F jS, Y') ?>" href="<?php the_permalink() ?>"><?php the_title(''); ?></a></h2> 
 				<!--END POST TITLE-->
 
-				<h4><?php the_date('F d, Y', '', ''); ?></h4>
+				<h4 class="notable-date"><a href="<?php the_permalink() ?>"><?php the_date('F d, Y', '', ''); ?></a></h4>
 				<?php the_content('continue...'); ?>  
 				
 				<?php wp_link_pages(array('before' => '<p class="link_pages"><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number'));  ?>

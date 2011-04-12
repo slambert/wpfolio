@@ -2,7 +2,7 @@
 Theme Name: WPFolio
 Theme URI: http://wpfolio.visitsteve.com/wiki/
 Description: Designed specifically for artist's portfolios. Features large images, theme options, and plenty of versatility. GPLv3 licensed. We welcome your code.
-Version: 1.7.11
+Version: 1.72
 Author: Steve Lambert & many others
 Tags: fixed-width, photoblogging, one-column, two-columns, theme-options, custom-background, threaded-comments, custom-menu, custom-colors
 License: GNU General Public License v3.0
@@ -39,6 +39,8 @@ body{
 	clear: both;
 	padding: 0;
 	margin: 0 30px;
+	max-width: auto;
+    max-height: auto;
 }
 /* @group htags */
 h1,h2,h3,h4,h5,h6,form,fieldset{
@@ -362,6 +364,10 @@ h2.post-title a{
 	font-style: normal;
 	padding: 0;
 	margin: 0;
+}
+h4.notable-date a{
+	font-weight: normal;
+	font-style: normal;
 }
 .notable-post h2, .notable-post h3{
 	line-height: 1.8em;
