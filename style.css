@@ -43,7 +43,7 @@ body{
     max-height: auto;
 }
 /* @group htags */
-h1,h2,h3,h4,h5,h6,form,fieldset{
+h1,h2,h3,h4,h5,h6,fieldset{
 	/* font-family: ($WPFolio_headline_font)*/
 	margin:0;
 	padding:0;
@@ -551,6 +551,10 @@ width: 440px;
 	color: #000;
 }
 /* @end */
+form {
+	margin: 0;
+	padding: 0;
+}
 .post-bottom-title{
 	margin: 5px 30px 0px;
 	text-align: center;
