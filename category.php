@@ -19,6 +19,7 @@
 
 						 
 		<!--category title is commented out <h2 class="pagetitle"><?php echo single_cat_title(); ?></h2> -->
+		<!--category description is commented out <div id="category-description" class="justify widemargins"><?php echo category_description(); ?></div><!--#category-description--> 
 	  
 			<?php while (have_posts()) : the_post(); ?>     
 		
