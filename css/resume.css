@@ -14,16 +14,13 @@ div.cv-style ul li {
 	font-style: italic;
 	line-height: 1.3em;
 }
-
 div.cv-style ul li ul {
 	margin-top: -1.3em;
 	margin-left: 6em;
 	margin-bottom: 1.5em;
 }
-
-div.cv-style ul li ul li  {
+div.cv-style ul li ul li {
 	font-weight: normal;
 	font-style: normal;
 	line-height: 1.3em;
-
 }
