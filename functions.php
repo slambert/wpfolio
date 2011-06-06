@@ -15,9 +15,6 @@ define('THEMELIB', get_template_directory() . '/library');
 // Load widgets
 require_once(THEMELIB . '/widgets.php');
 
-// Load registered sidebars
-require_once(THEMELIB . '/sidebars.php');
-
 // Load options stylesheet
 require_once(THEMELIB . '/option-stylesheet.php');
 
@@ -25,6 +22,50 @@ require_once(THEMELIB . '/option-stylesheet.php');
 require_once(THEMELIB . '/theme-options.php');
 
 // Done importing
+
+//////////////
+// SIDEBARS //
+//////////////
+
+/* This section registers the various widget areas for WPFolio */
+	    
+	if ( function_exists('register_sidebar') )
+	    register_sidebar(array(
+		'name'=>'sidebar'
+		));
+	    
+	if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer Right',
+	'id' => 'footer_right',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '',
+	'after_title' => '',
+	));
+	
+	if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer Left',
+	'id' => 'footer_left',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '',
+	'after_title' => '',
+	));
+	
+	if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer Center',
+	'id' => 'footer_center',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '',
+	'after_title' => '',
+	));
+	
+/* END Sidebars */
+
 
 ////////////
 // IMAGES //
