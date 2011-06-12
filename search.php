@@ -13,6 +13,8 @@
 		<div class="notable">
 		<h2 class="pagetitle">Search Result for <?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = esc_html($s, 1); $count = $allsearch->post_count; _e('', 'wpfolio'); _e('<span class="search-terms">', 'wpfolio'); echo $key; _e('</span>', 'wpfolio'); _e(' &mdash; ', 'wpfolio'); echo $count . ' '; _e('articles', 'wpfolio'); wp_reset_query(); ?></h2> <!-- Pagetitle shows number of search results-->
 		
+	<?php get_search_form(); ?>
+		
 
 	<?php 	if (! empty($display_stats) ) { 		get_stats(1); 		echo "<br />"; 	} 	else if (($posts & empty($display_stats)) ) : foreach ($posts as $post) : the_post(); ?>   
 
