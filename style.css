@@ -49,6 +49,8 @@ h1,h2,h3,h4,h5,h6,fieldset{
 	margin:0;
 	padding:0;
 	clear:both;
+	font-weight: normal;
+	font-style: normal;
 }
 h1{ /*font-size: ($WPFolio_headline_size)*/ }
 h1,h2,h3 { /*color: (WPFolio_highlight_color)*/ }
@@ -70,9 +72,10 @@ h5{
 	letter-spacing: .1em;
 	padding: .2em 0em;
 }
-h2.pagetitle{
+h2.pagetitle, h2.pagetitle a{
 	text-transform: uppercase;
 	text-align: center;
+	font-weight: normal;
 }
 .home h2.pagetitle{display: none;}
 /* @end */
@@ -554,6 +557,10 @@ width: 440px;
 form {
 	margin: 0;
 	padding: 0;
+}
+
+.notable #searchform {
+	margin: 12px 0;
 }
 .post-bottom-title{
 	margin: 5px 30px 0px;
