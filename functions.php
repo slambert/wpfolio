@@ -15,9 +15,6 @@ define('THEMELIB', get_template_directory() . '/library');
 // Load widgets
 require_once(THEMELIB . '/widgets.php');
 
-// Load registered sidebars
-require_once(THEMELIB . '/sidebars.php');
-
 // Load options stylesheet
 require_once(THEMELIB . '/option-stylesheet.php');
 
@@ -25,6 +22,50 @@ require_once(THEMELIB . '/option-stylesheet.php');
 require_once(THEMELIB . '/theme-options.php');
 
 // Done importing
+
+//////////////
+// SIDEBARS //
+//////////////
+
+/* This section registers the various widget areas for WPFolio */
+	    
+	if ( function_exists('register_sidebar') )
+	    register_sidebar(array(
+		'name'=>'sidebar'
+		));
+	    
+	if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer Right',
+	'id' => 'footer_right',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '',
+	'after_title' => '',
+	));
+	
+	if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer Left',
+	'id' => 'footer_left',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '',
+	'after_title' => '',
+	));
+	
+	if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer Center',
+	'id' => 'footer_center',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '',
+	'after_title' => '',
+	));
+	
+/* END Sidebars */
+
 
 ////////////
 // IMAGES //
@@ -145,47 +186,58 @@ function wpfolio_admin_footer() {
 	echo 'Thank you for creating with <a href="http://wordpress.org/" target="_blank">WordPress</a>. | <a href="http://codex.wordpress.org/" target="_blank">Documentation</a> | <a href="http://wordpress.org/support/forum/4" target="_blank">Feedback</a> | <a href="http://wpfolio.visitsteve.com/">Theme by WPFolio</a>';
 } 
 add_filter('admin_footer_text', 'wpfolio_admin_footer');
-
-
-
-// Add WPFolio Wiki site as a Dashboard Feed 
-// Thanks to bavotasan.com: http://bavotasan.com/tutorials/display-rss-feed-with-php/ 
-
-function custom_dashboard_widget() {
-
-	$rss = new DOMDocument();
-	$rss->load('http://wpfolio.visitsteve.com/wiki/feed');
-	$feed = array();
-	foreach ($rss->getElementsByTagName('item') as $node) {
-		$item = array ( 
-			'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-			// 'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-			'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-			'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
-			);
-		array_push($feed, $item);
-	}
-	$limit = 5; // change how many posts to display here
-	echo '<ul>'; // wrap in a ul
-	for($x=0;$x<$limit;$x++) {
-		$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
-		$link = $feed[$x]['link'];
-		// $description = $feed[$x]['desc'];
-		$date = date('l F d, Y', strtotime($feed[$x]['date']));
-		echo '<li><p><strong><a href="'.$link.'" title="'.$title.'">'.$title.'</a></strong>';
-		echo ' - '.$date.'</p></li>';
-		// echo '<p>'.$description.'</p>';
-	}
-	echo '</ul>';
-	echo '<p class="textright"><a href="http://wpfolio.visitsteve.com/wiki/category/news" class="button">View all</a></p>'; // link to site
 	
-}
+// Testing to see if the PHP version is up to date. If it is, add a WPFolio RSS feed widget, and if it's not, add a widget prompting an upgrade.
+if (version_compare(PHP_VERSION, '5.2.4', '>=')) {
+
+	// Add WPFolio Wiki site as a Dashboard Feed 
+	// Thanks to bavotasan.com: http://bavotasan.com/tutorials/display-rss-feed-with-php/ 
 	
-function add_custom_dashboard_widget() {
-	wp_add_dashboard_widget('custom_dashboard_widget', 'WPFolio News', 'custom_dashboard_widget');
+	function custom_dashboard_widget() {
+		$rss = new DOMDocument();
+		$rss->load('http://wpfolio.visitsteve.com/wiki/feed');
+		$feed = array();
+		foreach ($rss->getElementsByTagName('item') as $node) {
+			$item = array ( 
+				'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+				// 'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
+				'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+				'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
+				);
+			array_push($feed, $item);
+		}
+		$limit = 5; // change how many posts to display here
+		echo '<ul>'; // wrap in a ul
+		for($x=0;$x<$limit;$x++) {
+			$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
+			$link = $feed[$x]['link'];
+			// $description = $feed[$x]['desc'];
+			$date = date('l F d, Y', strtotime($feed[$x]['date']));
+			echo '<li><p><strong><a href="'.$link.'" title="'.$title.'">'.$title.'</a></strong>';
+			echo ' - '.$date.'</p></li>';
+			// echo '<p>'.$description.'</p>';
+		}
+		echo '</ul>';
+		echo '<p class="textright"><a href="http://wpfolio.visitsteve.com/wiki/category/news" class="button">View all</a></p>'; // link to site	
+	}
+	
+	function add_custom_dashboard_widget() {
+		wp_add_dashboard_widget('custom_dashboard_widget', 'WPFolio News', 'custom_dashboard_widget');
+	}
+	add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
+
+} else {
+
+	function print_php_error() {
+	$error = "<p style='color:red; font-size: 1.5em;'>You are using an outdated version of PHP.  WordPress doesn't support it and neither does WPFolio!  Upgrade to the latest version of PHP.</p>";
+		echo $error;
+	}
+	
+	function add_error_widget() {
+		wp_add_dashboard_widget('error_widget', 'IMPORTANT!', 'print_php_error');	
+	} 
+	
+	add_action('wp_dashboard_setup', 'add_error_widget' );
 }
-add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
-
-
 
 ?>

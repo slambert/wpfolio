@@ -35,8 +35,9 @@ Add if you want to enable the SuperFish Navbar. It will need styling!
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/resume.css" type="text/css" media="screen" />
 <?php } else if (is_page("")) { } ?>
 
-<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo home_url();?>/?wp_folio_css=css" rel="stylesheet" type="text/css" />
+<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
+
 
 
 <!-- calling wp_head -->

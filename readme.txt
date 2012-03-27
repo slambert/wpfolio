@@ -27,10 +27,33 @@ modifying code
 
 WPFolio has 2 layout styles, one for your portfolio and one for news.
 
-Portfolio style has no sidebar and uses the full 900px layout for your
-large work samples.
+The following category titles will automatically use the news layout: 
+ * News
+ * Latest
+ * Updates
+ * Blog
+ * Notable
+ 
+ANY other category title (like artwork, portfolio, elephants, burgerburger, 
+asdfgh, or hhhhhgggh, for example) will automatically use the Portfolio layout.
 
-News style has a sidebar and looks more like a tradtional blog.
+What's the diffrence?
+
+Portfolio style
+ * designed to display your artwork at 900px wide
+ * no sidebar
+ * uses the full 900px layout for your large work samples.
+ * Title and metadata appear below the post instead of at the top.
+
+News style 
+ * designed to display your show announcements, studio blog, and other news
+ * has a widget enabled sidebar
+ * looks more like a tradtional blog
+ 
+Note: when embedding videos in the portfolio layout, you can auto embed (using
+oembed and your video will span the full 900px. On the news layout, unless you
+specify the embed size they will bleed over into the sidebar and get cut off. 
+So, when embedding in the News section, specify a smaller embed size.
 
 --------------
  Widget Areas 
@@ -40,7 +63,7 @@ WPFolio has 4 Widget Areas
 
 SIDEBAR - appears on the default index page and in pages with a "news" layout
 
-FOOTER CENTER - spans the entire width of the footer
+FOOTER CENTER - spans the entire width of the footer (above Footer Left and Footer Right)
 
 FOOTER LEFT and FOOTER RIGHT - divide the footer in half
 

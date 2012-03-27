@@ -2,9 +2,10 @@
 Theme Name: WPFolio
 Theme URI: http://wpfolio.visitsteve.com/wiki/
 Description: Designed specifically for artist's portfolios. Features large images, theme options, and plenty of versatility. GPLv3 licensed. We welcome your code.
-Version: 1.72
+Version: 1.75
 Author: Steve Lambert & many others
-Tags: fixed-width, photoblogging, one-column, two-columns, theme-options, custom-background, threaded-comments, custom-menu, custom-colors
+Author URI: http://wpfolio.visitsteve.com/wiki/about/
+Tags: fixed-width, photoblogging, one-column, two-columns, theme-options, custom-background, threaded-comments, custom-menu, custom-colors, full-width-template
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 .
@@ -48,6 +49,8 @@ h1,h2,h3,h4,h5,h6,fieldset{
 	margin:0;
 	padding:0;
 	clear:both;
+	font-weight: normal;
+	font-style: normal;
 }
 h1{ /*font-size: ($WPFolio_headline_size)*/ }
 h1,h2,h3 { /*color: (WPFolio_highlight_color)*/ }
@@ -63,16 +66,16 @@ h5{
 }
 .low{ display:none; }
 #content h2, #content h3{
-	font-weight: normal;
 	letter-spacing: .1em;
 }
 #content h1 {
 	letter-spacing: .1em;
 	padding: .2em 0em;
 }
-h2.pagetitle{
+h2.pagetitle, h2.pagetitle a{
 	text-transform: uppercase;
 	text-align: center;
+	font-weight: normal;
 }
 .home h2.pagetitle{display: none;}
 /* @end */
@@ -554,6 +557,10 @@ width: 440px;
 form {
 	margin: 0;
 	padding: 0;
+}
+
+.notable #searchform {
+	margin: 12px 0;
 }
 .post-bottom-title{
 	margin: 5px 30px 0px;
