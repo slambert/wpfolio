@@ -15,7 +15,7 @@
 
 	<div class="post-bottom-title">  	
 		
-		<strong><a href="<?php the_permalink() ?>" title="Permalink for <?php the_title_attribute(); ?>"><?php the_title(); ?></a></strong>  | <?php the_time('Y') ?> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'medium', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>  <?php comments_popup_link(__('| Comments (0)'), __('| Comments (1)'), __('| Comments (%)'), __(''), __('')); ?>
+		<strong><a href="<?php the_permalink() ?>" title="Permalink for <?php the_title_attribute(); ?>"><?php the_title(); ?></a></strong>  | <?php the_time('Y') ?> | <?php the_category(', '); ?> <?php echo get_the_term_list($post->ID, 'medium', '| Media: ', ', ', ''); ?> <?php the_tags('| Tags: ',', ',''); ?>  
 	
 		<?php edit_post_link('edit this', '<br /><br /><span class="edit-link">', '</span>'); ?> <!--USER EDIT LINK-->
 		
