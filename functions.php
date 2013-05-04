@@ -126,7 +126,11 @@ register_nav_menus( array(
 add_theme_support( 'automatic-feed-links' );
 
 // This theme allows users to set a custom background
-add_custom_background();
+$bg_args = array(
+	'default-color' => 'aaaaaa'
+);
+
+add_theme_support( 'custom-background', $bg_args);
 
 // END wp 3.0 features
 
@@ -135,12 +139,13 @@ add_custom_background();
 //if you have a script that need jquery ... you don't need to call'it. You just have to put it in your dependancies.
 //wp_enqueue_script('jquery');
 
-wp_enqueue_script('hoverIntent', get_template_directory_uri().'/js/hoverIntent.js',array('jquery'));
-wp_enqueue_script('superfish', get_template_directory_uri().'/js/superfish.js',array('hoverIntent'));
-wp_enqueue_script('supersubs', get_template_directory_uri().'/js/supersubs.js',array('superfish'));
-wp_enqueue_script('wpfolio', get_template_directory_uri().'/js/wpfolio.js',array('supersubs'));
-
-
+function wpfolio_setup_scripts(){
+	wp_enqueue_script('hoverIntent', get_template_directory_uri().'/js/hoverIntent.js',array('jquery'));
+	wp_enqueue_script('superfish', get_template_directory_uri().'/js/superfish.js',array('hoverIntent'));
+	wp_enqueue_script('supersubs', get_template_directory_uri().'/js/supersubs.js',array('superfish'));
+	wp_enqueue_script('wpfolio', get_template_directory_uri().'/js/wpfolio.js',array('supersubs'));
+}
+add_action( 'wp_enqueue_scripts', 'wpfolio_setup_scripts' );
 
 // enable threaded comments
 
