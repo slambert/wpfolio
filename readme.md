@@ -1,10 +1,10 @@
-README FILE for WPFolio
-WPFolio is a free and open source theme for WordPress designed by artists
-specifically for visual artists.
+# WPFolio (Archived)
 
-more info: http://wpfolio.visitsteve.com/
+WPFolio was a free and open source theme for WordPress designed by artists specifically for visual artists. It was created at a time when there were few portfolio oriented themes available, many of which were inadequate and/or costly.
 
-Features include:
+more info: http://wpfolio.visitsteve.com/ (archived)
+
+Features included:
 
    * minimal design that emphasizes your images (at 900px wide!)
    * Features separate design for your portfolio and a news/blog section
@@ -21,13 +21,13 @@ modifying code
    * Custom Background and Menus
    * designed by artists to meet artists needs
 
---------
- Layout
--------- 
 
-WPFolio has 2 layout styles, one for your portfolio and one for news.
+## Layout
 
-The following category titles will automatically use the news layout: 
+
+WPFolio had 2 layout styles, one for your portfolio and one for news.
+
+The following category titles automatically used the news layout: 
  * News
  * Latest
  * Updates
@@ -35,17 +35,17 @@ The following category titles will automatically use the news layout:
  * Notable
  
 ANY other category title (like artwork, portfolio, elephants, burgerburger, 
-asdfgh, or hhhhhgggh, for example) will automatically use the Portfolio layout.
+asdfgh, or hhhhhgggh, for example) automatically used the Portfolio layout.
 
 What's the diffrence?
 
-Portfolio style
+**Portfolio style**
  * designed to display your artwork at 900px wide
  * no sidebar
  * uses the full 900px layout for your large work samples.
  * Title and metadata appear below the post instead of at the top.
 
-News style 
+**News style**
  * designed to display your show announcements, studio blog, and other news
  * has a widget enabled sidebar
  * looks more like a tradtional blog
@@ -55,9 +55,7 @@ oembed and your video will span the full 900px. On the news layout, unless you
 specify the embed size they will bleed over into the sidebar and get cut off. 
 So, when embedding in the News section, specify a smaller embed size.
 
---------------
- Widget Areas 
---------------
+## Widget Areas 
 
 WPFolio has 4 Widget Areas
 
@@ -67,30 +65,28 @@ FOOTER CENTER - spans the entire width of the footer (above Footer Left and Foot
 
 FOOTER LEFT and FOOTER RIGHT - divide the footer in half
 
-== Custom Widgets ==
+### Custom Widgets
 
 WPFolio includes several custom widgets.
 	* Add RSS, Credits to Footer
 	* License and Name in Footer
 
-------
- MISC
-------
+## MISC
 
 We use the term "more" rather than "previous / next" in navigating between posts.
 
 We automatically format the year for displaying the year the artwork was made in portfolio format posts. For art, the date is usually just a year. We use detailed dates on the blog layout.
 
 
-== MODIFYING CODE ==
+## MODIFYING CODE
+
 Want to modify this theme? Do it the smart way:
 http://themeshaper.com/modify-wordpress-themes/
+
 Got a great addition? Send us code, or fork the project in github and let
 us know. http://github.com/slambert/WPFolio
 
------------
- CHANGELOG
------------
+## CHANGELOG
 
 try here: http://github.com/slambert/WPFolio/commits/master
 
